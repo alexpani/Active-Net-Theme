@@ -1,0 +1,18 @@
+/*
+ General Mixins (Theme+WooCommerce) v1.0
+---------------------------------------------------------------------------------------------------- */
+@mixin box-shadow() {
+	box-shadow: $box-shadow;
+}
+
+@mixin border() {
+	border: $border;	
+}
+
+@mixin border-top() {
+	border-top: $border;	
+}
+
+@mixin border-bottom() {
+	border-bottom: $border;	
+}

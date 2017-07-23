@@ -1,0 +1,73 @@
+/*
+Variables v2.1
+---------------------------------------------------------------------------------------------------- */
+
+// Theme colors
+$color1: #32ace1;
+$color2: #f7af2a;
+$color3: #ed5d54;
+$color4: #f4f4f4;
+
+// Base colors 
+$green:	#7ad03a; // Poppy default #7ad03a
+$red:	$color3; // Poppy default #FF0000
+$orange:$color2; // Poppy default #FF6600
+$blue:	$color1; // Poppy default #3399FF
+
+// Typography
+$font: 'Poppins', sans-serif;
+$title-font: 'Montserrat', sans-serif;
+$text: #777;
+$title: #555;
+$bold: 700;
+$link: darken($color1,20);
+$link-hover: $color1;
+
+// Various 
+$background: /*url('images/bk.png')*/ #fff; // Bypassed if customizer is in use
+$header: /*url('images/bk.png')*/ #fff;
+$border: 1px solid #ddd;
+$border-radius: 3px;
+$box-shadow: 0px 0px 1px #bbb;
+$icon-color: $color2;
+
+// Structure
+$sidebar-spacing: 40px;
+$sidebar-primary-width: 300px; // Poppy default 360px
+$sidebar-secondary-width: 200px; // Poppy default 180px
+$one-sidebar-content-width: 1280px - $sidebar-primary-width - $sidebar-spacing; // Poppy default 880px
+$two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-width - $sidebar-spacing ); // Poppy default 660px
+$two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
+
+
+// Logo size as defined in function.php
+$logo-width: 600px*1.2;
+$logo-height: 150px*1.2;
+
+// Navigation
+$primary-nav-bk: $color1;
+$primary-nav-link: #fff;
+$primary-nav-hover: $orange;
+$secondary-nav-bk: /*url('images/bk.png')*/ #f4f4f4;
+$secondary-nav-link:$text;
+$secondary-nav-hover: $title;
+$responsive-nav-bk: #fff;
+$responsive-nav-link: $link;
+
+// Footer
+$footer-widgets: #f4f4f4;
+$footer-widgets-title: $title;
+$footer-widgets-text: $text;
+$footer: #fff;
+$footer-text: $text;
+
+// Woocommerce 
+$sale-color: $orange;
+$price-color: $green;
+$star-color: $orange;
+
+// Buttons
+$button-bk: $orange; // buttons on product, loop, cart
+$button-color: #fff; // text color on this button
+$button-alt-bk: $green; // cart button on single product page, proceed to ceckout in cart page
+$button-alt-color: #fff; // text color on this button
