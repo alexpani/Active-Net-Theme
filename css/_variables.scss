@@ -33,12 +33,11 @@ $icon-color: $color2;
 
 // Structure
 $sidebar-spacing: 40px;
-$sidebar-primary-width: 300px; // Poppy default 360px
-$sidebar-secondary-width: 200px; // Poppy default 180px
-$one-sidebar-content-width: 1280px - $sidebar-primary-width - $sidebar-spacing; // Poppy default 880px
-$two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-width - $sidebar-spacing ); // Poppy default 660px
+$sidebar-primary-width: 300px; // default 360px
+$sidebar-secondary-width: 200px; // default 180px
+$one-sidebar-content-width: 1280px - $sidebar-primary-width - $sidebar-spacing; // default 880px
+$two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-width - $sidebar-spacing ); // default 660px
 $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
-
 
 // Logo size as defined in function.php
 $logo-width: 600px*1.2;

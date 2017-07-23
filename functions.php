@@ -185,3 +185,6 @@ if ( !is_page() ) {
 	$post_meta = '[post_categories before="Categoria: "] [post_tags before="Etichetta: "]';
 	return $post_meta;
 }}
+
+//* Start the Poppy Framework
+include ('poppy-extension/poppy.php');

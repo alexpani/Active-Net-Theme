@@ -1,0 +1,391 @@
+//* Various classes
+
+//* Padding
+
+.pvs {
+	padding: $padding-small 0;
+}
+
+.pvm {
+	padding: $padding-medium 0;
+}
+
+.pvl {
+	padding: $padding-large 0;
+}
+
+.phl {
+	padding: 0 $padding-large;
+}
+
+.phm {
+	padding: 0 $padding-medium;
+}
+
+.phs {
+	padding: 0 $padding-small;
+}
+
+.pl {
+	padding: $padding-large;
+}
+
+.pm {
+	padding: $padding-medium;
+}
+
+.ps {
+	padding: $padding-small;
+}
+
+//* Permettono di spaziare le sezioni e i container
+.gut-20 {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.gut-40 {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+// Alcuni colori
+.red {
+	background: #e74c3c;
+} 
+
+.green {
+	background: #2ecc71;
+}
+
+.yellow {
+	background: #f1c40f;
+}
+
+.orange {
+	background: #f39c12;
+}
+
+//* Bottoni
+a.button-dark {	
+		background-color: $color-dark;
+		color: $color-light;
+		
+		&:hover {
+			background-color: $color-light;
+			color: $color-dark !important;
+		}
+			
+}
+
+a.button-light {	
+		background-color: $color-light;
+		color: $color-dark;
+		
+		&:hover {
+			background-color: $color-dark;
+			color: $color-light !important;
+		}
+			
+}
+
+//* Sfondi
+.background-1 {
+	background: url('images/background1.jpg');
+}
+
+//* Gradienti
+.gradient-1 {
+	background: linear-gradient(to bottom, #aaa, #eee);
+}
+
+.gradient-2 {
+	@include gradient();
+}
+
+//* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
+.aligner {
+	display:flex;
+	align-items:center;
+}
+
+/* ## Column Classes Extended (no margin)
+--------------------------------------------- */
+
+.five-sixths.ext,
+.four-sixths.ext,
+.one-fourth.ext,
+.one-half.ext,
+.one-sixth.ext,
+.one-third.ext,
+.three-fourths.ext,
+.three-sixths.ext,
+.two-fourths.ext,
+.two-sixths.ext,
+.two-thirds.ext {
+	float: left;
+	margin-left: 0;
+}
+
+.one-half.ext,
+.three-sixths.ext,
+.two-fourths.ext{
+	width: 50%;
+}
+
+.one-third.ext,
+.two-sixths.ext {
+	width: 33.33%;
+}
+
+.four-sixths.ext,
+.two-thirds.ext {
+	width: 66%;
+}
+
+.one-fourth.ext {
+	width: 25%;
+}
+
+.three-fourths.ext {
+	width: 75%;
+}
+
+.one-sixth.ext {
+	width: 16.66%;
+}
+
+.five-sixths.ext {
+	width: 83.33%;
+}
+
+//* Text Classes
+
+.text-light {
+	color: $color-light;
+}
+
+.text-dark {
+	color: $color-light;
+}
+
+
+
+/* Poppy Helper Classes v1.0
+--------------------------------------------- */
+
+.spacer-small {
+    margin: 20px auto;
+}
+
+.spcer-medium, ,.spacer, .separator {
+    margin: 40px auto;
+}
+
+.spacer-large {
+    margin: 60px auto;
+}
+
+.center, .align-center {
+	text-align: center;
+}
+
+.right, .align-right {
+	text-align: right;
+}
+
+.poppy {
+	
+	ul {
+		margin: 0;
+	}
+
+	li, .entry-content ul > li {
+		list-style-type: none !important;
+	}
+}
+
+
+//* Element li row v1.0
+li.ordrered-list-2:nth-of-type(2n+1), 
+li.ordrered-list-3:nth-of-type(3n+1), /* select every 3 item starting from 1 */
+li.ordrered-list-4:nth-of-type(4n+1),
+li.ordrered-list-5:nth-of-type(5n+1),
+li.ordrered-list-6:nth-of-type(6n+1) { 
+    clear: both;
+    margin-left: 0;
+}
+
+.poppy-element-li-row {	
+	
+	ul {
+		margin: 0;
+	}
+
+}
+
+
+//* Featured Info v2.0
+.poppy-featured-info {
+}
+
+
+//* Icon Box v1.3
+.poppy-icon-box {
+	text-align: center;
+	padding: 8px;
+	
+	div {
+		text-align: center;
+	}
+	
+	.fa {
+		color: $icon-color;		
+	}
+
+	.fa.gradient {
+		background: -webkit-linear-gradient(#673cf2, #1694ff);
+		background: -o-linear-gradient(#673cf2, #1694ff);
+		background: linear-gradient(#673cf2, #1694ff);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
+	}
+	
+	h3 {
+		margin-top: 8px;
+		margin-bottom: 0;
+		font-size: 1.9rem;
+		color: $title;
+	}
+	
+	h4 {
+		font-size: 1.6rem;
+		font-weight: normal;
+		margin-bottom: 2rem;
+		color: $text;
+	}
+
+}
+
+
+//* Home News v1.0
+.home-news {	
+
+		span {
+			position: relative;
+			top: 30px;
+			left: 0;
+			color: #FFF;
+			background: $color-primary;
+			padding: 4px;
+			font-size: 1.6rem;
+		}		
+
+		img {
+			margin-bottom: -10px;
+			width: 768px;
+			height: auto;
+		}
+
+		p {
+			font-size: 1.6rem;
+			line-height: 1.5;
+		}			
+
+			h3 {
+				text-transform: uppercase;
+				font-size: 1.8rem;
+				height: 6rem;
+				background: $color-primary;
+				padding: 10px;
+				margin: 0;
+				text-align: center;
+				
+				a {
+					color: #fff;
+					text-decoration: none;
+					vertical-align: text-top;
+					
+					&:hover {
+						color: #ccc;
+					}
+				}	
+				
+			}
+
+		}
+
+// Home News Type 2
+.home-news-2 { 
+
+	li > div {
+		border-radius: 4px;
+		-webkit-box-shadow: 1px 1px 1px rgba(115, 115, 115, 0.2);
+		-moz-box-shadow: 1px 1px 1px rgba(115, 115, 115, 0.2);
+		box-shadow: 1px 1px 1px rgba(115, 115, 115, 0.2);
+		background: #fff;
+		display: block;
+	}
+
+	.label {
+		display: block;
+		float: left;
+		//height: 20px;		
+		border-radius: 2px;
+		padding: 0px 15px 0px 15px;    
+		font-size: 1.3rem;
+		font-size: 13px;
+		line-height: 20px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #fff;
+		z-index: 10;
+		background: $icon-color;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		margin: -9px 0 0 20px;
+		position: absolute;
+	}
+
+	span {
+		position: relative;
+		top: 29px;
+		left: 0;
+		color: #FFF;
+		background: $icon-color;
+		padding: 4px;
+		font-size: 1.5rem;
+		font-size: 15px;
+		overflow: hidden;
+	}		
+
+	img {		
+		border-bottom-width: 3px;
+		border-bottom-style: solid;
+		border-radius: 4px 4px 0px 0px;
+		border-color: $icon-color;
+	}				
+
+	h3 {        				
+		font-size: 1.8rem;
+		font-size: 18px;				
+		padding: 10px;
+		margin: 0;
+		background: #fff;
+		
+		a {
+			color: $title;
+			text-decoration: none;
+			vertical-align: -webkit-baseline-middle;
+			
+			&:hover {
+				color: #ccc;
+			}
+
+		}
+		
+	}
+
+}
