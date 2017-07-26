@@ -1245,7 +1245,7 @@ Home
 .nav-primary {
 	background: $primary-nav-bk;
 	@include border-top();
-	@include border-bottom();
+	//@include border-bottom();
 	
 	.current-menu-item a {
 		color: $primary-nav-link;
