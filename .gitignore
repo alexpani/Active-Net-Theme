@@ -1,6 +1,7 @@
 
 *.codekit3
 poppy-extension/
+<<<<<<< HEAD
 
 
 style.css
@@ -16,3 +17,5 @@ style.css
 style.css
 
 style.css
+=======
+>>>>>>> origin/master
