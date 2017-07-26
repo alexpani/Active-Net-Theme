@@ -1,4 +1,4 @@
-Utilizzo di Poppy Extension
+ Utilizzo di Poppy Extension
 
 1. Sezioni
 
@@ -17,3 +17,21 @@ Naturlamente è possibile usare tutte le classi di poppy: center...
 
 parallax-x: dona un effetto parallasse alla sezione contenuta. Usare parallax-1 per la prima sezione, parallax-2 e parallax-3 per le seguenti
 hero: imposta l'immagine images/hero.jpg come hero e le dà un'effetto gradiente, oltre a stilizzare h1 e p per quella sezione. Nasce per essere modificata a piacere
+
+
+
+
+
+To do:
+- aggiungere layout a griglia per i post, tipo http://gridly.imagely.com
+- aggiungere tabbed content tipo https://www.musket-theme.com/components-test/
+- aggiungere expanders (accordion) tipo https://www.musket-theme.com/components-test/
+- aggiungere faqs come https://www.musket-theme.com/components-test/
+- aggiungere side images come https://www.musket-theme.com/components-test/
+- aggiungere cards come https://www.musket-theme.com/components-test/
+- aggiungere hero in versione immagine fissa con tutto il resto che scorre, tipo https://demos.artbees.net/jupiter5/v5/
+- per le section prevedere un bordo colorato, tipo https://demos.artbees.net/jupiter5/v5/ e un bordo con triangolino tipo https://avada.theme-fusion.com/
+- verifica cosa succede mettendo una sezione dentro una sezione. Figo per mettere una sezione semitrasparente all'interno di un altra che ha un imagine per sfondo, tipo https://avada.theme-fusion.com/ zona effetto legno
+- aggiungere effetto lettere trasparenti che vanno vedere cosa c'è sotto
+- avere la possibilità di dare un offset alle sezioni rispetto ai container per creare interessanti effetti di sovrapposizione tra le aree, vedi http://themes.muffingroup.com/be/diet/ e sopratutto http://themes.muffingroup.com/be/agency2/
+- e se volessi allineare in basso un 'immagine in un container/section? tipo  il gruppo di persone in basso su http://www.kriesi.at/themes/enfold-2017/

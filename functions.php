@@ -20,6 +20,8 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'activenet', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'activenet' ) );
 
+
+
 //* Add Image upload and Color select to WordPress Theme Customizer
 require_once( get_stylesheet_directory() . '/lib/customize.php' );
 
@@ -63,13 +65,12 @@ add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'g
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Add support for custom header
-add_theme_support( 'custom-header', array(
-	'width'           => 600,
-	'height'          => 150,
-	'header-selector' => '.site-title a',
-	'header-text'     => false,
-	'flex-height'     => true,
+// Add support for custom logo.
+add_theme_support( 'custom-logo', array(
+	'width'       => 600,
+	'height'      => 160,
+	'flex-width' => true,
+	'flex-height' => true,
 ) );
 
 //* Add support for custom background
@@ -185,6 +186,71 @@ if ( !is_page() ) {
 	$post_meta = '[post_categories before="Categoria: "] [post_tags before="Etichetta: "]';
 	return $post_meta;
 }}
+
+
+/**
+ * Add an image inline in the site title element for the logo
+ *
+ * @param string $title Current markup of title.
+ * @param string $inside Markup inside the title.
+ * @param string $wrap Wrapping element for the title.
+ *
+ * @author @_AlphaBlossom
+ * @author @_neilgee
+ * @author @_JiveDig
+ * @author @_srikat
+ */
+
+add_filter( 'genesis_seo_title', 'custom_header_inline_logo', 10, 3 );
+
+function custom_header_inline_logo( $title, $inside, $wrap ) {
+	// If the custom logo function and custom logo exist, set the logo image element inside the wrapping tags.
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$inside = sprintf( '<span class="screen-reader-text">%s</span>%s', esc_html( get_bloginfo( 'name' ) ), get_custom_logo() );
+	} else {
+		// If no custom logo, wrap around the site name.
+		$inside	= sprintf( '<a href="%s">%s</a>', trailingslashit( home_url() ), esc_html( get_bloginfo( 'name' ) ) );
+	}
+
+	// Build the title.
+	$title = genesis_markup( array(
+		'open'    => sprintf( "<{$wrap} %s>", genesis_attr( 'site-title' ) ),
+		'close'   => "</{$wrap}>",
+		'content' => $inside,
+		'context' => 'site-title',
+		'echo'    => false,
+		'params'  => array(
+			'wrap' => $wrap,
+		),
+	) );
+
+	return $title;
+}
+
+add_filter( 'genesis_attr_site-description', 'custom_add_site_description_class' );
+/**
+ * Add class for screen readers to site description.
+ * This will keep the site description markup but will not have any visual presence on the page
+ * This runs if there is a logo image set in the Customizer.
+ *
+ * @param array $attributes Current attributes.
+ *
+ * @author @_neilgee
+ * @author @_srikat
+ */
+function custom_add_site_description_class( $attributes ) {
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$attributes['class'] .= ' screen-reader-text';
+	}
+
+	return $attributes;
+}
+
+//* Scegliamo il tipo di header
+//*  Il default è logo-right
+
+//include_once( get_stylesheet_directory() . '/header-logo-mid-right.php' );
+include_once( get_stylesheet_directory() . '/header-left-logo-right.php' );
 
 //* Start the Poppy Framework
 include ('poppy-extension/poppy.php');

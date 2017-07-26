@@ -38,7 +38,11 @@
 	padding: $padding-small;
 }
 
-//* Permettono di spaziare le sezioni e i container
+.nopad {
+	padding: 0;
+}
+
+//* Permettono di spaziare le sezioni e i container (convertire come i padding)
 .gut-20 {
 	margin-bottom: 20px;
 	margin-top: 20px;

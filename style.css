@@ -1006,22 +1006,22 @@ Home
   background: #fff; }
 
 .site-header > .wrap {
-  padding: 30px 0 30px; }
+  padding: 20px 0; }
 
 /* ## Title Area
 --------------------------------------------- */
 .title-area {
   float: left;
   padding: 10px 0;
-  width: 360px; }
+  width: 300px; }
 
 .header-image .title-area {
   margin: 0 auto;
-  max-width: 360px;
+  max-width: 300px;
   padding: 0; }
 
 .header-full-width .title-area {
-  float: left;
+  float: none;
   width: 100%; }
 
 .site-title {
@@ -1031,8 +1031,8 @@ Home
   line-height: 1.2; }
 
 .site-title a,
-.site-title a:hover,
-.site-title a:focus {
+.site-title a:focus,
+.site-title a:hover {
   color: #777;
   text-decoration: none; }
 
@@ -1040,7 +1040,7 @@ Home
   background-position: center !important;
   background-size: contain !important;
   float: left;
-  min-height: 90px;
+  min-height: 80px;
   width: 100%; }
 
 .site-description {
@@ -1058,17 +1058,29 @@ Home
   display: block;
   text-indent: -9999px; }
 
-/* ## Header Widget Area
+/* ## Widget Area
 --------------------------------------------- */
 .site-header .widget-area {
-  margin-top: 20px;
   float: right;
-  width: 920px; }
-  .site-header .widget-area .widget {
-    margin: 0;
-    margin: 0 auto;
-    float: right;
-    margin-left: 30px; }
+  width: 800px; }
+
+/* ## New Wordpress Custom Logo
+--------------------------------------------- */
+.wp-custom-logo .title-area {
+  max-width: none;
+  margin-top: 0; }
+
+.wp-custom-logo .site-title {
+  text-indent: 0; }
+
+.wp-custom-logo .site-title > a {
+  min-height: 0; }
+
+.custom-logo-link {
+  display: block; }
+
+.custom-logo {
+  vertical-align: top; }
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
