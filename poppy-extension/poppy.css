@@ -35,6 +35,12 @@ v1.2
 .ps {
   padding: 20px; }
 
+.ptl {
+  padding-top: 100px; }
+
+.nopad {
+  padding: 0; }
+
 .gut-20 {
   margin-bottom: 20px;
   margin-top: 20px; }
@@ -44,16 +50,19 @@ v1.2
   margin-top: 40px; }
 
 .red {
-  background: #e74c3c; }
+  background-color: #e74c3c; }
 
 .green {
-  background: #2ecc71; }
+  background-color: #2ecc71; }
 
 .yellow {
-  background: #f1c40f; }
+  background-color: #f1c40f; }
 
 .orange {
-  background: #f39c12; }
+  background-color: #f39c12; }
+
+.black {
+  background-color: #000; }
 
 a.button-dark {
   background-color: #333;
@@ -70,7 +79,10 @@ a.button-light {
     color: #fff !important; }
 
 .background-1 {
-  background: url("images/background1.jpg"); }
+  background: url("images/background-1.jpg"); }
+
+.background-2 {
+  background: url("images/background-2.jpg") repeat; }
 
 .gradient-1 {
   background: linear-gradient(to bottom, #aaa, #eee); }
@@ -82,9 +94,24 @@ a.button-light {
   background: linear-gradient(to right, #7A28FF 0%, #00A1FF 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a28ff', endColorstr='#00a1ff', GradientType=1); }
 
-.aligner {
-  display: flex;
-  align-items: center; }
+.fancy-text-1 {
+  background: linear-gradient(to right, #66FF66 0%, #FFFF66 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.fancy-text-2 {
+  background: linear-gradient(to right, #f25ce4 0%, #6959c9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.drop-shadow-1 {
+  -webkit-box-shadow: 0 35px 50px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 35px 50px rgba(0, 0, 0, 0.25); }
+
+@media only screen and (min-width: 736px) {
+  .aligner {
+    display: flex;
+    align-items: center; } }
 
 /* ## Column Classes Extended (no margin)
 --------------------------------------------- */
@@ -126,6 +153,22 @@ a.button-light {
 
 .five-sixths.ext {
   width: 83.33%; }
+
+@media only screen and (max-width: 735px) {
+  .five-sixths,
+  .four-sixths,
+  .one-fourth,
+  .one-half.ext,
+  .one-sixth,
+  .one-third.ext,
+  .three-fourths,
+  .three-sixths,
+  .two-fourths,
+  .two-sixths,
+  .two-thirds {
+    display: block;
+    margin: 0;
+    width: 100%; } }
 
 .text-light {
   color: #fff; }
@@ -296,8 +339,10 @@ assegnare la classe sections nel box layput delle pagine del tema in cui si vuol
   margin: 0; }
 
 .section img {
-  margin: 0;
-  margin-bottom: -9px; }
+  margin-bottom: -8px; }
+
+.section p {
+  margin: 0; }
 
 .section.wide {
   width: 1200px;
@@ -336,16 +381,20 @@ assegnare la classe sections nel box layput delle pagine del tema in cui si vuol
     padding-left: 5%;
     padding-right: 5%; } }
 
-.container.hero {
+.container p {
+  margin: 0; }
+
+.container.hero-1 {
   background: url("images/hero.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   padding: 15% 0;
   position: relative; }
-  .container.hero * {
+  .container.hero-1 * {
     position: relative;
     z-index: 1; }
-  .container.hero:after {
+  .container.hero-1:after {
     content: " ";
     display: block;
     position: absolute;
@@ -360,9 +409,12 @@ assegnare la classe sections nel box layput delle pagine del tema in cui si vuol
     background: -webkit-linear-gradient(left, #7A28FF 0%, #00A1FF 100%);
     background: linear-gradient(to right, #7A28FF 0%, #00A1FF 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a28ff', endColorstr='#00a1ff', GradientType=1); }
-  .container.hero h1, .container.hero p {
+  .container.hero-1 h1, .container.hero-1 p {
     color: #FFF; }
-  .container.hero h1 {
+  .container.hero-1 h1 {
     font-size: 6.2rem; }
+
+.container.fixed {
+  background-attachment: fixed; }
 
 /*# sourceMappingURL=poppy.css.map */

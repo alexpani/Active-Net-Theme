@@ -24,6 +24,7 @@ hero: imposta l'immagine images/hero.jpg come hero e le dà un'effetto gradiente
 
 To do:
 - aggiungere layout a griglia per i post, tipo http://gridly.imagely.com
+- per mostrare gli archivi: file:///Users/alessandro/Dropbox/Active%20Net/Sitesucker/sridharkatakam.com/categories-list-one-latest-post-rest-grid-category-archives-genesis/index.html
 - aggiungere tabbed content tipo https://www.musket-theme.com/components-test/
 - aggiungere expanders (accordion) tipo https://www.musket-theme.com/components-test/
 - aggiungere faqs come https://www.musket-theme.com/components-test/
@@ -34,4 +35,3 @@ To do:
 - verifica cosa succede mettendo una sezione dentro una sezione. Figo per mettere una sezione semitrasparente all'interno di un altra che ha un imagine per sfondo, tipo https://avada.theme-fusion.com/ zona effetto legno
 - aggiungere effetto lettere trasparenti che vanno vedere cosa c'è sotto
 - avere la possibilità di dare un offset alle sezioni rispetto ai container per creare interessanti effetti di sovrapposizione tra le aree, vedi http://themes.muffingroup.com/be/diet/ e sopratutto http://themes.muffingroup.com/be/agency2/
-- e se volessi allineare in basso un 'immagine in un container/section? tipo  il gruppo di persone in basso su http://www.kriesi.at/themes/enfold-2017/

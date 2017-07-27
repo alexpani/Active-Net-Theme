@@ -38,9 +38,15 @@
 	padding: $padding-small;
 }
 
+.ptl {
+	padding-top: $padding-large;
+}
+
 .nopad {
 	padding: 0;
 }
+
+
 
 //* Permettono di spaziare le sezioni e i container (convertire come i padding)
 .gut-20 {
@@ -53,24 +59,28 @@
 	margin-top: 40px;
 }
 
-// Alcuni colori
+// Alcuni colori (estendere con colori moderni)
 .red {
-	background: #e74c3c;
+	background-color: #e74c3c;
 } 
 
 .green {
-	background: #2ecc71;
+	background-color: #2ecc71;
 }
 
 .yellow {
-	background: #f1c40f;
+	background-color: #f1c40f;
 }
 
 .orange {
-	background: #f39c12;
+	background-color: #f39c12;
 }
 
-//* Bottoni
+.black {
+	background-color: #000;
+}
+
+//* Classi aggiuntive per i bottoni
 a.button-dark {	
 		background-color: $color-dark;
 		color: $color-light;
@@ -95,7 +105,12 @@ a.button-light {
 
 //* Sfondi
 .background-1 {
-	background: url('images/background1.jpg');
+	background: url('images/background-1.jpg');
+}
+
+.background-2 {
+	background: url('images/background-2.jpg') repeat;
+
 }
 
 //* Gradienti
@@ -107,11 +122,40 @@ a.button-light {
 	@include gradient();
 }
 
-//* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
-.aligner {
-	display:flex;
-	align-items:center;
+
+//* Effetti testo
+
+.fancy-text-1 {
+	background: linear-gradient(to right, #66FF66 0%, #FFFF66 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
+
+.fancy-text-2 {
+	background: linear-gradient(to right, #f25ce4 0%, #6959c9 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+//* Ombre
+
+.drop-shadow-1 {
+	-webkit-box-shadow: 0 35px 50px rgba(0, 0, 0, .25);
+	box-shadow: 0 35px 50px rgba(0, 0, 0, .25);
+}
+
+//* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
+//* display:flex non permette alle colonne di collassare su schermi piccoli,
+//* per cui la rendo funzionante in corrispondenza di colonne ancora non collassate
+@media only screen and (min-width: 736px) {
+
+	.aligner {
+		display:flex;
+		align-items:center;
+	}
+
+}
+
 
 /* ## Column Classes Extended (no margin)
 --------------------------------------------- */
@@ -163,6 +207,27 @@ a.button-light {
 	width: 83.33%;
 }
 
+//* Verificare bene come si comportano le varie conf.
+//* Se ok, trasponi alle normali classi colonna
+@media only screen and (max-width: 735px) { // In pratica partiamo da IPhone 6plus orizzontale in giù
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half.ext, // Ok
+	.one-sixth,
+	.one-third.ext, // Ok
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		display: block;
+		margin: 0;
+		width: 100%;
+	}
+}
+
+
 //* Text Classes
 
 .text-light {
@@ -172,7 +237,6 @@ a.button-light {
 .text-dark {
 	color: $color-light;
 }
-
 
 
 /* Poppy Helper Classes v1.0

@@ -27,9 +27,13 @@ assegnare la classe sections nel box layput delle pagine del tema in cui si vuol
 	//padding: 0;
 	
 	img {
-		margin: 0;
-		margin-bottom: -9px; // Verificare se è universale. Evita il bordo nelle sezioni al 50%
+		//margin: 0;
+		margin-bottom: -8px; // Verificare se è universale. Evita il bordo nelle sezioni al 50%
 		//height: 100%;
+	}
+
+	p {
+		margin: 0; // permette di avere immagini perfettamente allineate in basso nelle section
 	}
 }
 
@@ -92,10 +96,18 @@ assegnare la classe sections nel box layput delle pagine del tema in cui si vuol
 	}
 }
 
-.container.hero {
+.container {
+	
+	p {
+		margin: 0;
+	}
+}
+
+.container.hero-1 {
 	background: url('images/hero.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 	padding: 15% 0;
 	@include overlay();	
 	
@@ -106,4 +118,8 @@ assegnare la classe sections nel box layput delle pagine del tema in cui si vuol
 	h1 {
 		font-size: 6.2rem;
 	}
+}
+
+.container.fixed {	
+	background-attachment: fixed;	
 }

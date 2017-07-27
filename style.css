@@ -21,6 +21,7 @@ Plugin Specific Classes v1.0
 ---------------------------------------------------------------------------------------------------- */
 /* Simple Social Icons
 --------------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900|PT+Sans:400,700|Poppins:300,400,500,600,700|Roboto:400,500,700");
 .simple-social-icons ul li.ssi-facebook a {
   background: #2D4486 !important; }
 
@@ -247,9 +248,8 @@ body {
   background-color: #fff;
   background: #fff;
   color: #777;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-family: "Pt Sans", sans-serif;
+  font-size: 1.8rem;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   line-height: 1.625;
@@ -329,7 +329,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", serif;
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 20px;
@@ -1216,7 +1216,6 @@ Home
 /* ## Entries
 --------------------------------------------- */
 .entry {
-  background-color: #fff;
   margin-bottom: 40px;
   padding: 30px 0px; }
 
@@ -1641,6 +1640,7 @@ body.home .aligncenter {
   .two-fourths,
   .two-sixths,
   .two-thirds {
+    display: block;
     margin: 0;
     width: 100%; } }
 

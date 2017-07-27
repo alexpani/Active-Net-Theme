@@ -42,7 +42,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 add_action( 'wp_enqueue_scripts', 'activenet_enqueue_scripts_styles' );
 function activenet_enqueue_scripts_styles() {
 
-	wp_enqueue_style( 'activenet-fonts', '//fonts.googleapis.com/css?family=Roboto:400,700,500|Montserrat:400,700|Poppins:400,500,700', array(), CHILD_THEME_VERSION );
+	//wp_enqueue_style( 'activenet-fonts', '//fonts.googleapis.com/css?family=Roboto:400,700,500|Montserrat:400,700|Poppins:400,500,700', array(), CHILD_THEME_VERSION );
 
 	//wp_enqueue_style( 'dashicons' );
 

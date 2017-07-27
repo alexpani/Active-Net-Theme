@@ -15,8 +15,13 @@ $orange:$color2; // Poppy default #FF6600
 $blue:	$color1; // Poppy default #3399FF
 
 // Typography
-$font: 'Poppins', sans-serif;
-$title-font: 'Montserrat', sans-serif;
+//$font: 'Poppins', sans-serif;
+$font: 'Pt Sans', sans-serif;
+$title-font: 'Montserrat', serif;
+//$title-font: 'Pt Sans', sans-serif;
+
+$base-font-size: 1.8rem;
+
 $text: #777;
 $title: #555;
 $bold: 700;
@@ -25,7 +30,7 @@ $link-hover: $color1;
 
 // Various 
 $background: /*url('images/bk.png')*/ #fff; // Bypassed if customizer is in use
-$header: /*url('images/bk.png')*/ #fff;
+$header: /* url('images/bk.png')*/ #fff;
 $border: 1px solid #ddd;
 $border-radius: 3px;
 $box-shadow: 0px 0px 1px #bbb;
@@ -47,9 +52,11 @@ $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
 $primary-nav-bk: $color1;
 $primary-nav-link: #fff;
 $primary-nav-hover: $orange;
+
 $secondary-nav-bk: /*url('images/bk.png')*/ #f4f4f4;
 $secondary-nav-link:$text;
 $secondary-nav-hover: $title;
+
 $responsive-nav-bk: #fff;
 $responsive-nav-link: $link;
 
