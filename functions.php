@@ -1,8 +1,8 @@
 <?php
 /**
  * Active Net
- * @version 3.0
- * @date 23/07/2017
+ * @version 1.0
+ * @date 02/08/2017
  * Based on Genesis Sample Child Theme
  *
  * @package Poppy Framework
@@ -20,18 +20,10 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'activenet', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'activenet' ) );
 
-
-
-//* Add Image upload and Color select to WordPress Theme Customizer
-require_once( get_stylesheet_directory() . '/lib/customize.php' );
-
-//* Include Customizer CSS
-include_once( get_stylesheet_directory() . '/lib/output.php' );
-
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Active Net' );
 define( 'CHILD_THEME_URL', 'http://www.active-net.it' );
-define( 'CHILD_THEME_VERSION', '1.6' );
+define( 'CHILD_THEME_VERSION', '1.0' );
 
 //* Start the WooCommerce Active Net Framework (only if WooCommerce is active)
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
@@ -46,17 +38,26 @@ function activenet_enqueue_scripts_styles() {
 
 	//wp_enqueue_style( 'dashicons' );
 
-	wp_enqueue_style( 'font-awesome', CHILD_URL . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
+	//wp_enqueue_style( 'font-awesome', CHILD_URL . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 
-	wp_enqueue_script( 'poppy-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'activenet-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 	$output = array(
 		'mainMenu' => __( 'Menu', 'activenet' ),
 		'subMenu'  => __( 'Menu', 'activenet' ),
 	);
-	wp_localize_script( 'poppy-responsive-menu', 'genesisSampleL10n', $output );
+	wp_localize_script( 'activenet-responsive-menu', 'genesisSampleL10n', $output );
 
 	wp_enqueue_style( 'custom-css-stylesheet', CHILD_URL . '/css/custom.css', array(), PARENT_THEME_VERSION );
 
+}
+
+//* Enqueue parallax script.
+add_action( 'wp_enqueue_scripts', 'enqueue_parallax_script' );
+function enqueue_parallax_script() {	
+
+	if ( ! wp_is_mobile() ) {
+		wp_enqueue_script( 'parallax-script', get_stylesheet_directory_uri() . '/js/parallax.js', array( 'jquery' ), '1.0.0' );
+	}
 }
 
 //* Add HTML5 markup structure
@@ -79,13 +80,13 @@ add_theme_support( 'custom-background' );
 //* Add support for after entry widget
 //add_theme_support( 'genesis-after-entry-widget-area' );
 
-//* Add support for 3-column footer widgets
+//* Add support for column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
 //* Add Image Sizes
 //add_image_size( 'featured-image', 720, 400, TRUE );
 
-//* Reposition the secondary navigation menu
+//* Put the secondary navigation menu on topo
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav', 5 );
 
@@ -100,17 +101,21 @@ function activenet_secondary_menu_args( $args ) {
 }
 
 //* Modify size of the Gravatar in the author box
-add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
-function genesis_sample_author_box_gravatar( $size ) {
+add_filter( 'genesis_author_box_gravatar_size', 'activenet_author_box_gravatar' );
+function activenet_author_box_gravatar( $size ) {
 	return 90;
 }
 
 //* Modify size of the Gravatar in the entry comments
-add_filter( 'genesis_comment_list_args', 'genesis_sample_comments_gravatar' );
-function genesis_sample_comments_gravatar( $args ) {
+add_filter( 'genesis_comment_list_args', 'activenet_comments_gravatar' );
+function activenet_comments_gravatar( $args ) {
 	$args['avatar_size'] = 60;
 	return $args;
 }
+
+//* Optimize automatic paragraph in WordPress
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'wpautop', 12);
 
 //* Add slider widget area
 genesis_register_sidebar( array(
@@ -128,10 +133,10 @@ add_action( 'genesis_after_header', 'slider_widget',20 );
 	) );
 }
 
-//* Customize the credits
+//* Customize the footer credits
 add_filter( 'genesis_footer_creds_text', 'an_footer_creds_text' );
 function an_footer_creds_text() {
-	echo '<p>©2017 Active Net Framework · P.IVA 0000000 · Web Design by <b>Active Net</b></p>';
+	echo '<p>©2017 Active Net Theme · P.IVA 0000000 · Web Design by <b>Active Net</b></p>';
 }
 
 //* Add custom header area
@@ -141,14 +146,6 @@ function an_do_header() {
 		'before'	=> '<div class="header widget-area">',
 		'after'		=> '</div>',
 	) );
-}
-
-//* Remove Post Title from home
-add_action( 'get_header', 'an_remove_titles_home_page' );
-function an_remove_titles_home_page() {
-    if ( is_front_page() ) {
-        remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-    }
 }
 
 //* Customize the Wordpress login page
@@ -175,18 +172,25 @@ return 'Active Net';
 //* Customize the entry info in the entry header
 add_filter( 'genesis_post_info', 'an_post_info_filter' );
 function an_post_info_filter($post_info) {
-	$post_info = '<i class="fa fa-calendar" aria-hidden="true"></i> [post_date] | <i class="fa fa-user-o" aria-hidden="true"></i> <i>[post_author_posts_link]</i> [post_comments] [post_edit]';
+	$post_info = '<i class="fa fa-calendar" aria-hidden="true"></i> [post_date] | <i class="fa fa-pencil" aria-hidden="true"></i> [post_categories before=""] [post_tags before="Etichetta: "] | <i class="fa fa-user-o" aria-hidden="true"></i> <i>[post_author_posts_link]</i> [post_comments] [post_edit]';
 	return $post_info;
 }
 
-//* Customize the post meta function
-add_filter( 'genesis_post_meta', 'an_post_meta_filter' );
-function an_post_meta_filter($post_meta) {
-if ( !is_page() ) {
-	$post_meta = '[post_categories before="Categoria: "] [post_tags before="Etichetta: "]';
-	return $post_meta;
-}}
+//* Remove post meta
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
+//* Customize Read More Text
+add_filter( 'excerpt_more', 'child_read_more_link' );
+add_filter( 'get_the_content_more_link', 'child_read_more_link' );
+add_filter( 'the_content_more_link', 'child_read_more_link' );
+function child_read_more_link() { 
+return '<a class="more-link" title="Continua a leggere" href="' . get_permalink() . '" rel="nofollow">Continua...</a>';
+}
+
+
+//* Unregister site layouts
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 /**
  * Add an image inline in the site title element for the logo
@@ -246,11 +250,45 @@ function custom_add_site_description_class( $attributes ) {
 	return $attributes;
 }
 
-//* Scegliamo il tipo di header
-//*  Il default è logo-right
+/* Remove & reposition the breadcrumbs before product title
+ * i.e. Show the breadcrumb in the single product pages only
+ */
+//remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+//add_action( 'woocommerce_single_product_summary', 'genesis_do_breadcrumbs',4 );
 
-//include_once( get_stylesheet_directory() . '/header-logo-mid-right.php' );
-include_once( get_stylesheet_directory() . '/header-left-logo-right.php' );
+//* Customize breadcrumbs display
+add_filter( 'genesis_breadcrumb_args', 'sp_breadcrumb_args' );
+function sp_breadcrumb_args( $args ) {
+	$args['home'] = 'Home';
+	$args['sep'] = ' > ';
+	$args['list_sep'] = ', '; // Genesis 1.5 and later
+	$args['prefix'] = '<div class="breadcrumb">';
+	$args['suffix'] = '</div>';
+	$args['heirarchial_attachments'] = true; // Genesis 1.5 and later
+	$args['heirarchial_categories'] = true; // Genesis 1.5 and later
+	$args['display'] = true;
+	$args['labels']['prefix'] = '';
+	$args['labels']['author'] = '';
+	$args['labels']['category'] = ''; // Genesis 1.6 and later
+	$args['labels']['tag'] = '';
+	$args['labels']['date'] = '';
+	$args['labels']['search'] = 'Cerca per ';
+	$args['labels']['tax'] = '';
+	$args['labels']['post_type'] = '';
+	$args['labels']['404'] = 'Non trovato: '; // Genesis 1.5 and later
+return $args;
+}
 
-//* Start the Poppy Framework
-include ('poppy-extension/poppy.php');
+/* Scegliamo il tipo di header
+*  Il default è logo-right
+*/
+
+//include_once( get_stylesheet_directory() . '/lib/header-logo-mid-right.php' );
+include_once( get_stylesheet_directory() . '/lib/header-left-logo-right.php' );
+
+//* Start the Active Net Extension Framework
+//include ('activenet-extensions/extensions.php');
+
+
+
+

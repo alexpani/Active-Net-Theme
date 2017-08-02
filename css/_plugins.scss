@@ -1,5 +1,5 @@
 /*
-Plugin Specific Classes v1.0
+Plugin Specific Classes
 ---------------------------------------------------------------------------------------------------- */
 
 
@@ -22,3 +22,8 @@ Plugin Specific Classes v1.0
 .simple-social-icons ul li.ssi-pinterest a{
 	background: #bb0f23 !important;
 }
+
+
+/* Genesis Simple Share. Remove counts
+--------------------------------------------- */
+.sharrre .count { display: none; } .sharrre:hover .share { opacity: 0.7; } .share-small .sharrre .share, .share-small .sharrre:hover .share { width: 65px; border-radius: 3px; } .share-medium .sharrre .share, .share-tall .sharrre .share, .share-medium .sharrre:hover .share, .share-tall .sharrre:hover .share { width: 75px; border-radius: 3px; } .share-outlined.share-small .share, .share-outlined.share-medium .share { border-right: 1px solid !important; }

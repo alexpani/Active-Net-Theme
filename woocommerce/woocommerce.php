@@ -1,8 +1,7 @@
 <?php
 /**
  * Woocommerce for Active Net framework
- * @version 1.7
- * @date 23/07/2017
+ *
  * Nota: Tutti gli hook si trovano su includes/wc-template-hooks.php
  */
 
@@ -20,6 +19,27 @@ function wp_enqueue_woocommerce_style(){
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
+
+//* Add support for WooCommerce 3.0 gallery feature
+add_action( 'after_setup_theme', 'yourtheme_setup' );
+function yourtheme_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+
+/* Print an inline script to the footer to keep elements at the same height.
+*  Usage: assign .match-height class to the elements
+*/
+add_action( 'wp_enqueue_scripts', 'activenet_match_height', 99 );
+function activenet_match_height() {
+	// If Woocommerce is not activated exit early
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return;
+	}
+	wp_enqueue_script( 'activenet-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_add_inline_script( 'activenet-match-height', "jQuery(document).ready( function() { jQuery( '.match-height').matchHeight(); });" );
+}
 
 //* Add subcategories widget area
 genesis_register_sidebar( array(
@@ -43,29 +63,6 @@ function poppy_fullwidth() {
     }
 }
 add_filter( 'genesis_site_layout', 'poppy_fullwidth' );
-
-/* Reposition the breadcrumbs before product title
- * i.e. Show the breadcrumb in the single product pages only
- */
-//remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-//add_action( 'woocommerce_single_product_summary', 'genesis_do_breadcrumbs',4 );
-
-//* Remove 'You are here' from the front of breadcrumb trail
-function an_prefix_breadcrumb( $args ) {
-  $args['labels']['prefix'] = '';
-  return $args;
-}
-add_filter( 'genesis_breadcrumb_args', 'an_prefix_breadcrumb' );
-
-//* Customize breadcrumbs display
-add_filter( 'genesis_breadcrumb_args', 'an_breadcrumb_args' );
-function an_breadcrumb_args( $args ) {
-	$args['home'] = 'Home';
-	$args['sep'] = '>';
-	$args['prefix'] = '<div class="breadcrumb">';
-	$args['suffix'] = '</div>';
-return $args;
-}
 
 //* Reposition star rating after price in single product pages
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );

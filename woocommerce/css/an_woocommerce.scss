@@ -34,30 +34,36 @@
  * Main WooCommerce styles
  */
 .woocommerce {
+
+	//added
+	#content, .content {
+		background: $content-background-color;
+		padding: $shop-padding;
+	}
 	//added
 	.woocommerce-message { 
-		border-top-color: $green;
+		border-top-color: $message-color;
 
 		&:before {
 			content: "\e015";
-			color: $green;
+			color: $message-color;
 		}
 	}
 
 	.woocommerce-info {
-		border-top-color: $blue;
+		border-top-color: $info-color;
 
 		&:before {			
-			color: $blue;
+			color: $info-color;
 		}
 	}
 
 	.woocommerce-error {
-		border-top-color: $red;
+		border-top-color: $error-color;
 
 		&:before {
 			content: "\e016";
-			color: $red;
+			color: $error-color;
 		}
 	}
 
@@ -87,7 +93,7 @@
 		}		
 
 		.out-of-stock {
-			color: $red;
+			color: $error-color;
 		}
 
 
@@ -107,12 +113,12 @@
 					padding: 0 0em;
 
 					a {						
-						color: $link;						
+						color: $primary-color;						
 						text-transform: uppercase;
 
 						&:hover {
 							text-decoration: none;
-							color: $link-hover;
+							color: $primary-color-alt;
 						}
 					}
 
@@ -277,7 +283,7 @@
 			&:disabled:hover,
 			&:disabled[disabled]:hover {
 				background-color: #ddd;
-				color: $text;
+				color: $text-color;
 			}
 		}
 
@@ -296,10 +302,10 @@
 	 */
 	#reviews {
 		h2 small {
-			color: $text;
+			color: $text-color;
 
 			a {				
-				color: $text;
+				color: $text-color;
 			}
 		}
 
@@ -310,7 +316,7 @@
 				li {					
 
 					.meta {
-						color: $text;
+						color: $text-color;
 					}
 
 					img.avatar {						
@@ -434,19 +440,26 @@
 		}		
 	}
 
+	.wc-proceed-to-checkout {
+		
+		a.checkout-button {			
+			padding: 0 0 1em;
+		}
+	}
+
 	.cart-collaterals {		
 
 		.cart_totals {
 			p {
 				small {
-					color: $text;					
+					color: $text-color;					
 				}
 			}
 
 			table {
 				
 				small {
-					color: $text;
+					color: $text-color;
 				}				
 			}
 
@@ -464,7 +477,7 @@
 	.checkout {		
 
 		.create-account small {			
-			color: $text;
+			color: $text-color;
 		}		
 	}
 
@@ -478,7 +491,7 @@
 		}
 
 		div.payment_box {			
-			background-color: $blue;
+			background-color: $info-color;
 			color: #fff;
 
 			input.input-text, textarea {
@@ -499,11 +512,11 @@
 			}
 
 			span.help {				
-				color: $text;
+				color: $text-color;
 			}
 
 			&::before {				
-				border: 1em solid $blue; /* arrow size / color */
+				border: 1em solid $info-color; /* arrow size / color */
 				border-right-color: transparent;
 				border-left-color: transparent;
 				border-top-color: transparent;				

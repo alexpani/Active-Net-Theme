@@ -1,10 +1,19 @@
 /*
- General Mixins (Theme+WooCommerce) v1.0
+ * Mixins (Theme+WooCommerce)
 ---------------------------------------------------------------------------------------------------- */
+
+//* Ombra per i vari riquadri (Usata da WooCommerce)
 @mixin box-shadow() {
 	box-shadow: $box-shadow;
 }
 
+//* Ombra più marcata
+@mixin drop-shadow() {
+-webkit-box-shadow: 0 35px 50px rgba(0, 0, 0, .25);
+box-shadow: 0 35px 50px rgba(0, 0, 0, .25);
+}
+
+//* Bordi
 @mixin border() {
 	border: $border;	
 }
@@ -15,4 +24,70 @@
 
 @mixin border-bottom() {
 	border-bottom: $border;	
+}
+
+
+/* Gradient and overlay */
+
+$gradient-left:   #7A28FF !default;
+$gradient-right:  #00A1FF !default;
+
+//* Overlay
+@mixin overlay {
+    position: relative;
+    * {
+        position: relative;
+        z-index: 1;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.82;
+        background: mix($gradient-left, $gradient-right);
+        background: -moz-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+        background: -webkit-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+        background: linear-gradient(to right, $gradient-left 0%, $gradient-right 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a28ff', endColorstr='#00a1ff', GradientType=1);
+    }
+}
+
+//* Gradient
+@mixin gradient {
+    background: mix($gradient-left, $gradient-right);
+    background: -moz-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+    background: -webkit-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+    background: linear-gradient(to right, $gradient-left 0%, $gradient-right 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a28ff', endColorstr='#00a1ff', GradientType=1);
+}
+
+//* Gradient Text
+@mixin gradient-text {
+    color: mix($gradient-left, $gradient-right);
+    background: -webkit-linear-gradient($gradient-text-left, $gradient-text-right);
+    background: -moz-linear-gradient($gradient-text-left, $gradient-text-right);
+    background: -ms-linear-gradient($gradient-text-left, $gradient-text-right);
+    background: -o-linear-gradient($gradient-text-left, $gradient-text-right);
+    background: linear-gradient($gradient-text-left, $gradient-text-right);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+@mixin fancy-text-1 {
+    background: linear-gradient(to right, #66FF66 0%, #FFFF66 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin fancy-text-2 {
+    background: linear-gradient(to right, #f25ce4 0%, #6959c9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

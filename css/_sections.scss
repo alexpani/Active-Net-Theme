@@ -1,0 +1,139 @@
+/*
+* Sections
+* Uso: assegnare la classe sections nel box layput delle pagine del tema in cui
+* si vuole attivare le sezioni
+----------------------------------------------------------------------------- */
+
+//* Classe da assegnare alla pagina nel box layout di Genesis
+.sections {
+
+	.site-inner {
+		max-width: none;
+		padding: 0;
+	}
+	
+	.entry-title {
+		//display: none;
+	}
+
+	.entry {
+		padding: 0;
+		margin: 0;
+	}
+
+	article.page {
+		padding: 0;
+	}
+
+}
+
+@media only screen and (max-width: 1023px) {
+	
+	.full-width .site-inner {
+		padding-left: 0%;
+		padding-right: 0%;
+		}
+
+}
+
+.container {
+	
+	p {
+		margin: 0;
+	}
+
+}
+
+.container.fixed {	
+	background-attachment: fixed;	
+}
+
+.section {
+	
+	img {
+		margin-bottom: -8px; // Verificare se è universale. Evita il bordo nelle sezioni al 50%
+	}
+
+	p {
+		margin: 0; // permette di avere immagini perfettamente allineate in basso nelle section
+	}
+}
+
+//* Permettono di stabilire la larghezza della sezione. Sono legate al tema
+.section.wide {
+	width: 1200px;
+	margin: 0 auto;
+	
+	@media only screen and (max-width: 1340px) {
+		max-width: 1140px;
+		}
+
+	@media only screen and (max-width: 1200px) {
+		max-width: 960px;
+		}	
+
+	@media only screen and (max-width: 1023px) {	
+		max-width: 800px;
+	}
+
+	@media only screen and (max-width: 860px) {
+		max-width: 100%;
+		padding-left: 5%;
+		padding-right: 5%;
+		}	
+
+}
+
+.section.normal {
+	width: 1140px;
+	margin: 0 auto;
+	
+	@media only screen and (max-width: 1340px) {
+		max-width: 960px;
+		}
+
+	@media only screen and (max-width: 1200px) {
+		max-width: 800px;
+		}	
+
+	@media only screen and (max-width: 1023px) {	
+		max-width: 800px;
+	}
+
+	@media only screen and (max-width: 860px) {
+		max-width: 100%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+}
+
+.section.narrow {
+	width: 960px;
+	margin: 0 auto;
+
+	@media only screen and (max-width: 1023px) {	
+		max-width: 800px;
+	}
+
+	@media only screen and (max-width: 860px) {
+		max-width: 100%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+}
+
+//* Section Arrows 
+//* https://css-tricks.com/snippets/css/css-triangle/
+.arrow-down {
+	margin: 0 auto;
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #f00;
+	margin-bottom: -20px;
+	z-index: 1000;
+	overflow: scroll;
+}

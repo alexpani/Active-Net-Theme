@@ -1,0 +1,184 @@
+/*
+Helper classes. Si utilizzano nell'editor dei post di Wordpress
+---------------------------------------------------------------------------------------------------- */
+
+//* Padding
+
+.pvs {
+	padding: $padding-small 0;
+}
+
+.pvm {
+	padding: $padding-medium 0;
+}
+
+.pvl {
+	padding: $padding-large 0;
+}
+
+.phl {
+	padding: 0 $padding-large;
+}
+
+.phm {
+	padding: 0 $padding-medium;
+}
+
+.phs {
+	padding: 0 $padding-small;
+}
+
+.pl {
+	padding: $padding-large;
+}
+
+.pm {
+	padding: $padding-medium;
+}
+
+.ps {
+	padding: $padding-small;
+}
+
+.ptl {
+	padding-top: $padding-large;
+}
+
+.nopad {
+	padding: 0;
+}
+
+
+//* Permettono di spaziare le sezioni e i container (da completare com per i padding)
+.mvs {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.mvm {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+
+
+//* Spacer
+
+.spacer-small {
+    margin: 20px auto;
+}
+
+.spcer-medium, ,.spacer, .separator {
+    margin: 40px auto;
+}
+
+.spacer-large {
+    margin: 60px auto;
+}
+
+//* Arranger
+
+.center, .align-center {
+	text-align: center;
+}
+
+.right, .align-right {
+	text-align: right;
+}
+
+
+//* Colori di sfondo per le section
+
+.red {
+	background-color: $alizarin;
+} 
+
+.green {
+	background-color: $emerald;
+}
+
+.yellow {
+	background-color: $sunflower;
+}
+
+.orange {
+	background-color: $orange ;
+}
+
+.black {
+	background-color: #000;
+}
+
+.white {
+	background-color: #FFF;
+}
+
+
+//* Sfondi demo
+
+.background-1 {
+	background: url('./images/background-1.jpg');
+}
+
+.background-2 {
+	background: url('./images/background-2.jpg') repeat;
+}
+
+//* Gradienti
+.gradient {
+	@include gradient();
+}
+
+//* Hero
+.hero-1 {
+	background: url('./images/hero.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding: 15% 0;
+	@include overlay();	
+	
+	h1,p {
+		color: #FFF;
+	}
+
+	h1 {
+		font-size: 6.2rem;
+	}
+}
+
+//* Testo
+
+.fancy-text-1 {
+	@include fancy-text-1();
+}
+
+.fancy-text-2 {
+	@include fancy-text-2();
+}
+
+.text-light {
+	color: $color-light;
+}
+
+.text-dark {
+	color: $color-dark;
+}
+
+//* Ombre
+
+.drop-shadow {
+	@include drop-shadow()
+}
+
+//* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
+//* display:flex non permette alle colonne di collassare su schermi piccoli,
+//* per cui la rendo funzionante in corrispondenza di colonne ancora non collassate
+@media only screen and (min-width: 736px) {
+
+	.aligner {
+		display:flex;
+		align-items:center;
+	}
+
+}
