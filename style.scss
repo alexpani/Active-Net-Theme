@@ -1166,6 +1166,29 @@ Home
 	margin-left: 0;
 }
 
+.site-header .nav-header {
+	float: right;
+	
+	.current-menu-item a {
+		color: $header-nav-hover;
+	}
+
+	a {	
+		padding: 16px 20px 16px;
+		color: $header-nav-link;		
+		font-size: 17px;
+		font-size: 1.7rem;
+		font-weight: $bold;	
+		text-transform: uppercase;	
+
+		&:hover, &:focus {
+			color: $header-nav-hover;
+		}
+						
+	}	
+
+}
+
 /* ## Primary Navigation
 --------------------------------------------- */
 

@@ -1959,6 +1959,20 @@ Home
 .site-header .genesis-nav-menu li li {
   margin-left: 0; }
 
+.site-header .nav-header {
+  float: right; }
+  .site-header .nav-header .current-menu-item a {
+    color: #2980b9; }
+  .site-header .nav-header a {
+    padding: 16px 20px 16px;
+    color: #3498db;
+    font-size: 17px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: uppercase; }
+    .site-header .nav-header a:hover, .site-header .nav-header a:focus {
+      color: #2980b9; }
+
 /* ## Primary Navigation
 --------------------------------------------- */
 .nav-primary {
