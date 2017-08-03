@@ -1,26 +1,7 @@
 
 *.codekit3
-poppy-extension/
+
 fonts/Local-Google-Fonts/
-<<<<<<< HEAD
-
-
-style.css
-
+languages/
 style.css.map
-
-*.map
-
-*.map
-
-style.css
-
-style.css
-
-style.css
-=======
->>>>>>> origin/master
-
-*.map
-
 *.map
