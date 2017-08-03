@@ -282,13 +282,5 @@ return $args;
 /* Scegliamo il tipo di header
 *  Il default è logo-right
 */
-
 //include_once( get_stylesheet_directory() . '/lib/header-logo-mid-right.php' );
 include_once( get_stylesheet_directory() . '/lib/header-left-logo-right.php' );
-
-//* Start the Active Net Extension Framework
-//include ('activenet-extensions/extensions.php');
-
-
-
-

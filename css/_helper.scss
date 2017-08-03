@@ -6,42 +6,57 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .pvs {
 	padding: $padding-small 0;
+	overflow: auto;
+
 }
 
 .pvm {
 	padding: $padding-medium 0;
+	overflow: auto;
+
 }
 
 .pvl {
 	padding: $padding-large 0;
+	overflow: auto;
+
 }
 
 .phl {
 	padding: 0 $padding-large;
+	overflow: auto;
+
 }
 
 .phm {
 	padding: 0 $padding-medium;
+	overflow: auto;
 }
 
 .phs {
 	padding: 0 $padding-small;
+	overflow: auto;
 }
 
 .pl {
 	padding: $padding-large;
+	overflow: auto;
 }
 
 .pm {
 	padding: $padding-medium;
+	overflow: auto;
+
 }
 
 .ps {
 	padding: $padding-small;
+	overflow: auto;
 }
 
 .ptl {
 	padding-top: $padding-large;
+	overflow: auto;
 }
 
 .nopad {
@@ -53,11 +68,19 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 .mvs {
 	margin-bottom: 20px;
 	margin-top: 20px;
+	overflow: auto;
 }
 
 .mvm {
 	margin-bottom: 40px;
 	margin-top: 40px;
+	overflow: auto;
+}
+
+.mvl {
+	margin-bottom: 80px;
+	margin-top: 80px;
+	overflow: auto;
 }
 
 
@@ -163,6 +186,22 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .text-dark {
 	color: $color-dark;
+}
+
+.text-medium {
+	font-size: $text-medium;
+}
+
+.text-large {
+	font-size: $text-large;
+}
+
+.text-xlarge {
+	font-size: $text-xlarge;
+}
+
+.text-xxlarge {
+	font-size: $text-xxlarge;
 }
 
 //* Ombre

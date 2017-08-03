@@ -421,45 +421,62 @@ Plugin Specific Classes
 Helper classes. Si utilizzano nell'editor dei post di Wordpress
 ---------------------------------------------------------------------------------------------------- */
 .pvs {
-  padding: 20px 0; }
+  padding: 20px 0;
+  overflow: auto; }
 
 .pvm {
-  padding: 50px 0; }
+  padding: 50px 0;
+  overflow: auto; }
 
 .pvl {
-  padding: 100px 0; }
+  padding: 100px 0;
+  overflow: auto; }
 
 .phl {
-  padding: 0 100px; }
+  padding: 0 100px;
+  overflow: auto; }
 
 .phm {
-  padding: 0 50px; }
+  padding: 0 50px;
+  overflow: auto; }
 
 .phs {
-  padding: 0 20px; }
+  padding: 0 20px;
+  overflow: auto; }
 
 .pl {
-  padding: 100px; }
+  padding: 100px;
+  overflow: auto; }
 
 .pm {
-  padding: 50px; }
+  padding: 50px;
+  overflow: auto; }
 
 .ps {
-  padding: 20px; }
+  padding: 20px;
+  overflow: auto; }
 
 .ptl {
-  padding-top: 100px; }
+  padding-top: 100px;
+  overflow: auto; }
 
 .nopad {
   padding: 0; }
 
 .mvs {
   margin-bottom: 20px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  overflow: auto; }
 
 .mvm {
   margin-bottom: 40px;
-  margin-top: 40px; }
+  margin-top: 40px;
+  overflow: auto; }
+
+.mvl {
+  margin-bottom: 80px;
+  margin-top: 80px;
+  overflow: auto; }
 
 .spacer-small {
   margin: 20px auto; }
@@ -552,6 +569,18 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .text-dark {
   color: #333; }
+
+.text-medium {
+  font-size: 3rem; }
+
+.text-large {
+  font-size: 4rem; }
+
+.text-xlarge {
+  font-size: 5rem; }
+
+.text-xxlarge {
+  font-size: 6rem; }
 
 .drop-shadow {
   -webkit-box-shadow: 0 35px 50px rgba(0, 0, 0, 0.25);
