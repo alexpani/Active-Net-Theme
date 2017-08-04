@@ -110,29 +110,85 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 }
 
 
-//* Colori di sfondo per le section
+//* Colors
+
+.color1 {
+	color: $color1;
+}
+
+.color2 {
+	color: $color2;
+}
+
+.color3 {
+	color: $color3;
+}
+
+.color4 {
+	color: $color4;
+}
+
+.bk-color1 {
+	background-color: $color1;
+}
+
+.bk-color2 {
+	background-color: $color2;
+}
+
+.bk-color3 {
+	background-color: $color3;
+}
+
+.bk-color4 {
+	background-color: $color4;
+}
 
 .red {
-	background-color: $alizarin;
+	color: $alizarin;
 } 
 
 .green {
-	background-color: $emerald;
+	color: $emerald;
 }
 
 .yellow {
-	background-color: $sunflower;
+	color: $sunflower;
 }
 
 .orange {
-	background-color: $orange ;
+	color: $orange ;
 }
 
 .black {
-	background-color: #000;
+	color: #000;
 }
 
 .white {
+	color: #FFF;
+}
+
+.bk-red {
+	background-color: $alizarin;
+} 
+
+.bk-green {
+	background-color: $emerald;
+}
+
+.bk-yellow {
+	background-color: $sunflower;
+}
+
+.bk-orange {
+	background-color: $orange ;
+}
+
+.bk-black {
+	background-color: #000;
+}
+
+.bk-white {
 	background-color: #FFF;
 }
 
@@ -152,22 +208,18 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	@include gradient();
 }
 
+.gradient-text {
+	@include gradient-text();
+}
+
 //* Hero
-.hero-1 {
+.hero {
 	background: url('./images/hero.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	padding: 15% 0;
-	@include overlay();	
-	
-	h1,p {
-		color: #FFF;
-	}
-
-	h1 {
-		font-size: 6.2rem;
-	}
+	@include overlay();		
 }
 
 //* Testo
@@ -180,12 +232,20 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	@include fancy-text-2();
 }
 
-.text-light {
+.text-light, .color-light {
 	color: $color-light;
 }
 
-.text-dark {
+.text-dark, .color-dark {
 	color: $color-dark;
+}
+
+.text-xsmall {
+	font-size: $text-xsmall;
+}
+
+.text-small {
+	font-size: $text-small;
 }
 
 .text-medium {
@@ -204,6 +264,21 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	font-size: $text-xxlarge;
 }
 
+.text-columns {
+	text-align: justify;
+	/*
+	-webkit-column-count: 2; 
+	-moz-column-count: 2; 
+	column-count: 2;
+	*/
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	column-gap: 20px;
+	-webkit-column-width: 9em;
+	-moz-column-width: 9em;
+	column-width: 18em;
+}
+
 //* Ombre
 
 .drop-shadow {
@@ -213,7 +288,7 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 //* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
 //* display:flex non permette alle colonne di collassare su schermi piccoli,
 //* per cui la rendo funzionante in corrispondenza di colonne ancora non collassate
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 666px) {
 
 	.aligner {
 		display:flex;

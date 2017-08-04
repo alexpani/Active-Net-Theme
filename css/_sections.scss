@@ -37,6 +37,7 @@
 }
 
 .container {
+	overflow: auto;
 	
 	p {
 		margin: 0;
@@ -86,7 +87,9 @@
 
 .section.normal {
 	width: 1140px;
-	margin: 0 auto;
+	//margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	
 	@media only screen and (max-width: 1340px) {
 		max-width: 960px;
@@ -101,9 +104,7 @@
 	}
 
 	@media only screen and (max-width: 860px) {
-		max-width: 100%;
-		padding-left: 5%;
-		padding-right: 5%;
+		max-width: 90%;
 	}
 
 }
@@ -117,23 +118,105 @@
 	}
 
 	@media only screen and (max-width: 860px) {
-		max-width: 100%;
-		padding-left: 5%;
-		padding-right: 5%;
+		max-width: 80%;	
 	}
 
 }
 
-//* Section Arrows 
-//* https://css-tricks.com/snippets/css/css-triangle/
-.arrow-down {
-	margin: 0 auto;
-	width: 0; 
-	height: 0; 
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top: 20px solid #f00;
-	margin-bottom: -20px;
-	z-index: 1000;
-	overflow: scroll;
+// Arrow
+@mixin arrow($color) {
+		content: "";
+		position: absolute;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid $color;
+		left: 48%;
+}
+
+.container.arrow.bk-color1 {
+
+	&:after {
+		@include arrow($color1);		
+	}
+	
+}
+
+.container.arrow.bk-color1 {
+
+	&:after {
+		@include arrow($color1);		
+	}
+	
+}
+
+.container.arrow.bk-color2 {
+
+	&:after {
+		@include arrow($color2);		
+	}
+	
+}
+
+.container.arrow.bk-color3 {
+
+	&:after {
+		@include arrow($color3);		
+	}
+	
+}
+
+.container.arrow.bk-color4 {
+
+	&:after {
+		@include arrow($color4);		
+	}
+	
+}
+
+.container.arrow.bk-red {
+
+	&:after {
+		@include arrow($red);		
+	}
+	
+}
+
+.container.arrow.bk-green {
+
+	&:after {
+		@include arrow($green);		
+	}
+	
+}
+
+.container.arrow.bk-yellow {
+
+	&:after {
+		@include arrow($yellow);		
+	}
+	
+}
+
+.container.arrow.bk-orange {
+
+	&:after {
+		@include arrow($orange);		
+	}
+	
+}
+
+.container.arrow.bk-black {
+
+	&:after {
+		@include arrow($black);		
+	}
+	
+}
+
+.container.arrow.bk-white {
+
+	&:after {
+		@include arrow($white);		
+	}
+	
 }

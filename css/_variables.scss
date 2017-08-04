@@ -30,6 +30,11 @@ $silver:        #bdc3c7;
 $concrete:      #95a5a6;
 $asbestos:      #7f8c8d;
 
+// Deafult colors
+$red: $alizarin;
+$green: $emerald;
+$yellow: $sunflower;
+
 // Theme colors
 $color1: $peterriver;
 $color2: $sunflower;
@@ -44,10 +49,10 @@ $primary-color-alt: $belizehole; // hover color for primary
 $secondary-color: $wetasphalt; // for secondary links and buttons
 $secondary-color-alt: $midnightblue; // hover color for secondary
 
-$elements-color: #eee; // usato nei bordi, spearatori, ecc..
+$elements-color: #ccc; // usato nei bordi, spearatori, ecc..
 
 // Colori usati negli helper
-$color-light: #fff !default;
+$color-light: #eee !default;
 $color-dark: #333 !default;
 
 // Woocommerce colors
@@ -64,7 +69,7 @@ $error-color: $alizarin;
 
 // Typography
 $font-family: 'Poppins', sans-serif;
-$font-size: 1.6rem;
+$font-size: 1.6rem; 
 $font-weight: 400;
 $text-color: #777;
 $text-line-height: 1.6;
@@ -74,13 +79,19 @@ $title-font-family: 'Montserrat', serif;
 $title-line-height: 1.2;
 $title-color: #555;
 $title-bold: 700;
+$h1: $font-size*1.8;
+$h2: $font-size*1.4;
+$h3: $font-size*1.2;
+$h4: $font-size*1.1;
 $title-margin: 0 0 2rem;
 $title-transform: uppercase;
 $paragraph-margin: 0 0 1rem;
-$text-medium: 3rem;
-$text-large: 4rem;
-$text-xlarge: 5rem;
-$text-xxlarge: 6rem;
+$text-xsmall: $font-size*.7;
+$text-small: $font-size*.9;
+$text-medium: $font-size*1.5;
+$text-large: $font-size*2;
+$text-xlarge: $font-size*3;
+$text-xxlarge: $font-size*4;
 
 // Various 
 $body-background: /*url('images/bk.png')*/ #fff; // Bypassed if customizer is in use
@@ -95,16 +106,27 @@ $box-shadow: 0px 0px 1px $elements-color;
 $icon-color: $turquoise;
 $border-test: 1px solid;
 $border-test: none;
+
+// Effects
+$gradient-start:   $wetasphalt;
+$gradient-end:  $belizehole;
+$gradient-angle: 135deg;
+$gradient-text-start:   $sunflower;
+$gradient-text-end:  $orange;
+$gradient-text-angle: 315deg;
+$overlay-start:   $amethyst;
+$overlay-end:  $midnightblue;
+$overlay-angle: 135deg;
+$overlay-opacity: 0.7;
+
+// Buttons
+$button-font-size: $font-size;
 $button-background: $primary-color;
 $button-background-hover: $primary-color-alt;
 $button-color: $white;
 $button-alt-background: $secondary-color;
 $button-alt-background-hover: $secondary-color-alt;
 $button-alt-color: $white;
-$gradient-left:   $wetasphalt;
-$gradient-right:  $belizehole;
-$gradient-text-left:   $sunflower;
-$gradient-text-right:  $pumpkin;
 
 // Structure
 $site-inner-padding-top: 40px;
@@ -123,7 +145,7 @@ $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
 
 // Header
 $header: /* url('images/bk.png')*/ #fff;
-$header-vertical-align: center; // ancora da implementare
+$header-vertical-align: center; // center al centro, flex-end in basso
 
 // Navigation
 $primary-nav-link: $white;
@@ -143,3 +165,8 @@ $footer-widgets-title: $title-color;
 $footer-widgets-text: $text-color;
 $footer: $white;
 $footer-text: $text-color;
+
+// Functions
+@function remtopx ($rem) {
+	@return $rem / 1rem * 10px;
+}

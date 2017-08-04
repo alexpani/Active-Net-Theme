@@ -23,9 +23,22 @@ Import
 @import "css/sections"; // sezioni
 @import "css/vendor/hue/hue.scss"; // Hues background effects
 @import "css/vendor/font-awesome-4.7.0/css/font-awesome.min.css"; // font awesome icon fonts
-//@import "fonts/Local-Google-Fonts/google-fonts/pt-sans/webfont.css";
-//@import "fonts/Local-Google-Fonts/google-fonts/montserrat/webfont.css";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900|PT+Sans:400,700|Poppins:300,400,500,600,700|Roboto:400,500,700');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900');
+
 
 /* ## Box Sizing
 --------------------------------------------- */
@@ -104,7 +117,7 @@ body {
 	background: $body-background;
 	color: $text-color;
 	font-family: $font-family;
-	font-size: $font-size / 1rem * 10px;
+	font-size: remtopx($font-size);
 	font-size: $font-size;	
 	-webkit-font-smoothing: antialiased;
 	font-weight: $font-weight;
@@ -205,31 +218,26 @@ h6 {
 	margin: $title-margin;
 	color: $title-color;
 	text-transform: $title-transform;
-
 }
 
 h1 {
-	font-size: 2.4rem;
+	font-size: $h1;	
 }
 
 h2 {
-	font-size: 2.0rem;
+	font-size: $h2;
 }
 
 h3 {
-	font-size: 1.9rem;
+	font-size: $h3;
 }
 
 h4 {
-	font-size: 1.8rem;
+	font-size: $h4;
 }
 
-h5 {
-	font-size: 1.7rem;
-}
-
-h6 {
-	font-size: 1.6rem;
+h5, h6 {
+	font-size: $font-size;
 }
 
 /* ## Objects
@@ -332,16 +340,16 @@ textarea {
 	background-color: #fff;
 	border: 1px solid $elements-color;
 	color: $text-color;
-	font-size: 16px;
-	font-size: 1.6rem;
-	font-weight: 400;
+	//font-size: 16px;
+	//font-size: 1.6rem;
+	//font-weight: 400;
 	padding: 6px;
 	width: 100%;
 }
 
 input:focus,
 textarea:focus {
-	border: 1px solid #999;
+	border: 1px solid darken($elements-color,20);
 	outline: none;
 }
 
@@ -361,12 +369,12 @@ input[type="radio"] {
 }
 
 label {
-	font-size: 16px;
+	//font-size: 16px;
 }
 
 /*
 Buttons
-Compattare e razionalizzare, verificare modificatori small ecc, implementare il button alt e le icone
+Implementare ghost e le icone
 ---------------------------------------------------------------------------------------------------- */
 
 button,
@@ -378,15 +386,14 @@ input[type="submit"],
 	border: 0;
 	color: $button-color;
 	cursor: pointer;
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: $button-font-size;
 	font-weight: $bold;
 	padding: 8px 24px;
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: normal;
 	width: auto;
-	margin-bottom: 10px;
+	margin: 10px 0;
 }
 
 button:hover,
@@ -400,36 +407,64 @@ input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus  {
 	background-color: $button-background-hover;
-	color: $button-color;
-}
-
-.entry-content .button:hover,
-.entry-content .button:focus {
-	color: $button-color;
+	color: $button-color;	
 }
 
 .button {
 	display: inline-block;
 }
 
-a.button.small,
-button.small,
-input[type="button"].small,
-input[type="reset"].small,
-input[type="submit"].small {
-	font-size: 13px;
-	font-size: 1.3rem;
+.button-small {
 	padding: 8px 12px;
+	font-size: $button-font-size - 0.3rem;	
 }
 
-a.button.very-small,
-button.very-small,
-input[type="button"].very-small,
-input[type="reset"].very-small,
-input[type="submit"].very-small {
-	font-size: 12px;
-	font-size: 1.2rem;
-	padding: 8px 12px;
+.button-xsmall {
+	padding: 7px 11px;
+	font-size: $button-font-size - 0.4rem;	
+}
+
+.button-large {
+	padding: 8px 24px;
+	font-size: $button-font-size + 0.4rem;	
+}
+
+.button-xlarge {
+	padding: 10px 26px;
+	font-size: $button-font-size + 1rem;	
+}
+
+.button-secondary {	
+		background-color: $secondary-color;
+		color: $color-light;
+		
+		&:hover {
+			background-color: $secondary-color-alt;
+			color: $color-light !important;
+		}
+			
+}
+
+.button-dark {	
+		background-color: $color-dark;
+		color: $color-light;
+		
+		&:hover {
+			background-color: lighten($color-dark,10);
+			color: $color-light !important;
+		}
+			
+}
+
+.button-light {	
+		background-color: $color-light;
+		color: $color-dark;
+		
+		&:hover {
+			background-color: darken($color-light,10);
+			color: $color-dark !important;
+		}
+			
 }
 
 button:disabled,
@@ -453,28 +488,7 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-//* Classi aggiuntive per i bottoni
-a.button-dark {	
-		background-color: $color-dark;
-		color: $color-light;
-		
-		&:hover {
-			background-color: $color-light;
-			color: $color-dark !important;
-		}
-			
-}
 
-a.button-light {	
-		background-color: $color-light;
-		color: $color-dark;
-		
-		&:hover {
-			background-color: $color-dark;
-			color: $color-light !important;
-		}
-			
-}
 
 /* ## Tables
 --------------------------------------------- */
@@ -1277,6 +1291,16 @@ Home
 
 article.page {
 	padding: $page-padding;	
+}
+
+.entry-content {
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 2.5rem;
+	}
+
+	h1:first-of-type {
+		margin-top: 0;
+	}
 }
 
 .page-title {
