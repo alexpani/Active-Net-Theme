@@ -5,13 +5,14 @@
 	Author URI: http://www.active-net.it
 	Template: genesis
 	Version: 1.0
-	Date: 02/08/2017
+	Date: 05/08/2017
 */
 
 /*
 Import
 ---------------------------------------------------------------------------------------------------- */
 @import "css/vendor/normalize.css";
+@import "css/fonts"; // font combinations
 @import "css/variables"; // base variables
 @import "css/mixins"; // theme mixins
 @import "css/grid"; // for now column classes normal and extended
@@ -24,21 +25,9 @@ Import
 @import "css/vendor/hue/hue.scss"; // Hues background effects
 @import "css/vendor/font-awesome-4.7.0/css/font-awesome.min.css"; // font awesome icon fonts
 
+// Saranno da rimuovere una volta che rendo definitivo il sistema per le combinazioni di font
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:400,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900');
-
 
 /* ## Box Sizing
 --------------------------------------------- */
@@ -213,7 +202,7 @@ h4,
 h5,
 h6 {
 	font-family: $title-font-family;
-	font-weight: $title-bold;
+	font-weight: $title-font-weight;
 	line-height: $title-line-height;
 	margin: $title-margin;
 	color: $title-color;
@@ -382,12 +371,13 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
+	font-family: $button-font-family;
 	background-color: $button-background;
 	border: 0;
 	color: $button-color;
 	cursor: pointer;
 	font-size: $button-font-size;
-	font-weight: $bold;
+	font-weight: $button-font-weight;
 	padding: 8px 24px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -414,24 +404,24 @@ input:focus[type="submit"],
 	display: inline-block;
 }
 
+.button-xsmall {
+	padding: 7px 11px;
+	font-size: $button-font-size - 0.5rem;	
+}
+
 .button-small {
 	padding: 8px 12px;
 	font-size: $button-font-size - 0.3rem;	
 }
 
-.button-xsmall {
-	padding: 7px 11px;
-	font-size: $button-font-size - 0.4rem;	
-}
-
 .button-large {
-	padding: 8px 24px;
+	padding: 10px 24px;
 	font-size: $button-font-size + 0.4rem;	
 }
 
 .button-xlarge {
-	padding: 10px 26px;
-	font-size: $button-font-size + 1rem;	
+	padding: 12px 40px;
+	font-size: $button-font-size + .8rem;	
 }
 
 .button-secondary {	
@@ -1088,6 +1078,8 @@ Home
 }
 
 .genesis-nav-menu a {
+	font-family: $navigation-font-family;
+	font-weight: $navigation-font-weight;
 	text-decoration: none;
 	display: block;	
 }
@@ -1225,8 +1217,7 @@ Home
 		padding: 16px 20px 16px;
 		color: $primary-nav-link;		
 		font-size: 17px;
-		font-size: 1.7rem;
-		font-weight: $bold;	
+		font-size: 1.7rem;		
 		text-transform: uppercase;	
 
 		&:hover, &:focus {
@@ -1343,6 +1334,7 @@ article.page {
 --------------------------------------------- */
 
 p.entry-meta {
+	font-family: $navigation-font-family;
 	font-size: 16px;
 	font-size: 1.6rem;
 	margin-bottom: 0;

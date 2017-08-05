@@ -12,6 +12,7 @@
  * Imports
  */
 
+@import "../../css/fonts"; // font combinations
 @import "../../css/variables"; // Global variables
 @import "../../css/mixins"; // Global Mixins
 @import "extra"; // Extra classes for plugin, widget, ecc.
@@ -261,6 +262,7 @@
 		background-color: $button-bk;
 		color: $button-color;
 		border-radius: $border-radius;	
+		font-weight: $button-font-weight;
 		
 		&:hover {
 			background-color: $button-bk - #111;			

@@ -22,6 +22,12 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 }
 
+.pvxl {
+	padding: $padding-xlarge 0;
+	overflow: auto;
+
+}
+
 .phl {
 	padding: 0 $padding-large;
 	overflow: auto;
@@ -201,6 +207,31 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .background-2 {
 	background: url('./images/background-2.jpg') repeat;
+}
+
+.polygon-green {
+	background: url("./images/polygon-green.jpg") repeat;
+	background-size: cover;
+}
+
+.polygon-blue {
+	background: url("./images/polygon-blue.jpg") repeat;
+	background-size: cover;
+}
+
+.polygon-red {
+	background: url("./images/polygon-red.jpg") repeat;
+	background-size: cover;
+}
+
+.polygon-yellow {
+	background: url("./images/polygon-yellow.jpg") repeat;
+	background-size: cover;
+}
+
+.polygon-purple {
+	background: url("./images/polygon-purple.jpg") repeat;
+	background-size: cover;
 }
 
 //* Gradienti

@@ -5,7 +5,7 @@
 	Author URI: http://www.active-net.it
 	Template: genesis
 	Version: 1.0
-	Date: 02/08/2017
+	Date: 05/08/2017
 */
 /*
 Import
@@ -14,6 +14,8 @@ Import
 /*
 Global Theme Variables
 ---------------------------------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900");
 /*
  * Mixins (Theme+WooCommerce)
 ---------------------------------------------------------------------------------------------------- */
@@ -23,19 +25,7 @@ Global Theme Variables
 /* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
 @import url(css/vendor/font-awesome-4.7.0/css/font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900");
-@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700|");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:400,700");
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
-@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
-@import url("https://fonts.googleapis.com/css?family=Lora:400,700");
-@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
-@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900");
 .five-sixths,
 .four-sixths,
 .one-fourth,
@@ -446,6 +436,10 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
   padding: 100px 0;
   overflow: auto; }
 
+.pvxl {
+  padding: 200px 0;
+  overflow: auto; }
+
 .phl {
   padding: 0 100px;
   overflow: auto; }
@@ -572,6 +566,26 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .background-2 {
   background: url("./images/background-2.jpg") repeat; }
+
+.polygon-green {
+  background: url("./images/polygon-green.jpg") repeat;
+  background-size: cover; }
+
+.polygon-blue {
+  background: url("./images/polygon-blue.jpg") repeat;
+  background-size: cover; }
+
+.polygon-red {
+  background: url("./images/polygon-red.jpg") repeat;
+  background-size: cover; }
+
+.polygon-yellow {
+  background: url("./images/polygon-yellow.jpg") repeat;
+  background-size: cover; }
+
+.polygon-purple {
+  background: url("./images/polygon-purple.jpg") repeat;
+  background-size: cover; }
 
 .gradient {
   background: #2f658c;
@@ -1292,7 +1306,7 @@ html {
 body {
   background: #fff;
   color: #777;
-  font-family: "Poppins", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
@@ -1374,12 +1388,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", serif;
-  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
   line-height: 1.2;
   margin: 0 0 2rem;
   color: #555;
-  text-transform: uppercase; }
+  text-transform: none; }
 
 h1 {
   font-size: 2.88rem; }
@@ -1505,6 +1519,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
+  font-family: "Lato", sans-serif;
   background-color: #3498db;
   border: 0;
   color: #fff;
@@ -1534,21 +1549,21 @@ input:focus[type="submit"],
 .button {
   display: inline-block; }
 
+.button-xsmall {
+  padding: 7px 11px;
+  font-size: 1.1rem; }
+
 .button-small {
   padding: 8px 12px;
   font-size: 1.3rem; }
 
-.button-xsmall {
-  padding: 7px 11px;
-  font-size: 1.2rem; }
-
 .button-large {
-  padding: 8px 24px;
+  padding: 10px 24px;
   font-size: 2rem; }
 
 .button-xlarge {
-  padding: 10px 26px;
-  font-size: 2.6rem; }
+  padding: 12px 40px;
+  font-size: 2.4rem; }
 
 .button-secondary {
   background-color: #34495e;
@@ -2050,6 +2065,8 @@ Home
   text-align: left; }
 
 .genesis-nav-menu a {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
   text-decoration: none;
   display: block; }
 
@@ -2151,7 +2168,6 @@ Home
     color: #fff;
     font-size: 17px;
     font-size: 1.7rem;
-    font-weight: 700;
     text-transform: uppercase; }
     .nav-primary a:hover, .nav-primary a:focus {
       color: #fff;
@@ -2184,7 +2200,7 @@ Home
 .archive-description .entry-title,
 .archive-title,
 .author-box-title {
-  text-transform: uppercase; }
+  text-transform: none; }
 
 /* ## Entries
 * Promemoria: page e post sono intuitivi. entry comprende entrambi. Vengono assegnati ad article. 
@@ -2201,7 +2217,7 @@ article.page {
   margin-top: 0; }
 
 .page-title {
-  text-transform: uppercase; }
+  text-transform: none; }
 
 .archive .post, .blog .post {
   margin-bottom: 20px;
@@ -2231,6 +2247,7 @@ article.page {
 /* ## Entry Meta
 --------------------------------------------- */
 p.entry-meta {
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   margin-bottom: 0; }

@@ -78,13 +78,13 @@ $strong: $bold;
 $title-font-family: 'Montserrat', serif;
 $title-line-height: 1.2;
 $title-color: #555;
-$title-bold: 700;
+$title-font-weight: 900;
 $h1: $font-size*1.8;
 $h2: $font-size*1.4;
 $h3: $font-size*1.2;
 $h4: $font-size*1.1;
 $title-margin: 0 0 2rem;
-$title-transform: uppercase;
+$title-transform: none;
 $paragraph-margin: 0 0 1rem;
 $text-xsmall: $font-size*.7;
 $text-small: $font-size*.9;
@@ -100,6 +100,7 @@ $content-background-color: $white;
 $padding-small: 20px;
 $padding-medium: 50px;
 $padding-large: 100px;
+$padding-xlarge: 200px;
 $border: 1px solid $elements-color;
 $border-radius: 3px;
 $box-shadow: 0px 0px 1px $elements-color;
@@ -120,6 +121,8 @@ $overlay-angle: 135deg;
 $overlay-opacity: 0.7;
 
 // Buttons
+$button-font-family: $title-font-family;
+$button-font-weight: 500;
 $button-font-size: $font-size;
 $button-background: $primary-color;
 $button-background-hover: $primary-color-alt;
@@ -148,6 +151,8 @@ $header: /* url('images/bk.png')*/ #fff;
 $header-vertical-align: center; // center al centro, flex-end in basso
 
 // Navigation
+$navigation-font-family: $title-font-family;
+$navigation-font-weight: 500;
 $primary-nav-link: $white;
 $primary-nav-bk: $color1;
 $primary-nav-hover: $orange;
@@ -170,3 +175,16 @@ $footer-text: $text-color;
 @function remtopx ($rem) {
 	@return $rem / 1rem * 10px;
 }
+
+// Declare fonts combination, else fallback
+
+//@include raleway-opensans();
+//@include roboto-opensans();
+//@include josefinsans-playfairdisplay();
+//@include robotoslab-roboto();
+//@include opensanscondensed-opensans();
+//@include oswald-opensans();
+//@include montserrat-merriweather();
+//@include merriweather-montserrat();
+@include lato-sourcesanspro();
+//@include playfairdisplay-opensans();
