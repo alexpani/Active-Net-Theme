@@ -421,6 +421,7 @@ input:focus[type="submit"],
 
 .button-xlarge {
 	padding: 12px 40px;
+	margin: 20px 0;
 	font-size: $button-font-size + .8rem;	
 }
 
@@ -1285,6 +1286,7 @@ article.page {
 }
 
 .entry-content {
+	
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 2.5rem;
 	}
@@ -1293,6 +1295,8 @@ article.page {
 		margin-top: 0;
 	}
 }
+
+
 
 .page-title {
 	text-transform: $title-transform;

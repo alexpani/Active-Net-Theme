@@ -2,7 +2,13 @@
 Poppy Elements
 ---------------------------------------------------------------------------------------------------- */
 
-.poppy {
+$icon-color: #1abc9c !default;
+$secondary-color: #555 !default;
+$color-light: #fff !default;
+$color-dark: #333 !default;
+
+
+.entry-content .poppy {
 	
 	ul {
 		margin: 0;
@@ -11,6 +17,11 @@ Poppy Elements
 	li, .entry-content ul > li {
 		list-style-type: none !important;
 	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0rem;
+	}
+
 }
 
 
@@ -39,37 +50,63 @@ li.ordrered-list-6:nth-of-type(6n+1) {
 
 
 //* Icon Box
-.poppy-icon-box {
+.poppy.poppy-icon-box {
 	text-align: center;
-	padding: 8px;
+	padding: 10px;
 	
 	div {
 		text-align: center;
+		margin-bottom: 20px;
 	}
 	
 	.fa {
 		color: $icon-color;		
 	}
-
-	.fa.gradient {		
-		@include gradient-text();
-	}
 	
 	h3 {
-		margin-top: 8px;
-		margin-bottom: 0;
-		font-size: 1.9rem;
+		margin: 1rem auto;		
 		color: $secondary-color;
+	}
+
+	h3 {
+		color: $color-light !important;
 	}
 	
 	h4 {
-		font-size: 1.6rem;
-		font-weight: normal;
-		margin-bottom: 2rem;
+		font-weight: normal;		
 		color: $secondary-color;
 	}
 
+	&.text-light,
+	&.color-light {
+
+		h3, h4 {
+			color: $color-light !important;
+		}
+
+	}
+
+	&.text-dark,
+	&.color-dark {
+
+		h3, h4 {
+			color: $color-dark !important;
+		}
+
+	}
+
+	&.icon-gradient {
+
+		.fa {
+			color: transparent;
+			@include gradient-text();		
+		}
+		
+	}
+
 }
+
+
 
 
 //* Home News Type 1

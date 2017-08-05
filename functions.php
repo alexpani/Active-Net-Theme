@@ -133,6 +133,38 @@ add_action( 'genesis_after_header', 'slider_widget',20 );
 	) );
 }
 
+//* Add Home Top Sections widget area
+genesis_register_sidebar( array(
+	'id'            => 'home-top-sections',
+	'name'          => __( 'Home Top Sections', 'activenet' ),
+	'description'   => __( 'Home Top Sections Area', 'activenet' ),
+) );
+
+add_action( 'genesis_after_header', 'home_top_sections_widget',20 );
+	function home_top_sections_widget() {
+	if ( is_front_page() )
+		genesis_widget_area( 'home-top-sections', array(
+			'before' => '<div class="home-top-sections sections widget-area"><div class="wrap">',
+			'after' => '</div></div>',
+	) );
+}
+
+
+//* Add Home Bottom Sections widget area
+genesis_register_sidebar( array(
+	'id'            => 'home-bottom-sections',
+	'name'          => __( 'Home Bottom Sections', 'activenet' ),
+	'description'   => __( 'Home Bottom Sections Area', 'activenet' ),
+) );
+
+add_action( 'genesis_before_footer', 'home_bottom_sections_widget',20 );
+	function home_bottom_sections_widget() {
+	if ( is_front_page() )
+		genesis_widget_area( 'home-bottom-sections', array(
+			'before' => '<div class="home-bottom-sections sections widget-area"><div class="wrap">',
+			'after' => '</div></div>',
+	) );
+}
 //* Customize the footer credits
 add_filter( 'genesis_footer_creds_text', 'an_footer_creds_text' );
 function an_footer_creds_text() {
@@ -284,3 +316,112 @@ return $args;
 */
 //include_once( get_stylesheet_directory() . '/lib/header-logo-mid-right.php' );
 include_once( get_stylesheet_directory() . '/lib/header-left-logo-right.php' );
+
+
+
+
+/*
+Mettiamo in colonne il blog
+---------------------------------------------------------------------------------------------------- */
+
+//* Add class to .site-container
+add_filter('genesis_attr_entry', 'jive_attributes_st_container');
+function jive_attributes_st_container($attributes) {
+	$attributes['class'] .= ' one-half ext match-height'; // La figata è che matcheight risolve anche il problema del float delle colonne e non serve 'first'
+	return $attributes;
+}
+ 
+/**
+ * Custom Genesis Home Loop with Character Limitation on Excerpt
+ *
+ * @package   Custom Genesis Home Loop with Character Limitation on Excerpt
+ * @author    Neil Gee
+ * @link      https://wpbeaches.com/custom-genesis-standard-loop-blog-page/
+ * @copyright (c)2014, Neil Gee
+ */
+ 
+add_action('genesis_before_loop', 'wpb_change_home_loop');
+/*
+ * Adding in our new home loop.
+ */
+function wpb_change_home_loop() {
+if ( is_home() ) {
+
+/** Replace the home loop with our custom **/
+remove_action( 'genesis_loop', 'genesis_do_loop' );
+add_action( 'genesis_loop', 'wpb_custom_loop' );
+
+/** Custom  loop **/
+function wpb_custom_loop() {
+if ( have_posts() ) :
+
+		do_action( 'genesis_before_while' );
+		while ( have_posts() ) : the_post();
+
+			do_action( 'genesis_before_entry' );
+
+			genesis_markup( array(
+				'open'    => '<article %s>',
+				'context' => 'entry',
+			) );
+
+				do_action( 'genesis_entry_header' );
+
+				do_action( 'genesis_before_entry_content' );
+
+				printf( '<div %s>', genesis_attr( 'entry-content' ) );
+
+				//do_action( 'genesis_entry_content' ); //Remove standard excerpt
+ 
+				 echo genesis_do_post_image(); //Add in featured image
+				 
+				 echo the_excerpt_max_charlength(300); //change amount of characters to display
+				
+				echo '</div>';
+
+				do_action( 'genesis_after_entry_content' );
+
+				do_action( 'genesis_entry_footer' );
+
+			genesis_markup( array(
+				'close'   => '</article>',
+				'context' => 'entry',
+			) );
+
+			do_action( 'genesis_after_entry' );
+
+		endwhile; // End of one post.
+		do_action( 'genesis_after_endwhile' );
+
+	else : // If no posts exist.
+		do_action( 'genesis_loop_else' );
+	endif; // End loop.
+
+}
+
+	}
+}
+/*
+ * Limit the excerpt by character.
+ *
+ * @link Reference - http://codex.wordpress.org/Function_Reference/get_the_excerpt
+ */
+function the_excerpt_max_charlength($charlength) {
+
+	$excerpt = get_the_excerpt();
+	$charlength++;
+
+	if ( mb_strlen( $excerpt ) > $charlength ) {
+		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			echo mb_substr( $subex, 0, $excut );
+		} else {
+			echo $subex;
+		}
+		echo ' <br><a href="' . get_permalink() . '" class="more-link" title="Read More">Read More</a>';
+	} else {
+		echo $excerpt;
+	}
+}

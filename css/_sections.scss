@@ -10,7 +10,7 @@
 	.site-inner {
 		max-width: none;
 		padding: 0;
-	}
+	}	
 	
 	.entry-title {
 		//display: none;
@@ -25,6 +25,12 @@
 		padding: 0;
 	}
 
+}
+
+.sections.home-top-sections .wrap,
+.sections.home-bottom-sections .wrap {
+	max-width: none;
+	padding: 0;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -201,6 +207,14 @@
 
 	&:after {
 		@include arrow($orange);		
+	}
+	
+}
+
+.container.arrow.bk-blue {
+
+	&:after {
+		@include arrow($blue);		
 	}
 	
 }

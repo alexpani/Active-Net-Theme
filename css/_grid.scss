@@ -75,6 +75,12 @@
 		margin: 0;
 		width: 100%;
 	}
+
+	.one-fourth, .three-fourths, .two-fourths { // Ok
+		display: block;
+		margin: 0;
+		width: 50%;
+	}
 }
 
 

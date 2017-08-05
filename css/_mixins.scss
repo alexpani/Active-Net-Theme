@@ -13,6 +13,15 @@
 box-shadow: 0 35px 50px rgba(0, 0, 0, .25);
 }
 
+@mixin text-shadow-dark() {    
+    text-shadow: 0 2px 4px rgba(0, 0, 0, .2);    
+}
+
+@mixin text-shadow-light() {    
+    text-shadow: 0 3px 2px rgba(255, 255, 255, .3);    
+}
+
+
 //* Bordi
 @mixin border() {
 	border: $border;	
@@ -68,6 +77,9 @@ $gradient-end:  #00A1FF !default;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
+    position: relative;
+    text-shadow: none;
+    color: #FFF;
 }
 
 @mixin fancy-text-1 {

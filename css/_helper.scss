@@ -90,7 +90,6 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 }
 
 
-
 //* Spacer
 
 .spacer-small {
@@ -151,19 +150,23 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 }
 
 .red {
-	color: $alizarin;
+	color: $red;
 } 
 
 .green {
-	color: $emerald;
+	color: $green;
 }
 
 .yellow {
-	color: $sunflower;
+	color: $yellow;
 }
 
 .orange {
 	color: $orange ;
+}
+
+.blue, .blu {
+	color: $blue;
 }
 
 .black {
@@ -175,19 +178,23 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 }
 
 .bk-red {
-	background-color: $alizarin;
+	background-color: $red;
 } 
 
 .bk-green {
-	background-color: $emerald;
+	background-color: $green;
 }
 
 .bk-yellow {
-	background-color: $sunflower;
+	background-color: $yellow;
 }
 
 .bk-orange {
 	background-color: $orange ;
+}
+
+.bk-blue {
+	background-color: $blue ;
 }
 
 .bk-black {
@@ -264,11 +271,15 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 }
 
 .text-light, .color-light {
-	color: $color-light;
+	color: $color-light !important;
 }
 
 .text-dark, .color-dark {
-	color: $color-dark;
+	color: $color-dark !important;
+}
+
+.uppercase {
+	text-transform: uppercase;
 }
 
 .text-xsmall {
@@ -313,7 +324,15 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 //* Ombre
 
 .drop-shadow {
-	@include drop-shadow()
+	@include drop-shadow();
+}
+
+.text-shadow-dark {
+	@include text-shadow-dark();
+}
+
+.text-shadow-light {
+	@include text-shadow-light();
 }
 
 //* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
