@@ -51,7 +51,7 @@ $primary-color-alt: $belizehole; // hover color for primary
 $secondary-color: $wetasphalt; // for secondary links and buttons
 $secondary-color-alt: $midnightblue; // hover color for secondary
 
-$elements-color: #ccc; // usato nei bordi, spearatori, ecc..
+$elements-color: #ddd; // usato nei bordi, spearatori, ecc..
 
 // Colori usati negli helper
 $color-light: #eee !default;
@@ -107,8 +107,8 @@ $border: 1px solid $elements-color;
 $border-radius: 3px;
 $box-shadow: 0px 0px 1px $elements-color;
 $icon-color: $turquoise;
-$border-test: 1px solid;
-$border-test: none;
+$border-test: 'no'; // Enable visible borders for test purposes. yes or no
+
 
 // Effects
 $gradient-start:   $wetasphalt;
@@ -132,6 +132,7 @@ $button-color: $white;
 $button-alt-background: $secondary-color;
 $button-alt-background-hover: $secondary-color-alt;
 $button-alt-color: $white;
+$button-shadow: 'no'; // yes or no. Alternative, add button-shadow class to single button
 
 // Structure
 $site-inner-padding-top: 40px;

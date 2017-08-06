@@ -28,16 +28,16 @@ li.cat-parent.current-cat > a, li.current-cat-parent > a, li.current-cat > a {
   font-weight: bold; }
 
 .cat-item {
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ddd; }
   .cat-item ul.children {
     margin-left: 10px;
-    border-top: 1px solid #ccc; }
+    border-top: 1px solid #ddd; }
 
 .woocommerce ul.cart_list li a, .woocommerce ul.product_list_widget li a {
   font-weight: 700; }
 
 .short-description {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 15px; }
   .short-description p {
     margin: 0 0 10px; }
@@ -250,7 +250,7 @@ select.orderby {
     color: #fff; }
   .woocommerce ul.products li.product {
     text-align: center;
-    box-shadow: 0px 0px 1px #ccc; }
+    box-shadow: 0px 0px 1px #ddd; }
     .woocommerce ul.products li.product .onsale {
       top: 0;
       right: 0;
@@ -294,7 +294,7 @@ select.orderby {
   .woocommerce nav.woocommerce-pagination {
     text-align: center; }
     .woocommerce nav.woocommerce-pagination ul {
-      border: 1px solid #ccc; }
+      border: 1px solid #ddd; }
       .woocommerce nav.woocommerce-pagination ul li {
         border-right: 1px solid #ddd; }
   .woocommerce a.button,
@@ -366,12 +366,12 @@ select.orderby {
   .woocommerce #reviews #comments ol.commentlist li img.avatar {
     width: 48px;
     background: #eee;
-    border: 1px solid #ccc; }
+    border: 1px solid #ddd; }
   .woocommerce #reviews #comments ol.commentlist li .comment-text {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 3px; }
   .woocommerce #reviews #comments ol.commentlist #respond {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 3px; }
   .woocommerce .star-rating:before {
     color: #f39c12; }
@@ -391,7 +391,7 @@ select.orderby {
   .woocommerce form.login,
   .woocommerce form.checkout_coupon,
   .woocommerce form.register {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 3px; }
   .woocommerce .order_details {
     *zoom: 1;
@@ -458,7 +458,7 @@ select.orderby {
 #add_payment_method #payment {
   background: #fff;
   border-radius: 3px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ddd; }
   .woocommerce-cart #payment ul.payment_methods,
   .woocommerce-checkout #payment ul.payment_methods,
   #add_payment_method #payment ul.payment_methods {

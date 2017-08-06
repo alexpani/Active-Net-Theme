@@ -22,39 +22,6 @@
 	margin: 0 16px 24px 0;
 }
 
-/* ## Genesis
---------------------------------------------- */
-
-.breadcrumb {
-	text-transform: uppercase;
-	@include border-bottom();
-	color: $title-color;	
-	font-size: 14px;
-	font-size: 1.4rem;
-	margin-bottom: 10px;
-	padding: $page-padding;
-	padding-bottom: 4px;
-	line-height: 1;
-}
-
-.after-entry,
-.archive-description,
-.author-box {
-	background-color: #fff;
-	font-size: 18px;
-	font-size: 1.8rem;
-	margin-bottom: 40px;
-	padding: 60px;
-}
-
-.archive-description {
-	display: none;
-}
-
-.archive-description p:last-child,
-.author-box p:last-child {
-	margin-bottom: 0;
-}
 
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
