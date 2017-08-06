@@ -36,7 +36,7 @@ function activenet_enqueue_scripts_styles() {
 
 	//wp_enqueue_style( 'activenet-fonts', '//fonts.googleapis.com/css?family=Roboto:400,700,500|Montserrat:400,700|Poppins:400,500,700', array(), CHILD_THEME_VERSION );
 
-	//wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style( 'dashicons' );
 
 	//wp_enqueue_style( 'font-awesome', CHILD_URL . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 
@@ -82,6 +82,16 @@ add_theme_support( 'custom-background' );
 
 //* Add support for column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+// Remove default image sizes
+add_filter( 'intermediate_image_sizes_advanced', 'prefix_remove_default_images' );
+function prefix_remove_default_images( $sizes ) {
+ //unset( $sizes['small']); // 150px
+ unset( $sizes['medium']); // 300px
+ unset( $sizes['large']); // 1024px
+ unset( $sizes['medium_large']); // 768px
+ return $sizes;
+}
 
 //* Add Image Sizes
 //add_image_size( 'featured-image', 720, 400, TRUE );
@@ -149,7 +159,6 @@ add_action( 'genesis_after_header', 'home_top_sections_widget',20 );
 	) );
 }
 
-
 //* Add Home Bottom Sections widget area
 genesis_register_sidebar( array(
 	'id'            => 'home-bottom-sections',
@@ -165,6 +174,7 @@ add_action( 'genesis_before_footer', 'home_bottom_sections_widget',20 );
 			'after' => '</div></div>',
 	) );
 }
+
 //* Customize the footer credits
 add_filter( 'genesis_footer_creds_text', 'an_footer_creds_text' );
 function an_footer_creds_text() {
@@ -201,10 +211,10 @@ function an_login_logo_url_title() {
 return 'Active Net';
 }
 
-//* Customize the entry info in the entry header
+//* Customize the post info in the entry header
 add_filter( 'genesis_post_info', 'an_post_info_filter' );
 function an_post_info_filter($post_info) {
-	$post_info = '<i class="fa fa-calendar" aria-hidden="true"></i> [post_date] | <i class="fa fa-pencil" aria-hidden="true"></i> [post_categories before=""] [post_tags before="Etichetta: "] | <i class="fa fa-user-o" aria-hidden="true"></i> <i>[post_author_posts_link]</i> [post_comments] [post_edit]';
+	$post_info = '<i class="fa fa-calendar" aria-hidden="true"></i> [post_date] | <i class="fa fa-newspaper-o" aria-hidden="true"></i> [post_categories before=""] [post_tags before="Etichetta: "] | <i class="fa fa-user" aria-hidden="true"></i> <i>[post_author_posts_link]</i> [post_comments] [post_edit]';
 	return $post_info;
 }
 
@@ -218,7 +228,6 @@ add_filter( 'the_content_more_link', 'child_read_more_link' );
 function child_read_more_link() { 
 return '<a class="more-link" title="Continua a leggere" href="' . get_permalink() . '" rel="nofollow">Continua...</a>';
 }
-
 
 //* Unregister site layouts
 genesis_unregister_layout( 'content-sidebar-sidebar' );
@@ -317,20 +326,10 @@ return $args;
 //include_once( get_stylesheet_directory() . '/lib/header-logo-mid-right.php' );
 include_once( get_stylesheet_directory() . '/lib/header-left-logo-right.php' );
 
-
-
-
 /*
 Mettiamo in colonne il blog
 ---------------------------------------------------------------------------------------------------- */
 
-//* Add class to .site-container
-add_filter('genesis_attr_entry', 'jive_attributes_st_container');
-function jive_attributes_st_container($attributes) {
-	$attributes['class'] .= ' one-half ext match-height'; // La figata è che matcheight risolve anche il problema del float delle colonne e non serve 'first'
-	return $attributes;
-}
- 
 /**
  * Custom Genesis Home Loop with Character Limitation on Excerpt
  *
@@ -345,7 +344,14 @@ add_action('genesis_before_loop', 'wpb_change_home_loop');
  * Adding in our new home loop.
  */
 function wpb_change_home_loop() {
-if ( is_home() ) {
+if ( is_home() || is_category() ) {
+
+//* Add class to .entry
+add_filter('genesis_attr_entry', 'jive_attributes_st_container');
+function jive_attributes_st_container($attributes) {
+	$attributes['class'] .= ' one-half ext match-height post-type-1'; // La figata è che matcheight risolve anche il problema del float delle colonne e non serve 'first'
+	return $attributes;
+}
 
 /** Replace the home loop with our custom **/
 remove_action( 'genesis_loop', 'genesis_do_loop' );
@@ -365,6 +371,8 @@ if ( have_posts() ) :
 				'context' => 'entry',
 			) );
 
+			echo genesis_do_post_image(); //Add in featured image
+
 				do_action( 'genesis_entry_header' );
 
 				do_action( 'genesis_before_entry_content' );
@@ -373,15 +381,15 @@ if ( have_posts() ) :
 
 				//do_action( 'genesis_entry_content' ); //Remove standard excerpt
  
-				 echo genesis_do_post_image(); //Add in featured image
 				 
-				 echo the_excerpt_max_charlength(300); //change amount of characters to display
+				 
+				 echo the_excerpt_max_charlength(100); //change amount of characters to display
 				
 				echo '</div>';
 
 				do_action( 'genesis_after_entry_content' );
 
-				do_action( 'genesis_entry_footer' );
+				//do_action( 'genesis_entry_footer' );
 
 			genesis_markup( array(
 				'close'   => '</article>',
@@ -420,7 +428,8 @@ function the_excerpt_max_charlength($charlength) {
 		} else {
 			echo $subex;
 		}
-		echo ' <br><a href="' . get_permalink() . '" class="more-link" title="Read More">Read More</a>';
+		//echo ' <br><a href="' . get_permalink() . '" class="button button-xsmall" title="Leggi tutto">Leggi tutto</a>';
+		echo ' <br><a href="' . get_permalink() . '" class="more-link" title="Leggi tutto">Leggi tutto <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
 	} else {
 		echo $excerpt;
 	}

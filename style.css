@@ -24,6 +24,7 @@ Global Theme Variables
 --------------------------------------------- */
 /* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
 @import url(css/vendor/font-awesome-4.7.0/css/font-awesome.min.css);
+@import url(css/vendor/ionicons-2.0.1/css/ionicons.min.css);
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 .five-sixths,
@@ -91,7 +92,10 @@ Global Theme Variables
   .one-fourth, .three-fourths, .two-fourths {
     display: block;
     margin: 0;
-    width: 50%; } }
+    width: 50%; }
+  .third {
+    clear: both;
+    margin-left: 0; } }
 
 /* ## Column Classes Extended (no left margin)
 --------------------------------------------- */
@@ -149,7 +153,10 @@ Global Theme Variables
   .one-fourth.ext, .three-fourths.ext, .two-fourths.ext {
     display: block;
     margin: 0;
-    width: 50%; } }
+    width: 50%; }
+  .third {
+    clear: both;
+    margin-left: 0; } }
 
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
@@ -1556,7 +1563,7 @@ input[type="radio"] {
   color: #777; }
 
 /*
-Buttons
+#Buttons
 Implementare ghost e le icone
 ---------------------------------------------------------------------------------------------------- */
 button,
@@ -1955,7 +1962,7 @@ Home
   .slider img {
     margin: 0; }
 
-/* # Site Header
+/* # Site #Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
   background: #fff; }
@@ -2075,7 +2082,7 @@ Home
   .site-header .search-form {
     margin: 16px auto; } }
 
-/* ## New Wordpress Custom Logo
+/* ## New Wordpress Custom #Logo
 --------------------------------------------- */
 .wp-custom-logo .title-area {
   max-width: none;
@@ -2097,7 +2104,7 @@ Home
 .custom-logo {
   vertical-align: top; }
 
-/* # Site Navigation
+/* # Site #Navigation
 ---------------------------------------------------------------------------------------------------- */
 .genesis-nav-menu {
   clear: both;
@@ -2121,7 +2128,7 @@ Home
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus {
-  color: #f39c12;
+  color: #2980b9;
   text-decoration: none; }
 
 /* Da qui in poi i menu sono ancora da revisionare non appena serviranno i sottomenu */
@@ -2202,13 +2209,14 @@ Home
     .site-header .nav-header a:hover, .site-header .nav-header a:focus {
       color: #2980b9; }
 
-/* ## Primary Navigation
+/* ## #Primary Navigation
 --------------------------------------------- */
 .nav-primary {
   background: #3498db; }
   .nav-primary .current-menu-item a {
     color: #fff;
-    background: #f39c12; }
+    background: #2980b9;
+    border-top: 3px solid #f39c12; }
   .nav-primary a {
     padding: 16px 20px 16px;
     color: #fff;
@@ -2217,7 +2225,8 @@ Home
     text-transform: uppercase; }
     .nav-primary a:hover, .nav-primary a:focus {
       color: #fff;
-      background: #f39c12; }
+      background: #2980b9;
+      border-top: 3px solid #f39c12; }
 
 /* ## Top Navigation (Secondary Navigation)
 --------------------------------------------- */
@@ -2233,9 +2242,9 @@ Home
     font-weight: 700;
     text-transform: uppercase; }
     .nav-secondary a:hover, .nav-secondary a:focus {
-      color: #555; }
+      color: #f39c12; }
   .nav-secondary .current_page_item a {
-    color: #555; }
+    color: #f39c12; }
   .nav-secondary li {
     float: right; }
 
@@ -2248,7 +2257,7 @@ Home
 .author-box-title {
   text-transform: none; }
 
-/* ## Entries
+/* ## #Entries
 * Promemoria: page e post sono intuitivi. entry comprende entrambi. Vengono assegnati ad article. 
 * Il body ha: page per le pagine, single per i post e archive e category per gli archivi. Nella
 * home gli archivi hanno home e blog.
@@ -2268,6 +2277,11 @@ article.page {
 .archive .post, .blog .post {
   margin-bottom: 20px;
   padding: 10px; }
+
+.archive .post-type-1 h2.entry-title,
+.home .post-type-1 h2.entry-title {
+  margin-bottom: .5rem;
+  line-height: 1.1; }
 
 .post {
   padding: 10px; }
@@ -2290,7 +2304,7 @@ article.page {
   background-color: #777;
   color: #ccc; }
 
-/* ## Entry Meta
+/* ## Entry #Meta
 --------------------------------------------- */
 p.entry-meta {
   font-family: "Lato", sans-serif;
@@ -2299,7 +2313,11 @@ p.entry-meta {
   margin-bottom: 0; }
 
 .entry-header .entry-meta {
-  margin-bottom: 16px; }
+  margin-bottom: 2rem; }
+
+.archive .post-type-1 .entry-meta,
+.home .post-type-1 .entry-meta {
+  margin-bottom: 0.5rem; }
 
 .entry-footer .entry-meta {
   border-top: 1px solid #ccc;

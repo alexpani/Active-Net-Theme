@@ -24,6 +24,7 @@ Import
 @import "css/sections"; // sezioni
 @import "css/vendor/hue/hue.scss"; // Hues background effects
 @import "css/vendor/font-awesome-4.7.0/css/font-awesome.min.css"; // font awesome icon fonts
+@import "css/vendor/ionicons-2.0.1/css/ionicons.min.css"; // font awesome icon fonts
 
 // Saranno da rimuovere una volta che rendo definitivo il sistema per le combinazioni di font
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900');
@@ -362,7 +363,7 @@ label {
 }
 
 /*
-Buttons
+#Buttons
 Implementare ghost e le icone
 ---------------------------------------------------------------------------------------------------- */
 
@@ -871,7 +872,7 @@ Home
 }
 
 
-/* # Site Header
+/* # Site #Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
@@ -1029,7 +1030,7 @@ Home
 
 }
 
-/* ## New Wordpress Custom Logo
+/* ## New Wordpress Custom #Logo
 --------------------------------------------- */
 
 .wp-custom-logo .title-area {
@@ -1062,7 +1063,7 @@ Home
 }
 
 
-/* # Site Navigation
+/* # Site #Navigation
 ---------------------------------------------------------------------------------------------------- */
 
 .genesis-nav-menu {
@@ -1196,7 +1197,7 @@ Home
 
 }
 
-/* ## Primary Navigation
+/* ## #Primary Navigation
 --------------------------------------------- */
 
 .nav-primary {
@@ -1206,15 +1207,12 @@ Home
 
 	.current-menu-item a {
 		color: $primary-nav-link;
-		// Dei due che seguono, sceglierne uno per cambiare il tipo di hover
-		// Farlo anche sugli hover più sotto
-		// Potresti anche voler adattare il padding più sotto
+		// I seguenti cambiano il tipo di hover, si possono usare insieme		
 		background: $primary-nav-hover; // standard
-		//border-top: 6px solid $primary-nav-hover; // linetta alta
+		border-top: 3px solid $secondary-nav-hover; // linetta alta
 	}
 
 	a {	
-		//border-top: 6px solid $primary-nav-bk; // solo per menu con linetta alta
 		padding: 16px 20px 16px;
 		color: $primary-nav-link;		
 		font-size: 17px;
@@ -1223,9 +1221,9 @@ Home
 
 		&:hover, &:focus {
 			color: $primary-nav-link;
-			// Dei due che seguono, sceglierne uno per cambiare il tipo di hover
+			// I seguenti cambiano il tipo di hover, si possono usare insieme		
 			background: $primary-nav-hover; // standard
-			//border-top: 6px solid $primary-nav-hover; // linetta alta
+			border-top: 3px solid $secondary-nav-hover; // linetta alta
 
 		}
 						
@@ -1275,7 +1273,7 @@ Home
 .widget-title {
 }
 
-/* ## Entries
+/* ## #Entries
 * Promemoria: page e post sono intuitivi. entry comprende entrambi. Vengono assegnati ad article. 
 * Il body ha: page per le pagine, single per i post e archive e category per gli archivi. Nella
 * home gli archivi hanno home e blog.
@@ -1307,6 +1305,12 @@ article.page {
 	padding: $post-padding;
 }
 
+.archive .post-type-1 h2.entry-title,
+.home .post-type-1 h2.entry-title {
+	margin-bottom: .5rem;
+	line-height: 1.1;
+}
+
 .post {
 	padding: $post-padding;
 }
@@ -1334,7 +1338,7 @@ article.page {
 	color: $elements-color;
 }
 
-/* ## Entry Meta
+/* ## Entry #Meta
 --------------------------------------------- */
 
 p.entry-meta {
@@ -1345,7 +1349,12 @@ p.entry-meta {
 }
 
 .entry-header .entry-meta {
-	margin-bottom: 16px;
+	margin-bottom: 2rem;
+}
+
+.archive .post-type-1 .entry-meta,
+.home .post-type-1 .entry-meta {
+	margin-bottom: 0.5rem;
 }
 
 .entry-footer .entry-meta {
