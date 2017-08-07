@@ -681,7 +681,7 @@ th:first-child {
 .site-inner {
 	clear: both;
 	padding-top: $site-inner-padding-top;
-	word-wrap: break-word;
+	word-wrap: break-word;	
 	
 	.landing-page & {
 		max-width: 800px;
@@ -1076,6 +1076,55 @@ img.alignright,
 
 .site-header {
 	background: $header;
+	
+	@media only screen and (min-width: 1023px) {		
+	
+		@if $sticky-header == 'yes' {	
+			position: fixed;
+			width: 100%;
+			z-index: 999;
+			border-bottom: $border;
+		}		
+
+	}
+
+}
+
+.home .site-header {
+	background: $header;
+	
+	@media only screen and (min-width: 1023px) {		
+	
+		@if $sticky-header == 'yes' {			
+			border: none;
+		
+			@if $sticky-header-transparent == 'yes' {
+				background: transparent;
+				-webkit-transition: all 0.1s ease-in-out;
+				-moz-transition:    all 0.1s ease-in-out;
+				-ms-transition:     all 0.1s ease-in-out;
+				-o-transition:      all 0.1s ease-in-out;
+				transition:         all 0.1s ease-in-out;
+			}
+
+		}		
+
+	}
+
+}
+
+@media only screen and (min-width: 1023px) {
+
+	.home .site-header.white {
+		background: $header;
+		border-bottom: $border;	
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition:    all 0.2s ease-in-out;
+		-ms-transition:     all 0.2s ease-in-out;
+		-o-transition:      all 0.2s ease-in-out;
+		transition:         all 0.2s ease-in-out;
+	}
+
 }
 
 .site-header > .wrap {
@@ -1210,6 +1259,10 @@ img.alignright,
 .site-header .widget-area {
 	float: right;
 	width: 67%;
+	
+	.widget {
+		margin-bottom: 0;
+	}
 }
 
 @media only screen and (max-width: 1340px) {
@@ -1246,6 +1299,7 @@ img.alignright,
 	}
 
 }
+
 
 /* ## New Wordpress Custom #Logo
 --------------------------------------------- */
@@ -1365,6 +1419,11 @@ img.alignright,
 	float: right;
 }
 
+
+
+/* ## #Mobile & #Responsive Menu
+--------------------------------------------- */
+
 @media only screen and (max-width: 1023px) {		
 
 	.genesis-nav-menu li,
@@ -1386,6 +1445,8 @@ img.alignright,
 	.js .site-header nav  {
 		display: none;
 		position: relative;
+		background: rgba(#fff, .4);
+		overflow: auto;
 	}
 
 	.js .site-header nav .wrap {
@@ -1400,7 +1461,6 @@ img.alignright,
 	.sub-menu-toggle {
 		border-width: 0;
 		background-color: #fff;
-		color: $text-color;
 		display: block;
 		margin: 0 auto;
 		overflow: hidden;
@@ -1414,10 +1474,9 @@ img.alignright,
 	}
 
 	.menu-toggle {
-		background: $primary-nav-bk;
-		color: #FFF;
-		border-top: 1px solid $elements-color;
-		line-height: 20px;
+		background: transparent;
+		color: $responsive-nav-toggle;
+		//line-height: 20px;
 		position: relative;
 		right: 0;
 		z-index: 1000;
@@ -1458,20 +1517,21 @@ img.alignright,
 		content: "\f142";
 	}
 
-	.genesis-nav-menu li.menu-item a {
-		color: $responsive-nav-link;
-		background: $responsive-nav-bk;
-		text-align: center;
-;
-	}
+
 
 	.js .nav-primary .genesis-nav-menu .menu-item,
 	.js .site-header .genesis-nav-menu .menu-item {
 		display: block;
-		float: none;
-		margin: 1px 0;
+		
+		// lo allineo a sinistra
+		float: left;
+		padding: 4px;
+		
+		margin: 4px 8px;
 		position: relative;
-		text-align: left;
+		text-align: center;
+		text-transform: uppercase;
+
 	}
 
 	.js .genesis-nav-menu .menu-item:hover {
@@ -1483,6 +1543,7 @@ img.alignright,
 		border: none;
 		padding: 12px 0;
 		width: 100%;
+		color: $responsive-nav-link;
 	}
 
 	.js .genesis-nav-menu .sub-menu {
@@ -1515,8 +1576,12 @@ img.alignright,
 
 	.js nav button:hover,
 	.js .menu-toggle:hover {
-		background-color: $primary-nav-bk;
-		color: #fff;		
+		color: $responsive-nav-toggle;	
+		background: $header;
+	}
+
+	.js .menu-toggle.activated {
+		border-bottom: $border;
 	}
 
 	.js .nav-primary {
@@ -1533,8 +1598,9 @@ img.alignright,
 
 	.js nav button:focus,
 	.js .menu-toggle:focus {
-		background-color: $primary-nav-bk;
-		color: #fff;
+		//background-color: $primary-nav-bk;
+		color: $responsive-nav-toggle;
+		background-color: $header;		
 	}
 
 }
@@ -1563,33 +1629,93 @@ img.alignright,
 }
 
 
-/* ## Site Header Navigation
+/* ## Site #Header Navigation
 --------------------------------------------- */
 
-.site-header .genesis-nav-menu li li {
-	margin-left: 0;
-}
+@media only screen and (min-width: 1023px) {	
 
-.site-header .nav-header {
-	float: right;
-	
-	.current-menu-item a {
-		color: $header-nav-hover;
+	.site-header .genesis-nav-menu li li {
+		margin-left: 0;
 	}
 
-	a {	
-		padding: 16px 20px 16px;
-		color: $header-nav-link;		
-		font-size: 17px;
-		font-size: 1.7rem;
-		font-weight: $bold;	
-		text-transform: uppercase;	
-
-		&:hover, &:focus {
+	.site-header .nav-header {
+		float: right;
+		
+		.current-menu-item a {
 			color: $header-nav-hover;
+			
+			// linetta bassa
+			@if $header-nav-underline == 'yes' {
+
+				span {
+					border-bottom: 2px solid $secondary-nav-hover; 
+					padding-bottom: 4px;
+				}
+
+			}	
+
 		}
-						
-	}	
+
+		a {	
+			padding: 16px 20px 16px;
+			color: $header-nav-link;		
+			font-size: $header-navigation-font-size;
+			font-weight: $bold;	
+			text-transform: uppercase;	
+
+			&:hover, &:focus {
+				color: $header-nav-hover;
+			
+			// linetta bassa
+				@if $header-nav-underline == 'yes' {	
+					span {
+						border-bottom: 2px solid $secondary-nav-hover; // linetta bassa
+						padding-bottom: 4px;
+					}
+
+				}
+
+			}
+							
+		}	
+
+	}
+
+	@if $sticky-header == 'yes' {
+
+		.front-page .site-header .nav-header {
+
+		 	a {
+				color: $color-light;
+			
+				&:hover, &:focus {
+					color: $header-nav-hover;
+				}
+			}
+
+			.current-menu-item a {
+				color: $header-nav-hover;
+			}
+
+		}
+
+		.front-page .white.site-header .nav-header  {
+
+		 	a {
+				color: $color-dark;
+			
+				&:hover, &:focus {
+					color: $header-nav-hover;
+				}
+			}
+
+			.current-menu-item a {
+				color: $header-nav-hover;
+			}
+
+		}
+
+	}
 
 }
 
@@ -1611,8 +1737,7 @@ img.alignright,
 	a {	
 		padding: 16px 20px 16px;
 		color: $primary-nav-link;		
-		font-size: 17px;
-		font-size: 1.7rem;		
+		font-size: $primary-navigation-font-size;
 		text-transform: uppercase;	
 
 		&:hover, &:focus {
@@ -1624,6 +1749,7 @@ img.alignright,
 		}
 						
 	}
+
 }
 
 /* ## Top Navigation (Secondary Navigation)
@@ -1632,18 +1758,21 @@ img.alignright,
 .nav-secondary {
 	background: $secondary-nav-bk;	
 	@include border-top();
-	@include border-bottom();	
+	@include border-bottom();
+		
 	a {
 		padding: 12px 10px;		
 		color: $secondary-nav-link;
-		font-size: 13px;
-		font-size: 1.3rem;
+		font-size: $secondary-navigation-font-size;
 		font-weight: $bold;
-		text-transform: uppercase;		
+		text-transform: uppercase;
+				
 		&:hover, &:focus {
 			color: $secondary-nav-hover;
-			}
 		}
+
+	}
+
 	.current_page_item a {
 		color: $secondary-nav-hover;
 	}	
@@ -1651,6 +1780,7 @@ img.alignright,
 	li {
 		float: right;
 	}
+
 }
 
 
@@ -1748,11 +1878,6 @@ p.entry-meta {
 	margin-bottom: 2rem;
 }
 
-.archive .post-type-1 .entry-meta,
-.home .post-type-1 .entry-meta {
-	margin-bottom: 0.5rem;
-}
-
 .entry-footer .entry-meta {
 	border-top: 1px solid $elements-color;
 	padding-top: 2px;
@@ -1767,6 +1892,112 @@ p.entry-meta {
 	content: "\2014";
 	margin: 0 6px 0 2px;
 }
+
+/* ## Post Type 1
+--------------------------------------------- */
+.archive .post-type-1 .entry-meta,
+.home .post-type-1 .entry-meta {
+	margin-bottom: 0.5rem;
+}
+
+/* ## Post Type 2
+--------------------------------------------- */
+.post-type-2 {
+
+	.content {
+		background: none;
+	}
+
+	.content .entry {
+		float: left;
+		width: 23.828125%;
+		margin-left: 1.5625%;
+		margin-bottom: 1.5625%;
+		padding: 0 0 20px 0;
+		position: relative;
+		background-color: #fff;
+		@include box-shadow();
+	}
+
+	.content .entry:nth-of-type(4n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+
+	.content .entry .entry-time {
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: rgba(255,255,255,0.8);
+		padding: 4px 15px;
+		color: $text-color;
+	}
+
+	.content .entry img.alignright {
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+
+	.content .entry .entry-header .entry-meta {
+		margin-bottom: 0px;
+	}
+
+	.content .entry .entry-title {
+		text-transform: uppercase;
+		font-size: $h3;
+	}
+
+	.content .entry .entry-categories,
+	.content .entry .entry-title,
+	.content .entry .entry-content {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	@media only screen and (max-width: 1024px) {
+
+		
+		.content .entry {
+			float: left;
+			width: 48.9583333333%;
+			margin-left: 2.0833333333%;
+			margin-bottom: 2.0833333333%;
+		}
+
+		.content .entry:nth-of-type(4n+1) {
+			margin-left: 2.0833333333%;
+			clear: none;
+		}
+
+		.content .entry:nth-of-type(2n+1) {
+			margin-left: 0;
+			clear: left;
+		}
+
+	}
+
+
+	@media only screen and (max-width: 500px) {
+
+		.content .entry {
+			float: none;
+			width: 100%;
+			margin-left: 0%;
+			margin-bottom: 16px;
+		}
+
+		.content .entry:nth-of-type(4n+1) {
+			margin-left: 0;
+		}
+
+		.content .entry:nth-of-type(2n+1) {
+			clear: none;
+		}
+
+	}
+
+}
+
 
 /* ## #Pagination
 --------------------------------------------- */
@@ -1795,7 +2026,7 @@ p.entry-meta {
 	font-weight: $bold;
 	padding: 8px 12px;
 	text-decoration: none;
-		border: $border;
+	border: $border;
 
 }
 
@@ -1979,102 +2210,4 @@ p.entry-meta {
 
 }
 
-
-/* Post Type 2
---------------------------------------------- */
-.post-type-2 {
-
-	.content {
-		background: none;
-	}
-
-	.content .entry {
-		float: left;
-		width: 23.828125%;
-		margin-left: 1.5625%;
-		margin-bottom: 1.5625%;
-		padding: 0 0 20px 0;
-		position: relative;
-		background-color: #fff;
-		@include box-shadow();
-	}
-
-	.content .entry:nth-of-type(4n+1) {
-		margin-left: 0;
-		clear: left;
-	}
-
-	.content .entry .entry-time {
-		position: absolute;
-		left: 0;
-		top: 0;
-		background: rgba(255,255,255,0.8);
-		padding: 4px 15px;
-		color: $text-color;
-	}
-
-	.content .entry img.alignright {
-		margin-left: 0;
-		margin-bottom: 10px;
-	}
-
-	.content .entry .entry-header .entry-meta {
-		margin-bottom: 0px;
-	}
-
-	.content .entry .entry-title {
-		text-transform: uppercase;
-		font-size: $h3;
-	}
-
-	.content .entry .entry-categories,
-	.content .entry .entry-title,
-	.content .entry .entry-content {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-
-	@media only screen and (max-width: 1024px) {
-
-		
-		.content .entry {
-			float: left;
-			width: 48.9583333333%;
-			margin-left: 2.0833333333%;
-			margin-bottom: 2.0833333333%;
-		}
-
-		.content .entry:nth-of-type(4n+1) {
-			margin-left: 2.0833333333%;
-			clear: none;
-		}
-
-		.content .entry:nth-of-type(2n+1) {
-			margin-left: 0;
-			clear: left;
-		}
-
-	}
-
-
-	@media only screen and (max-width: 500px) {
-
-		.content .entry {
-			float: none;
-			width: 100%;
-			margin-left: 0%;
-			margin-bottom: 16px;
-		}
-
-		.content .entry:nth-of-type(4n+1) {
-			margin-left: 0;
-		}
-
-		.content .entry:nth-of-type(2n+1) {
-			clear: none;
-		}
-
-	}
-
-}
 

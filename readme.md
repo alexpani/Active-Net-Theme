@@ -8,7 +8,6 @@ To do:
 
 - aggiungere html e css per le icone social, senza bisogno di utilizzare simple social icons
 - pensare ad un semplice megamenu che permetta la divisione in colonne delle voci
-- sticky menu
 - pensare anche ad un template per avere l'header verticale, tipo bianchi
 - e un header horizzontale ma in basso sulla pagina, tipo https://theme.co/x/
 
@@ -26,13 +25,12 @@ Naturlamente è possibile usare tutte le classi di poppy: center...
 
 1.2 Le classi per i container
 
-parallax-x: dona un effetto parallasse alla sezione contenuta. Usare parallax-1 per la prima sezione, parallax-2 e parallax-3 per le seguenti hero: imposta l'immagine images/hero.jpg come hero e le dà un'effetto gradiente, oltre a stilizzare h1 e p per quella sezione. Nasce per essere modificata a piacere
+parallax-x: dona un effetto parallasse alla sezione contenuta. Usare parallax-1 per la prima sezione, parallax per le seguenti
+hero: imposta l'immagine images/hero.jpg come hero e le dà un'effetto gradiente, oltre a stilizzare h1 e p per quella sezione. Nasce per essere modificata a piacere
 
 To do:
 
-aggiungere effetto lettere trasparenti che vanno vedere cosa c'è sotto
 aggiungere layout a griglia per i post, tipo http://gridly.imagely.com
-per mostrare gli archivi: file:///Users/alessandro/Dropbox/Active%20Net/Sitesucker/sridharkatakam.com/categories-list-one-latest-post-rest-grid-category-archives-genesis/index.html
 aggiungere tabbed content tipo https://www.musket-theme.com/components-test/
 aggiungere expanders (accordion) tipo https://www.musket-theme.com/components-test/
 aggiungere faqs come https://www.musket-theme.com/components-test/

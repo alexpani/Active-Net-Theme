@@ -1,5 +1,22 @@
 <?php
 
+// Limit post number in home
+add_action( 'pre_get_posts',  'change_posts_number_home_page'  );
+function change_posts_number_home_page( $query ) {
+   if ($query->is_home() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 4 );
+    return $query;
+    }
+}
+
+// remove pagination in home
+add_action ( 'genesis_after_entry', 'sk_remove_pagination' );
+function sk_remove_pagination() {
+    if ( is_home() ) { 
+        remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' ); 
+    }
+}
+
 add_action( 'get_header', 'post_type_2' );
 
 function post_type_2() {
@@ -10,6 +27,7 @@ if ( is_front_page() || is_category() ) {
 	function excerpt( $limit ) {
 	    return wp_trim_words( get_the_excerpt(), $limit );
 	}
+
 
 	// Register a custom image size for images on category archives
 	add_image_size( 'post-image', 640, 416, true );

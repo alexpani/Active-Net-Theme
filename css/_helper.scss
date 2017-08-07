@@ -107,13 +107,17 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 //* Arranger
 
 .center, .align-center {
-	text-align: center;
+	text-align: center !important;
 }
 
 .right, .align-right {
-	text-align: right;
+	text-align: right !important;
 }
 
+// Backgrounds
+.fixed {	
+	background-attachment: fixed;	
+}
 
 //* Colors
 
@@ -248,6 +252,10 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .gradient-text {
 	@include gradient-text();
+}
+
+.transparent-text {
+	@include transparent-text();
 }
 
 //* Hero

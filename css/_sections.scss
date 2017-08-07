@@ -51,10 +51,6 @@
 
 }
 
-.container.fixed {	
-	background-attachment: fixed;	
-}
-
 .section {
 	
 	img {
@@ -64,6 +60,8 @@
 	p {
 		margin: 0; // permette di avere immagini perfettamente allineate in basso nelle section
 	}
+
+	overflow: auto;
 }
 
 //* Permettono di stabilire la larghezza della sezione. Sono legate al tema

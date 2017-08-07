@@ -87,6 +87,18 @@ $gradient-end:  #00A1FF !default;
     color: #FFF;
 }
 
+//* Transparent Text or image behind text
+@mixin transparent-text {
+    color: white;  /* Fallback: assume this color ON TOP of image */
+    background: url(./images/hero.jpg) no-repeat;
+    background-size: cover; // 
+    background-attachment: fixed; // fixed o inherit. Con fixed lo sfondo non si muove inseieme alle lettere
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    //opacity: .5; // Variando l'opacità si possono creare interessanti effetti, se il testo è posizionato su un'altro sfondo
+    
+}
+
 @mixin fancy-text-1 {
     background: linear-gradient(to right, #66FF66 0%, #FFFF66 100%);
     -webkit-background-clip: text;

@@ -40,6 +40,8 @@ function activenet_enqueue_scripts_styles() {
 
 	//wp_enqueue_style( 'font-awesome', CHILD_URL . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 
+	wp_enqueue_script( 'activenet-sticky-header', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
 	wp_enqueue_script( 'activenet-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 	$output = array(
 		'mainMenu' => __( 'Menu', 'activenet' ),
@@ -134,7 +136,7 @@ genesis_register_sidebar( array(
 	'description'   => __( 'Slider Area', 'activenet' ),
 ) );
 
-add_action( 'genesis_after_header', 'slider_widget',20 );
+add_action( 'genesis_before_content_sidebar_wrap', 'slider_widget',20 );
 	function slider_widget() {
 	if ( is_front_page() )
 		genesis_widget_area( 'slider', array(
@@ -144,6 +146,7 @@ add_action( 'genesis_after_header', 'slider_widget',20 );
 }
 
 //* Add Home Top Sections widget area
+
 genesis_register_sidebar( array(
 	'id'            => 'home-top-sections',
 	'name'          => __( 'Home Top Sections', 'activenet' ),
@@ -349,7 +352,7 @@ function gt_review_newer_link_text() {
 * header-left-logo-right.php
 */
 //include_once( get_stylesheet_directory() . '/lib/header-logo-mid-right.php' );
-include_once( get_stylesheet_directory() . '/lib/header-left-logo-right.php' );
+//include_once( get_stylesheet_directory() . '/lib/header-left-logo-right.php' );
 
 /* Scegliamo il tipo di blog
 * default 1 colonna semplice 

@@ -14,21 +14,23 @@ jQuery(function( $ ){
 		scrolltop = $(window).scrollTop()
 		scrollwindow = scrolltop + $(window).height();
 
-		$(".parallax-1").css("backgroundPosition", "50% " + -(scrolltop/6) + "px");
+		$(".parallax-top").css("backgroundPosition", "50% " + -(scrolltop/6) + "px");
 
-		if ( $(".parallax-2").length ) {
+		if ( $(".parallax").length ) {
 
-			sectionthreeoffset = $(".parallax-2").offset().top;
+			sectionthreeoffset = $(".parallax").offset().top;
 
 			if( scrollwindow > sectionthreeoffset ) {
 
 				// Enable parallax effect.
 				backgroundscroll = scrollwindow - sectionthreeoffset;
-				$(".parallax-2").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
+				$(".parallax").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
 
 			}
 
 		}
+
+		/*
 
 		if ( $(".parallax-3").length ) {
 
@@ -43,6 +45,8 @@ jQuery(function( $ ){
 			}
 
 		}
+
+		*/
 
 	});
 

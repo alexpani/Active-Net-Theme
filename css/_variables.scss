@@ -150,22 +150,30 @@ $two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-wid
 $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
 
 // Header
-$header: /* url('images/bk.png')*/ #fff;
+$header: /*url('images/bk.png')*/ #fff;
 $header-vertical-align: center; // center al centro, flex-end in basso
+$sticky-header: 'yes'; // attiva sticky header.
+$sticky-header-transparent: 'yes';
 
 // Navigation
 $navigation-font-family: $title-font-family;
 $navigation-font-weight: 500;
+$primary-navigation-font-size: $font-size;
 $primary-nav-link: $white;
 $primary-nav-bk: $color1;
 $primary-nav-hover: $blue;
+$secondary-navigation-font-size: $font-size;
 $secondary-nav-link:$text-color;
 $secondary-nav-bk: /*url('images/bk.png')*/ #f4f4f4;
 $secondary-nav-hover: $orange;
-$responsive-nav-bk: $white;
-$responsive-nav-link: $primary-color;
-$header-nav-link: $primary-color;
+
+$header-navigation-font-size: 1.4rem;
+$header-nav-link: $color-dark;
 $header-nav-hover: $primary-color-alt;
+$header-nav-underline: 'yes'; // style of te menu items, yes or no
+$responsive-nav-bk: $white;
+$responsive-nav-link: $secondary-color;
+$responsive-nav-toggle: $text-color;
 
 // Footer
 $footer-widgets: #f4f4f4;
