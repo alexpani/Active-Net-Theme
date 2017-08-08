@@ -1,7 +1,5 @@
 
 *.codekit3
 
-fonts/Local-Google-Fonts/
 languages/
-style.css.map
 *.map
