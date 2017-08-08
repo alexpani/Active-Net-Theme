@@ -22,6 +22,7 @@ Import
 @import "css/helper"; // helper classes (classes to use in content creation)
 @import "css/poppy_components"; // poppy components (icon box...)
 @import "css/sections"; // sections framework
+@import "css/side_menu"; // sliding responsive side menu
 @import "css/vendor/hue/hue.scss"; // Hues background effects
 @import "css/vendor/font-awesome-4.7.0/css/font-awesome.min.css"; // font awesome icon fonts
 @import "css/vendor/ionicons-2.0.1/css/ionicons.min.css"; // ionicons icon fonts
@@ -1128,7 +1129,7 @@ img.alignright,
 }
 
 .site-header > .wrap {
-	padding: 20px 0;
+	padding: $header-vertical-padding 0;
 	display: flex;
 	-webkit-align-items: center;
 	        align-items: center;
@@ -1423,8 +1424,47 @@ img.alignright,
 
 /* ## #Mobile & #Responsive Menu
 --------------------------------------------- */
+	    
+/* Adding a responsive side menu in Genesis */
 
-@media only screen and (max-width: 1023px) {		
+@if $side-menu == 'yes' {
+
+	#primary-nav-link-container {
+	    text-align: center;
+	    display: none;
+	}
+
+	a#primary-nav-link:focus {
+		outline: none;
+	}
+
+	@media only screen and (max-width: 1023px) {
+
+		#primary-nav-container {
+			display: none;
+		}
+
+		#primary-nav-link-container {
+			display: block;
+		}
+
+		// Nascondo il normale menu responsive se è attiva la side navigation
+		.site-header .widget_nav_menu,
+		.menu-toggle {
+			display: none !important;
+		}
+
+	}
+
+}
+
+@if $side-menu == 'no' {
+	#primary-nav-link-container {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 1023px) {	
 
 	.genesis-nav-menu li,
 	.header-image .title-area,
@@ -1473,7 +1513,8 @@ img.alignright,
 		border-width: 0;
 	}
 
-	.menu-toggle {
+	.menu-toggle,
+	#primary-nav-link {
 		background: transparent;
 		color: $responsive-nav-toggle;
 		//line-height: 20px;
@@ -1546,6 +1587,11 @@ img.alignright,
 		color: $responsive-nav-link;
 	}
 
+	.js .nav-primary .genesis-nav-menu .current-menu-item a {
+		color: $responsive-nav-link;
+		background: none;
+	}
+
 	.js .genesis-nav-menu .sub-menu {
 		border: none;
 	}
@@ -1589,11 +1635,13 @@ img.alignright,
 	}
 
 	.genesis-nav-menu > .right {
-		float: none;		
+		float: none;
+				
 		a.wcmenucart-contents {
 			color: $primary-color;
 			padding: 10px 0;
 		}
+
 	}
 
 	.js nav button:focus,
@@ -2209,5 +2257,4 @@ p.entry-meta {
 	}
 
 }
-
 

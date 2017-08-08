@@ -150,8 +150,9 @@ $two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-wid
 $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
 
 // Header
-$header: /*url('images/bk.png')*/ #fff;
+$header: /*url('images/bk.png')*/ rgba(#fff, .9);
 $header-vertical-align: center; // center al centro, flex-end in basso
+$header-vertical-padding: 10px;
 $sticky-header: 'yes'; // attiva sticky header.
 $sticky-header-transparent: 'yes';
 
@@ -174,6 +175,7 @@ $header-nav-underline: 'yes'; // style of te menu items, yes or no
 $responsive-nav-bk: $white;
 $responsive-nav-link: $secondary-color;
 $responsive-nav-toggle: $text-color;
+$side-menu: 'yes'; // Occorre anche configurare il menu utilizzato in jquery.sidr.min.init.js
 
 // Footer
 $footer-widgets: #f4f4f4;

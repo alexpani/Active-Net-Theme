@@ -1014,6 +1014,138 @@ li.ordrered-list-6:nth-of-type(6n+1) {
   border-top: 20px solid #fff;
   left: 48%; }
 
+.sidr {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 160px;
+  width: auto;
+  overflow-x: none;
+  overflow-y: auto;
+  font-size: 1.6rem;
+  background: #f8f8f8;
+  color: #333;
+  box-shadow: inset 0 0 5px 5px #ebebeb; }
+
+.sidr .sidr-inner {
+  padding: 0 0 15px; }
+
+.sidr .sidr-inner > p {
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.sidr.right {
+  left: auto;
+  right: -260px; }
+
+.sidr.left {
+  left: -260px;
+  right: auto; }
+
+.sidr h1, .sidr h2, .sidr h3, .sidr h4, .sidr h5, .sidr h6 {
+  font-size: 11px;
+  font-weight: normal;
+  padding: 0 15px;
+  margin: 0 0 5px;
+  color: #333;
+  line-height: 24px;
+  background-image: linear-gradient(#ffffff, #dfdfdf);
+  box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2); }
+
+.sidr p {
+  font-size: 13px;
+  margin: 0 0 12px; }
+
+.sidr p a {
+  color: rgba(51, 51, 51, 0.9); }
+
+.sidr > p {
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.sidr ul {
+  display: block;
+  margin: 0 0 15px;
+  padding: 0;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #fff; }
+
+.sidr ul li {
+  display: block;
+  margin: 0;
+  line-height: 48px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #dfdfdf; }
+
+.sidr ul li:hover, .sidr ul li.active, .sidr ul li.sidr-class-active {
+  border-top: none;
+  line-height: 49px; }
+
+.sidr ul li:hover > a, .sidr ul li:hover > span, .sidr ul li.active > a, .sidr ul li.active > span, .sidr ul li.sidr-class-active > a, .sidr ul li.sidr-class-active > span {
+  box-shadow: inset 0 0 15px 3px #ebebeb; }
+
+.sidr ul li a, .sidr ul li span {
+  padding: 0 15px;
+  display: block;
+  text-decoration: none;
+  color: #333; }
+
+.sidr ul li ul {
+  border-bottom: none;
+  margin: 0; }
+
+.sidr ul li ul li {
+  line-height: 40px;
+  font-size: 13px; }
+
+.sidr ul li ul li:last-child {
+  border-bottom: none; }
+
+.sidr ul li ul li:hover, .sidr ul li ul li.active, .sidr ul li ul li.sidr-class-active {
+  border-top: none;
+  line-height: 41px; }
+
+.sidr ul li ul li:hover > a, .sidr ul li ul li:hover > span, .sidr ul li ul li.active > a, .sidr ul li ul li.active > span, .sidr ul li ul li.sidr-class-active > a, .sidr ul li ul li.sidr-class-active > span {
+  box-shadow: inset 0 0 15px 3px #ebebeb; }
+
+.sidr ul li ul li a, .sidr ul li ul li span {
+  color: rgba(51, 51, 51, 0.8);
+  padding-left: 30px; }
+
+.sidr form {
+  margin: 0 15px; }
+
+.sidr label {
+  font-size: 13px; }
+
+.sidr input[type="text"], .sidr input[type="password"], .sidr input[type="date"], .sidr input[type="datetime"], .sidr input[type="email"], .sidr input[type="number"], .sidr input[type="search"], .sidr input[type="tel"], .sidr input[type="time"], .sidr input[type="url"], .sidr textarea, .sidr select {
+  width: 100%;
+  font-size: 13px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 0 10px;
+  border-radius: 2px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(51, 51, 51, 0.6);
+  display: block;
+  clear: both; }
+
+.sidr input[type=checkbox] {
+  width: auto;
+  display: inline;
+  clear: none; }
+
+.sidr input[type=button], .sidr input[type=submit] {
+  color: #f8f8f8;
+  background: #333; }
+
+.sidr input[type=button]:hover, .sidr input[type=submit]:hover {
+  background: rgba(51, 51, 51, 0.9); }
+
 /*
 *
 * Credits:
@@ -2055,7 +2187,7 @@ img.alignright,
 /* # Site #Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
-  background: #fff; }
+  background: rgba(255, 255, 255, 0.9); }
   @media only screen and (min-width: 1023px) {
     .site-header {
       position: fixed;
@@ -2064,7 +2196,7 @@ img.alignright,
       border-bottom: 1px solid #ddd; } }
 
 .home .site-header {
-  background: #fff; }
+  background: rgba(255, 255, 255, 0.9); }
   @media only screen and (min-width: 1023px) {
     .home .site-header {
       border: none;
@@ -2077,7 +2209,7 @@ img.alignright,
 
 @media only screen and (min-width: 1023px) {
   .home .site-header.white {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid #ddd;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2086,7 +2218,7 @@ img.alignright,
     transition: all 0.2s ease-in-out; } }
 
 .site-header > .wrap {
-  padding: 20px 0;
+  padding: 10px 0;
   display: flex;
   -webkit-align-items: center;
   align-items: center; }
@@ -2299,6 +2431,23 @@ img.alignright,
 
 /* ## #Mobile & #Responsive Menu
 --------------------------------------------- */
+/* Adding a responsive side menu in Genesis */
+#primary-nav-link-container {
+  text-align: center;
+  display: none; }
+
+a#primary-nav-link:focus {
+  outline: none; }
+
+@media only screen and (max-width: 1023px) {
+  #primary-nav-container {
+    display: none; }
+  #primary-nav-link-container {
+    display: block; }
+  .site-header .widget_nav_menu,
+  .menu-toggle {
+    display: none !important; } }
+
 @media only screen and (max-width: 1023px) {
   .genesis-nav-menu li,
   .header-image .title-area,
@@ -2333,7 +2482,8 @@ img.alignright,
   .sub-menu-toggle:hover,
   .sub-menu-toggle:focus {
     border-width: 0; }
-  .menu-toggle {
+  .menu-toggle,
+  #primary-nav-link {
     background: transparent;
     color: #777;
     position: relative;
@@ -2381,6 +2531,9 @@ img.alignright,
     padding: 12px 0;
     width: 100%;
     color: #34495e; }
+  .js .nav-primary .genesis-nav-menu .current-menu-item a {
+    color: #34495e;
+    background: none; }
   .js .genesis-nav-menu .sub-menu {
     border: none; }
   .js .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
@@ -2402,7 +2555,7 @@ img.alignright,
   .js nav button:hover,
   .js .menu-toggle:hover {
     color: #777;
-    background: #fff; }
+    background: rgba(255, 255, 255, 0.9); }
   .js .menu-toggle.activated {
     border-bottom: 1px solid #ddd; }
   .js .nav-primary {
@@ -2415,7 +2568,7 @@ img.alignright,
   .js nav button:focus,
   .js .menu-toggle:focus {
     color: #777;
-    background-color: #fff; } }
+    background-color: rgba(255, 255, 255, 0.9); } }
 
 /* ## Accessible Menu
 --------------------------------------------- */

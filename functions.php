@@ -17,6 +17,10 @@ include_once( get_template_directory() . '/lib/init.php' );
 //* Setup Theme
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
+//* Suggest plugin dependencies
+foreach ( glob( dirname( __FILE__ ) . '/lib/dependencies/*.php' ) as $file ) { include $file; }
+WP_Dependency_Installer::instance()->run( dirname( __FILE__ ) . '/lib/dependencies' );
+
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'activenet', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'activenet' ) );
 
@@ -361,3 +365,30 @@ function gt_review_newer_link_text() {
 */
 //include_once( get_stylesheet_directory() . '/lib/post-type-1.php' );
 include_once( get_stylesheet_directory() . '/lib/post-type-2.php' );
+
+
+
+/*
+* Side Responsive Menu (disattivare se non si usa side menu)
+* https://sridharkatakam.com/adding-responsive-side-menu-genesis/
+---------------------------------------------------------------------------------------------------- */
+//* Add hamburger font icon below Primary nav
+add_action( 'genesis_after_header', 'sk_hamburger_menu' );
+function sk_hamburger_menu() {
+
+	echo '<div id="primary-nav-link-container"><div class="wrap"><a id="primary-nav-link" href="#primary-nav-container"><i class="fa fa-bars"></i> Menu</a></div></div>';
+}
+
+//* Enqueue Sidr and Touchwipe jQuery plugins
+add_action( 'wp_enqueue_scripts', 'enqueue_sidr_touchwipe' );
+function enqueue_sidr_touchwipe() {
+	wp_enqueue_script( 'sidr',  get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'sidr-init',  get_stylesheet_directory_uri() . '/js/jquery.sidr.min.init.js', array( 'sidr' ), '1.0.0', true );
+	//wp_enqueue_style( 'sidr-css', get_stylesheet_directory_uri() . '/css/jquery.sidr.light.css' );
+
+	// to make the right/left swipe touch event open or close the responsive menu
+	wp_enqueue_script( 'touchwipe',  get_stylesheet_directory_uri() . '/js/jquery.touchwipe.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'touchwipe-init',  get_stylesheet_directory_uri() . '/js/jquery.touchwipe.min.init.js', array( 'touchwipe' ), '1.0.0', true );
+}
+
+
