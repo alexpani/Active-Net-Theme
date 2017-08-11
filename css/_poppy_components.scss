@@ -99,7 +99,7 @@ li.ordrered-list-6:nth-of-type(6n+1) {
 
 		.fa {
 			color: transparent;
-			@include gradient-text();		
+			@include text-gradient();		
 		}
 		
 	}

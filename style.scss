@@ -5,7 +5,7 @@
 	Author URI: http://www.active-net.it
 	Template: genesis
 	Version: 1.1
-	Date: 06/08/2017
+	Date: 08/08/2017
 */
 
 /*
@@ -951,7 +951,8 @@ img.alignright,
 .entry-content .wp-audio-shortcode,
 .entry-content .wp-playlist,
 .entry-content .wp-video {
-	margin: 0 0 28px;
+	margin: -25px 0 0px;
+	background: #000;
 }
 
 /* ## Genesis
@@ -967,26 +968,10 @@ img.alignright,
 	padding: $page-padding;
 	padding-bottom: 4px;
 	line-height: 1;
+	//background: #FFF;
 }
 
-.after-entry,
-.archive-description,
-.author-box {
-	background-color: #fff;
-	font-size: 18px;
-	font-size: 1.8rem;
-	margin-bottom: 40px;
-	padding: 60px;
-}
 
-.archive-description {
-	display: none;
-}
-
-.archive-description p:last-child,
-.author-box p:last-child {
-	margin-bottom: 0;
-}
 
 
 /* # #Widgets
@@ -1868,8 +1853,6 @@ article.page {
 	}
 }
 
-
-
 .page-title {
 	text-transform: $title-transform;
 }
@@ -1941,11 +1924,57 @@ p.entry-meta {
 	margin: 0 6px 0 2px;
 }
 
+/* ## Archivio Post di Default
+--------------------------------------------- */
+
+.archive-description {
+	background-color: #fff;
+	//font-size: 18px;
+	//font-size: 1.8rem;
+	margin-bottom: 20px;
+	padding: $post-padding;
+}
+
+.archive-description p:last-child {
+	margin-bottom: 0;
+}
+
+.archive {
+
+	.content {
+		background: transparent;
+		}
+
+	.entry {
+		background: #FFF;
+		padding: $post-padding;
+	}
+}
+
+
 /* ## Post Type 1
 --------------------------------------------- */
 .archive .post-type-1 .entry-meta,
 .home .post-type-1 .entry-meta {
 	margin-bottom: 0.5rem;
+}
+
+.archive .post-type-1 {
+	
+	width: 48.85%;
+	float: left;
+	margin-left: 20px;	
+	
+	@media only screen and (max-width: 1200px) {
+
+	width: 100%;	
+	margin-left: 0;
+	}
+}
+
+.post-type-1:nth-of-type(2n+1) { 
+    clear: both;
+    margin-left: 0;
 }
 
 /* ## Post Type 2
@@ -2101,8 +2130,7 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	font-size: 14px;
-	font-size: 1.4rem;
+	font-size: $sidebar-font-size;
 	margin-bottom: 40px;
 
 }
@@ -2119,7 +2147,7 @@ p.entry-meta {
 	background-color: #fff;
 	padding: $sidebar-widget-padding;
 	margin-bottom: $sidebar-widget-margin-bottom;
-	//@include box_shadow();
+	@include box-shadow-1();
 }
 
 
@@ -2257,4 +2285,114 @@ p.entry-meta {
 	}
 
 }
+
+
+
+
+
+
+
+// Tabs. Requires anijs.js
+
+ul.tabs, ul.accordions {
+	margin: 0;
+	margin-bottom: 40px;
+	overflow: auto;
+	
+ 	li {
+		list-style: none;
+		display: inline;
+	}
+
+}
+
+.tab h2 {
+	margin: 0 0 -1px 0;
+	border: solid 1px $elements-color;
+	border-bottom: none;
+	padding: 12px 18px;
+	cursor: pointer;
+	display: inline-block;
+	background: $elements-color;
+	
+	&:hover {
+		color: $primary-color;
+		cursor: pointer;
+	}
+
+}
+
+.tabs .tab.active h2 {
+	border-bottom: none;
+	z-index: 2;
+	color: $primary-color;
+	background: #FFF;
+}
+
+.tab div {
+	display: none;
+	float: left;
+	border-top: 1px solid $elements-color;		
+	padding-top: 10px;
+}
+
+@media only screen and (max-width: 360px) {
+
+	.tab h2 {
+		width: 100%;
+		border-bottom: 1px solid #fff;
+		border-top: 1px solid #fff;
+	}
+}	
+
+.tabs .tab.active div {
+  display: block; 
+}
+
+.accordions .tab h2 {
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+}
+
+.accordions .tab.active h2 {
+	border-bottom: 1px solid $elements-color;
+	border-top: 1px solid $elements-color;
+	z-index: 2;
+	color: $primary-color;
+	background: #FFF;
+}
+
+.accordions .tab.active div {
+  display: block;
+  padding: 20px 6px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*End CSS example*/
+
+/*Other CSS*/
+
+
+
+
+
+
+
 

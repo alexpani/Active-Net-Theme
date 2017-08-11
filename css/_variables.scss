@@ -51,7 +51,7 @@ $primary-color-alt: $belizehole; // hover color for primary
 $secondary-color: $wetasphalt; // for secondary links and buttons
 $secondary-color-alt: $midnightblue; // hover color for secondary
 
-$elements-color: #ddd; // usato nei bordi, spearatori, ecc..
+$elements-color: $clouds; // usato nei bordi, spearatori, ecc..
 
 // Colori usati negli helper
 $color-light: #eee !default;
@@ -99,13 +99,12 @@ $text-xxlarge: $font-size*4;
 $body-background: /*url('images/bk.png')*/ #fff; // Bypassed if customizer is in use
 $site-container-background: $clouds;
 $content-background-color: $white;
-$padding-small: 20px;
+$padding-small: 15px;
 $padding-medium: 50px;
 $padding-large: 100px;
 $padding-xlarge: 200px;
 $border: 1px solid $elements-color;
 $border-radius: 3px;
-$box-shadow: 0px 0px 1px $elements-color;
 $icon-color: $turquoise;
 $border-test: 'no'; // Enable visible borders for test purposes. yes or no
 
@@ -120,7 +119,7 @@ $gradient-text-angle: 315deg;
 $overlay-start:   $amethyst;
 $overlay-end:  $midnightblue;
 $overlay-angle: 135deg;
-$overlay-opacity: 0.7;
+$overlay-opacity: 0.5;
 
 // Buttons
 $button-font-family: $title-font-family;
@@ -141,8 +140,9 @@ $sidebar-widget-padding: 10px;
 $sidebar-widget-margin-bottom: 10px;
 $sidebar-primary-width: 240px; // default 360px
 $sidebar-secondary-width: 200px; // default 180px
+$sidebar-font-size: $font-size;
 $shop-padding: 20px;
-$page-padding: 10px;
+$page-padding: 20px;
 $post-padding: $page-padding;
 // Dont't touch these!
 $one-sidebar-content-width: 1280px - $sidebar-primary-width - $sidebar-spacing; // default 880px
@@ -150,7 +150,7 @@ $two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-wid
 $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
 
 // Header
-$header: /*url('images/bk.png')*/ rgba(#fff, .9);
+$header: /*url('images/bk.png')*/ rgba(#fff, .95);
 $header-vertical-align: center; // center al centro, flex-end in basso
 $header-vertical-padding: 10px;
 $sticky-header: 'yes'; // attiva sticky header.

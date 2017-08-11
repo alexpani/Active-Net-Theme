@@ -217,7 +217,8 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 }
 
 .background-2 {
-	background: url('./images/background-2.jpg') repeat;
+	background-image: url('./images/background-2.jpg');
+	background-repeat: repeat;
 }
 
 .polygon-green {
@@ -245,17 +246,12 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	background-size: cover;
 }
 
-//* Gradienti
-.gradient {
-	@include gradient();
-}
-
-.gradient-text {
-	@include gradient-text();
-}
-
-.transparent-text {
-	@include transparent-text();
+.overlay {
+	position: absolute;
+	top: 40%;
+	left: 25%;
+	width: 50%;
+	text-align: center;
 }
 
 //* Hero
@@ -268,16 +264,7 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	@include overlay();		
 }
 
-//* Testo
-
-.fancy-text-1 {
-	@include fancy-text-1();
-}
-
-.fancy-text-2 {
-	@include fancy-text-2();
-}
-
+//* Text
 .text-light, .color-light {
 	color: $color-light !important;
 }
@@ -329,19 +316,6 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	column-width: 18em;
 }
 
-//* Ombre
-
-.drop-shadow {
-	@include drop-shadow();
-}
-
-.text-shadow-dark {
-	@include text-shadow-dark();
-}
-
-.text-shadow-light {
-	@include text-shadow-light();
-}
 
 //* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
 //* display:flex non permette alle colonne di collassare su schermi piccoli,

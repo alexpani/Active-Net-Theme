@@ -45,6 +45,11 @@ function activenet_enqueue_scripts_styles() {
 	//wp_enqueue_style( 'font-awesome', CHILD_URL . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'activenet-sticky-header', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'activenet-anijs', get_stylesheet_directory_uri() . '/js/anijs-min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
+	wp_enqueue_script( 'activenet-anijs-dom', get_stylesheet_directory_uri() . '/js/anijs-helper-dom-min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
+	wp_enqueue_style( 'anijs-example', 'http://anijs.github.io/lib/anicollection/anicollection.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'activenet-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 	$output = array(
@@ -298,11 +303,10 @@ function custom_add_site_description_class( $attributes ) {
 	return $attributes;
 }
 
-/* Remove & reposition the breadcrumbs before product title
- * i.e. Show the breadcrumb in the single product pages only
- */
-//remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-//add_action( 'woocommerce_single_product_summary', 'genesis_do_breadcrumbs',4 );
+//* Remove & reposition the breadcrumbs
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+//add_action( 'woocommerce_single_product_summary', 'genesis_do_breadcrumbs',4 ); // Se lo vuoi sopra al nome del prodotto. Allora disattiva quello qui sotto.
+add_action( 'genesis_before_loop', 'genesis_do_breadcrumbs',4 );
 
 //* Customize breadcrumbs display
 add_filter( 'genesis_breadcrumb_args', 'sp_breadcrumb_args' );
@@ -363,8 +367,8 @@ function gt_review_newer_link_text() {
 * post-type-1: 2 colonne semplice -> http://i.imgur.com/7jWNXfo.png
 * post-type-2: 4 colonne (da Srikat) -> http://i.imgur.com/MBMier2.png
 */
-//include_once( get_stylesheet_directory() . '/lib/post-type-1.php' );
-include_once( get_stylesheet_directory() . '/lib/post-type-2.php' );
+include_once( get_stylesheet_directory() . '/lib/post-type-1.php' );
+//include_once( get_stylesheet_directory() . '/lib/post-type-2.php' );
 
 
 

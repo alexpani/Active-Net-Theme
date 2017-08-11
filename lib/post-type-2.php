@@ -21,7 +21,7 @@ add_action( 'get_header', 'post_type_2' );
 
 function post_type_2() {
 
-if ( is_front_page() || is_category() ) {
+if ( is_home() || is_category() ) {
 
 	// Custom excerpt length
 	function excerpt( $limit ) {

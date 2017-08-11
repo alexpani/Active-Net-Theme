@@ -22,7 +22,8 @@ if ( is_home() || is_category() ) {
 //* Add class to .entry
 add_filter('genesis_attr_entry', 'jive_attributes_st_container');
 function jive_attributes_st_container($attributes) {
-	$attributes['class'] .= ' one-half ext match-height post-type-1'; // La figata è che matcheight risolve anche il problema del float delle colonne e non serve 'first'
+	$attributes['class'] .= ' element match-height post-type-1'; // La figata è che matcheight risolve anche il problema del float delle colonne e non serve 'first'
+	//$attributes['data-anijs'] .= 'if: click, do: $remove, to: target';
 	return $attributes;
 }
 
