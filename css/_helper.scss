@@ -260,8 +260,16 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	padding: 15% 0;
+	padding: 0% 0;
 	@include overlay();		
+	//overflow: hidden;
+	padding: 100px 0;
+	//display: table;	
+	//table-layout: fixed;
+	//width: 100%;
+	height: calc(100vh);
+	display: flex;
+	align-items:center;
 }
 
 //* Text
@@ -315,6 +323,58 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	-moz-column-width: 9em;
 	column-width: 18em;
 }
+
+
+.text-separator {
+    overflow: hidden;
+    text-align: center;
+    margin: 40px auto !important;
+    
+    &:before,
+	&:after {
+	    background-color: $title-color;
+	    content: "";
+	    display: inline-block;
+	    height: 1px;
+	    position: relative;
+	    vertical-align: middle;
+	    width: 20%;
+	}
+
+	&:before {
+	    right: 0.5rem;
+	    margin-left: -50%;
+	}
+
+	&:after {
+	    left: 0.5rem;
+	    margin-right: -50%;
+	}
+
+}
+
+.content-box-primary {
+	background-color: $primary-color;
+	border: 1px solid $primary-color-alt;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 30px;
+	width: 80%;
+	margin: 30px auto;
+}
+
+.content-box-secondary {
+	background-color: $secondary-color;
+	border: 1px solid $secondary-color-alt;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 30px;
+	width: 80%;
+	margin: 30px auto;
+}
+
+
+
 
 
 //* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto

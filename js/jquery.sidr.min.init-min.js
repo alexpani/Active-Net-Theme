@@ -1,1 +1,0 @@
-jQuery(document).ready(function($){$("#primary-nav-link").sidr({name:"sidr-primary-nav",source:".nav-header"})});

@@ -62,7 +62,7 @@ Global Theme Variables
 .text-transparent {
   color: white;
   /* Fallback: assume this color ON TOP of image */
-  background: url(./images/hero.jpg) no-repeat;
+  background: url("./images/hero.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   -webkit-background-clip: text;
@@ -109,7 +109,7 @@ li.cat-parent.current-cat > a, li.current-cat-parent > a, li.current-cat > a {
   overflow: hidden; }
 
 select.orderby {
-  color: #777;
+  color: #333;
   width: 110%;
   -webkit-border-radius: 0px;
   -webkit-appearance: none;
@@ -366,7 +366,7 @@ select.orderby {
     background-color: #f39c12;
     color: #fff;
     border-radius: 3px;
-    font-weight: 700; }
+    font-weight: 500; }
     .woocommerce a.button:hover,
     .woocommerce button.button:hover,
     .woocommerce input.button:hover,
@@ -405,7 +405,7 @@ select.orderby {
       .woocommerce #respond input#submit.alt:disabled:hover,
       .woocommerce #respond input#submit.alt:disabled[disabled]:hover {
         background-color: #ddd;
-        color: #777; }
+        color: #333; }
     .woocommerce a.button:disabled:hover, .woocommerce a.button.disabled:hover, .woocommerce a.button:disabled[disabled]:hover,
     .woocommerce button.button:disabled:hover,
     .woocommerce button.button.disabled:hover,
@@ -418,11 +418,11 @@ select.orderby {
     .woocommerce #respond input#submit:disabled[disabled]:hover {
       background-color: #27ae60; }
   .woocommerce #reviews h2 small {
-    color: #777; }
+    color: #333; }
     .woocommerce #reviews h2 small a {
-      color: #777; }
+      color: #333; }
   .woocommerce #reviews #comments ol.commentlist li .meta {
-    color: #777; }
+    color: #333; }
   .woocommerce #reviews #comments ol.commentlist li img.avatar {
     width: 48px;
     background: #eee;
@@ -488,12 +488,12 @@ select.orderby {
 .woocommerce-cart .cart-collaterals .cart_totals p small,
 .woocommerce-checkout .cart-collaterals .cart_totals p small,
 #add_payment_method .cart-collaterals .cart_totals p small {
-  color: #777; }
+  color: #333; }
 
 .woocommerce-cart .cart-collaterals .cart_totals table small,
 .woocommerce-checkout .cart-collaterals .cart_totals table small,
 #add_payment_method .cart-collaterals .cart_totals table small {
-  color: #777; }
+  color: #333; }
 
 .woocommerce-cart .cart-collaterals .cart_totals .discount td,
 .woocommerce-checkout .cart-collaterals .cart_totals .discount td,
@@ -511,7 +511,7 @@ select.orderby {
 .woocommerce-cart .checkout .create-account small,
 .woocommerce-checkout .checkout .create-account small,
 #add_payment_method .checkout .create-account small {
-  color: #777; }
+  color: #333; }
 
 .woocommerce-cart #payment,
 .woocommerce-checkout #payment,
@@ -550,7 +550,7 @@ select.orderby {
     .woocommerce-cart #payment div.payment_box span.help,
     .woocommerce-checkout #payment div.payment_box span.help,
     #add_payment_method #payment div.payment_box span.help {
-      color: #777; }
+      color: #333; }
     .woocommerce-cart #payment div.payment_box::before,
     .woocommerce-checkout #payment div.payment_box::before,
     #add_payment_method #payment div.payment_box::before {

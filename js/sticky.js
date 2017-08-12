@@ -10,6 +10,7 @@
 
 	var $body         = $( 'body' ),
 		$content      = $( '.offscreen-content' ),
+		$widgetArea   = $( '.widget-area'),
 		headerHeight  = $( '.site-header' ).height(),
 		$siteHeader   = $( '.site-header' ),
 		$siteInner    = $( '.site-inner' ),
@@ -31,7 +32,7 @@
 	});
 
 	// Push the .site-inner down dependant on the header height.
-	if ( ! $body.hasClass( 'front-page' ) ) {
+	if ( (! $body.hasClass( 'sections' ) && (! $widgetArea.hasClass( 'home-top-sections' ))) || !('fixed' == __getPositionValue( '.site-header' ))) {
 
 		__repositionSiteHeader( headerHeight, $siteInner );
 
@@ -41,10 +42,11 @@
 			headerHeight = $siteHeader.height();
 			__repositionSiteHeader( headerHeight, $siteInner );
 
-
 		});
 
 	}
+
+
 		
 
 	// Function to get the CSS value of the position property of the passed element.

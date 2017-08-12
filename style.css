@@ -21,8 +21,6 @@ Global Theme Variables
 ---------------------------------------------------------------------------------------------------- */
 @import url(css/vendor/font-awesome-4.7.0/css/font-awesome.min.css);
 @import url(css/vendor/ionicons-2.0.1/css/ionicons.min.css);
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900");
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 .box-shadow-1 {
   -webkit-box-shadow: 0px 10px 45px 0px rgba(30, 37, 54, 0.18);
   box-shadow: 0px 2px 5px 0px rgba(30, 37, 54, 0.18); }
@@ -67,7 +65,7 @@ Global Theme Variables
 .text-transparent {
   color: white;
   /* Fallback: assume this color ON TOP of image */
-  background: url(./images/hero.jpg) no-repeat;
+  background: url("./images/hero.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   -webkit-background-clip: text;
@@ -342,11 +340,11 @@ Global Theme Variables
   color: #fff; }
 
 .sidebar .widget.enews-widget {
-  background-color: #777; }
+  background-color: #333; }
 
 .sidebar .enews-widget input,
 .sidebar .enews-widget input:focus {
-  border: 1px solid #777; }
+  border: 1px solid #333; }
 
 .sidebar .enews-widget input[type="submit"] {
   background-color: #f1c40f;
@@ -355,7 +353,7 @@ Global Theme Variables
 .sidebar .enews-widget input:hover[type="submit"],
 .sidebar .enews-widget input:focus[type="submit"] {
   background-color: #fff;
-  color: #777; }
+  color: #333; }
 
 .enews-widget input {
   font-size: 16px;
@@ -650,8 +648,12 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 15% 0;
-  position: relative; }
+  padding: 0% 0;
+  position: relative;
+  padding: 100px 0;
+  height: calc(100vh);
+  display: flex;
+  align-items: center; }
   .hero * {
     position: relative;
     z-index: 1; }
@@ -678,22 +680,22 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
   text-transform: uppercase; }
 
 .text-xsmall {
-  font-size: 1.12rem; }
+  font-size: 1.26rem; }
 
 .text-small {
-  font-size: 1.44rem; }
+  font-size: 1.62rem; }
 
 .text-medium {
-  font-size: 2.4rem; }
+  font-size: 2.7rem; }
 
 .text-large {
-  font-size: 3.2rem; }
+  font-size: 3.6rem; }
 
 .text-xlarge {
-  font-size: 4.8rem; }
+  font-size: 5.4rem; }
 
 .text-xxlarge {
-  font-size: 6.4rem; }
+  font-size: 7.2rem; }
 
 .text-columns {
   text-align: justify;
@@ -708,6 +710,43 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
   -webkit-column-width: 9em;
   -moz-column-width: 9em;
   column-width: 18em; }
+
+.text-separator {
+  overflow: hidden;
+  text-align: center;
+  margin: 40px auto !important; }
+  .text-separator:before, .text-separator:after {
+    background-color: #555;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%; }
+  .text-separator:before {
+    right: 0.5rem;
+    margin-left: -50%; }
+  .text-separator:after {
+    left: 0.5rem;
+    margin-right: -50%; }
+
+.content-box-primary {
+  background-color: #3498db;
+  border: 1px solid #2980b9;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 30px;
+  width: 80%;
+  margin: 30px auto; }
+
+.content-box-secondary {
+  background-color: #34495e;
+  border: 1px solid #2c3e50;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 30px;
+  width: 80%;
+  margin: 30px auto; }
 
 @media only screen and (min-width: 666px) {
   .aligner {
@@ -1051,7 +1090,7 @@ li.ordrered-list-6:nth-of-type(6n+1) {
   width: auto;
   overflow-x: none;
   overflow-y: auto;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   background: #f8f8f8;
   color: #333;
   box-shadow: inset 0 0 5px 5px #ebebeb; }
@@ -1495,16 +1534,16 @@ html {
 
 /* Chrome fix */
 body > div {
-  font-size: 1.6rem; }
+  font-size: 1.8rem; }
 
 body {
   background: #fff;
-  color: #777;
+  color: #333;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
   margin: 0; }
 
@@ -1590,19 +1629,19 @@ h6 {
   text-transform: none; }
 
 h1 {
-  font-size: 2.88rem; }
+  font-size: 3.24rem; }
 
 h2 {
-  font-size: 2.24rem; }
+  font-size: 2.52rem; }
 
 h3 {
-  font-size: 1.92rem; }
+  font-size: 2.16rem; }
 
 h4 {
-  font-size: 1.76rem; }
+  font-size: 1.98rem; }
 
 h5, h6 {
-  font-size: 1.6rem; }
+  font-size: 1.8rem; }
 
 /* ## Objects
 --------------------------------------------- */
@@ -1683,7 +1722,7 @@ select,
 textarea {
   background-color: #fff;
   border: 1px solid #ecf0f1;
-  color: #777;
+  color: #333;
   padding: 6px;
   width: 100%; }
 
@@ -1698,11 +1737,11 @@ input[type="radio"] {
   width: auto; }
 
 ::-moz-placeholder {
-  color: #777;
+  color: #333;
   opacity: 1; }
 
 ::-webkit-input-placeholder {
-  color: #777; }
+  color: #333; }
 
 /*
 #Buttons
@@ -1717,8 +1756,8 @@ input[type="submit"],
   border: 0;
   color: #fff;
   cursor: pointer;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 500;
   padding: 8px 24px;
   text-decoration: none;
   text-transform: uppercase;
@@ -1763,20 +1802,20 @@ input:focus[type="submit"],
 
 .button-xsmall {
   padding: 7px 11px;
-  font-size: 1.1rem; }
+  font-size: 1.3rem; }
 
 .button-small {
   padding: 8px 12px;
-  font-size: 1.3rem; }
+  font-size: 1.5rem; }
 
 .button-large {
   padding: 10px 24px;
-  font-size: 2rem; }
+  font-size: 2.2rem; }
 
 .button-xlarge {
   padding: 12px 40px;
   margin: 20px 0;
-  font-size: 2.4rem; }
+  font-size: 2.6rem; }
 
 .button-secondary {
   background-color: #34495e;
@@ -1902,7 +1941,7 @@ th:first-child {
   font-size: 1em;
   font-weight: bold;
   padding: 15px 23px 14px;
-  color: #777;
+  color: #333;
   background: #fff;
   z-index: 100000;
   /* Above WP toolbar. */
@@ -2198,7 +2237,7 @@ img.alignright,
 /* # Site #Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
-  background: rgba(255, 255, 255, 0.95); }
+  background: #fff; }
   @media only screen and (min-width: 1023px) {
     .site-header {
       position: fixed;
@@ -2206,10 +2245,12 @@ img.alignright,
       z-index: 999;
       border-bottom: 1px solid #ecf0f1; } }
 
-.home .site-header {
-  background: rgba(255, 255, 255, 0.95); }
+.sections .site-header,
+.has-home-top-sections .site-header {
+  background: #fff; }
   @media only screen and (min-width: 1023px) {
-    .home .site-header {
+    .sections .site-header,
+    .has-home-top-sections .site-header {
       border: none;
       background: transparent;
       -webkit-transition: all 0.1s ease-in-out;
@@ -2219,9 +2260,10 @@ img.alignright,
       transition: all 0.1s ease-in-out; } }
 
 @media only screen and (min-width: 1023px) {
-  .home .site-header.white {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #ecf0f1;
+  .site-header.white {
+    background: #fff;
+    -webkit-box-shadow: 0px 10px 45px 0px rgba(30, 37, 54, 0.18);
+    box-shadow: 0px 2px 5px 0px rgba(30, 37, 54, 0.18);
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -2303,7 +2345,7 @@ img.alignright,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-  color: #777;
+  color: #333;
   text-decoration: none; }
 
 .header-image .site-title > a {
@@ -2384,7 +2426,7 @@ img.alignright,
 
 .genesis-nav-menu a {
   font-family: "Lato", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   display: block; }
 
@@ -2496,7 +2538,7 @@ a#primary-nav-link:focus {
   .menu-toggle,
   #primary-nav-link {
     background: transparent;
-    color: #777;
+    color: #333;
     position: relative;
     right: 0;
     z-index: 1000;
@@ -2565,8 +2607,8 @@ a#primary-nav-link:focus {
     margin: 0; }
   .js nav button:hover,
   .js .menu-toggle:hover {
-    color: #777;
-    background: rgba(255, 255, 255, 0.95); }
+    color: #333;
+    background: #fff; }
   .js .menu-toggle.activated {
     border-bottom: 1px solid #ecf0f1; }
   .js .nav-primary {
@@ -2578,8 +2620,8 @@ a#primary-nav-link:focus {
       padding: 10px 0; }
   .js nav button:focus,
   .js .menu-toggle:focus {
-    color: #777;
-    background-color: rgba(255, 255, 255, 0.95); } }
+    color: #333;
+    background-color: #fff; } }
 
 /* ## Accessible Menu
 --------------------------------------------- */
@@ -2618,17 +2660,25 @@ a#primary-nav-link:focus {
         .site-header .nav-header a:hover span, .site-header .nav-header a:focus span {
           border-bottom: 2px solid #f39c12;
           padding-bottom: 4px; }
-  .front-page .site-header .nav-header a {
+  .sections .site-header .nav-header a,
+  .has-home-top-widget-sections .site-header .nav-header a {
     color: #eee; }
-    .front-page .site-header .nav-header a:hover, .front-page .site-header .nav-header a:focus {
+    .sections .site-header .nav-header a:hover, .sections .site-header .nav-header a:focus,
+    .has-home-top-widget-sections .site-header .nav-header a:hover,
+    .has-home-top-widget-sections .site-header .nav-header a:focus {
       color: #2980b9; }
-  .front-page .site-header .nav-header .current-menu-item a {
+  .sections .site-header .nav-header .current-menu-item a,
+  .has-home-top-widget-sections .site-header .nav-header .current-menu-item a {
     color: #2980b9; }
-  .front-page .white.site-header .nav-header a {
+  .sections .white.site-header .nav-header a,
+  .has-home-top-widget-sections .white.site-header .nav-header a {
     color: #333; }
-    .front-page .white.site-header .nav-header a:hover, .front-page .white.site-header .nav-header a:focus {
+    .sections .white.site-header .nav-header a:hover, .sections .white.site-header .nav-header a:focus,
+    .has-home-top-widget-sections .white.site-header .nav-header a:hover,
+    .has-home-top-widget-sections .white.site-header .nav-header a:focus {
       color: #2980b9; }
-  .front-page .white.site-header .nav-header .current-menu-item a {
+  .sections .white.site-header .nav-header .current-menu-item a,
+  .has-home-top-widget-sections .white.site-header .nav-header .current-menu-item a {
     color: #2980b9; } }
 
 /* ## #Primary Navigation
@@ -2642,7 +2692,7 @@ a#primary-nav-link:focus {
   .nav-primary a {
     padding: 16px 20px 16px;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-transform: uppercase; }
     .nav-primary a:hover, .nav-primary a:focus {
       color: #fff;
@@ -2657,8 +2707,8 @@ a#primary-nav-link:focus {
   border-bottom: 1px solid #ecf0f1; }
   .nav-secondary a {
     padding: 12px 10px;
-    color: #777;
-    font-size: 1.6rem;
+    color: #333;
+    font-size: 1.8rem;
     font-weight: 700;
     text-transform: uppercase; }
     .nav-secondary a:hover, .nav-secondary a:focus {
@@ -2686,7 +2736,7 @@ article.page {
   padding: 20px; }
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-  margin-top: 2.5rem; }
+  margin: 4rem 0 2rem; }
 
 .entry-content h1:first-of-type {
   margin-top: 0; }
@@ -2721,7 +2771,7 @@ article.page {
   margin-bottom: 0; }
 
 .entry-content code {
-  background-color: #777;
+  background-color: #333;
   color: #ecf0f1; }
 
 /* ## Entry #Meta
@@ -2805,7 +2855,7 @@ p.entry-meta {
   top: 0;
   background: rgba(255, 255, 255, 0.8);
   padding: 4px 15px;
-  color: #777; }
+  color: #333; }
 
 .post-type-2 .content .entry img.alignright {
   margin-left: 0;
@@ -2816,7 +2866,7 @@ p.entry-meta {
 
 .post-type-2 .content .entry .entry-title {
   text-transform: uppercase;
-  font-size: 1.92rem; }
+  font-size: 2.16rem; }
 
 .post-type-2 .content .entry .entry-categories,
 .post-type-2 .content .entry .entry-title,
@@ -2863,7 +2913,7 @@ p.entry-meta {
 
 .archive-pagination a {
   background-color: #fff;
-  color: #777;
+  color: #333;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -2888,7 +2938,7 @@ p.entry-meta {
 /* # #Sidebars
 ---------------------------------------------------------------------------------------------------- */
 .sidebar {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 40px; }
 
 @media only screen and (max-width: 860px) {
@@ -2911,9 +2961,9 @@ p.entry-meta {
   font-size: 1.6rem;
   clear: both;
   padding: 60px 0;
-  color: #777; }
+  color: #333; }
   .footer-widgets a {
-    color: #777; }
+    color: #333; }
   .footer-widgets .widget-title {
     color: #555; }
 
@@ -2959,14 +3009,14 @@ p.entry-meta {
   background: #fff;
   border-top: 1px solid #ecf0f1;
   border-bottom: 1px solid #ecf0f1;
-  color: #777;
+  color: #333;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5;
   padding: 20px 0;
   text-align: center; }
   .site-footer a {
-    color: #777; }
+    color: #333; }
 
 /* # #Media #Queries
 ---------------------------------------------------------------------------------------------------- */

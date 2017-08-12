@@ -72,6 +72,7 @@
 	@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900');
 	$font-family: 'Source Sans Pro', sans-serif !global;
+	$font-weight: 300 !global;
 	$title-font-family: 'Lato', sans-serif !global;
 	$title-font-weight: 900 !global;
 	$button-font-family: $title-font-family !global;
@@ -90,4 +91,17 @@
 	$button-font-weight: 700;
 	$navigation-font-family: $font-family !global;
 	$navigation-font-weight: 700 !global;
+}
+
+@mixin quicksand-cormorantgaramont() { // visto su http://demo.studiopress.com/parallax
+	@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+	@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700');
+	$title-font-family: 'Quicksand', sans-serif !global;
+	$font-family: 'Cormorant Garamond', serif !global;
+	$font-weight: 400 !global;
+	$title-font-weight: 400 !global;
+	$button-font-family: $title-font-family !global;
+	$button-font-weight: 500;
+	$navigation-font-family: $title-font-family !global;
+	$navigation-font-weight: 500 !global;
 }

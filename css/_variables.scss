@@ -70,22 +70,38 @@ $info-color: $peterriver;
 $error-color: $alizarin;
 
 // Typography
-$font-family: 'Poppins', sans-serif;
-$font-size: 1.6rem; 
-$font-weight: 400;
-$text-color: #777;
+
+// Declare fonts combination
+
+//@include raleway-opensans();
+//@include roboto-opensans();
+//@include josefinsans-playfairdisplay();
+//@include robotoslab-roboto();
+//@include opensanscondensed-opensans();
+//@include oswald-opensans();
+//@include montserrat-merriweather();
+//@include merriweather-montserrat();
+@include lato-sourcesanspro();
+//@include playfairdisplay-opensans();
+//@include quicksand-cormorantgaramont();
+
+$font-size: 1.8rem; 
+//$font-family: 'Poppins', sans-serif;
+//$font-weight: 400;
+$text-color: #333;
 $text-line-height: 1.6;
 $bold: 700;
 $strong: $bold;
-$title-font-family: 'Montserrat', serif;
+//$title-font-family: 'Montserrat', serif;
 $title-line-height: 1.2;
 $title-color: #555;
-$title-font-weight: 900;
+//$title-font-weight: 900;
 $h1: $font-size*1.8;
 $h2: $font-size*1.4;
 $h3: $font-size*1.2;
 $h4: $font-size*1.1;
-$title-margin: 0 0 2rem;
+$title-margin: 0 0 2rem; 			// in generale
+$entry-title-margin: 4rem 0 2rem;   // nei contenuti
 $title-transform: none;
 $paragraph-margin: 0 0 1rem;
 $text-xsmall: $font-size*.7;
@@ -150,7 +166,7 @@ $two-sidebar-content-width: ($one-sidebar-content-width - $sidebar-secondary-wid
 $two-sidebar-wrap-width: 1280px - $sidebar-secondary-width - $sidebar-spacing;
 
 // Header
-$header: /*url('images/bk.png')*/ rgba(#fff, .95);
+$header: /*url('images/bk.png')*/ #fff;
 $header-vertical-align: center; // center al centro, flex-end in basso
 $header-vertical-padding: 10px;
 $sticky-header: 'yes'; // attiva sticky header.
@@ -188,16 +204,3 @@ $footer-text: $text-color;
 @function remtopx ($rem) {
 	@return $rem / 1rem * 10px;
 }
-
-// Declare fonts combination, else fallback
-
-//@include raleway-opensans();
-//@include roboto-opensans();
-//@include josefinsans-playfairdisplay();
-//@include robotoslab-roboto();
-//@include opensanscondensed-opensans();
-//@include oswald-opensans();
-//@include montserrat-merriweather();
-//@include merriweather-montserrat();
-@include lato-sourcesanspro();
-//@include playfairdisplay-opensans();

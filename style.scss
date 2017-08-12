@@ -27,9 +27,6 @@ Import
 @import "css/vendor/font-awesome-4.7.0/css/font-awesome.min.css"; // font awesome icon fonts
 @import "css/vendor/ionicons-2.0.1/css/ionicons.min.css"; // ionicons icon fonts
 
-// Saranno da rimuovere una volta che rendo definitivo il sistema per le combinazioni di font
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900');
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 
 /* ## Box Sizing
 --------------------------------------------- */
@@ -1076,7 +1073,8 @@ img.alignright,
 
 }
 
-.home .site-header {
+.sections .site-header,
+.has-home-top-sections .site-header {
 	background: $header;
 	
 	@media only screen and (min-width: 1023px) {		
@@ -1101,9 +1099,10 @@ img.alignright,
 
 @media only screen and (min-width: 1023px) {
 
-	.home .site-header.white {
+	.site-header.white {
 		background: $header;
-		border-bottom: $border;	
+		//border-bottom: $border;
+		@include box-shadow-1();	
 		-webkit-transition: all 0.2s ease-in-out;
 		-moz-transition:    all 0.2s ease-in-out;
 		-ms-transition:     all 0.2s ease-in-out;
@@ -1716,7 +1715,8 @@ img.alignright,
 
 	@if $sticky-header == 'yes' {
 
-		.front-page .site-header .nav-header {
+		.sections .site-header .nav-header,
+		.has-home-top-widget-sections .site-header .nav-header {
 
 		 	a {
 				color: $color-light;
@@ -1732,7 +1732,8 @@ img.alignright,
 
 		}
 
-		.front-page .white.site-header .nav-header  {
+		.sections .white.site-header .nav-header,
+		.has-home-top-widget-sections .white.site-header .nav-header  {
 
 		 	a {
 				color: $color-dark;
@@ -1845,7 +1846,7 @@ article.page {
 .entry-content {
 	
 	h1, h2, h3, h4, h5, h6 {
-		margin-top: 2.5rem;
+		margin: $entry-title-margin;
 	}
 
 	h1:first-of-type {

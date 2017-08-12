@@ -94,7 +94,7 @@ $gradient-start:   #7A28FF !default;
 $gradient-end:  #00A1FF !default;
 
 //* Overlay
-@mixin overlay {
+@mixin overlay() {
     position: relative;
     * {
         position: relative;
@@ -135,9 +135,9 @@ $gradient-end:  #00A1FF !default;
 }
 
 //* Transparent Text or image behind text
-@mixin text-transparent {
+@mixin text-transparent() {
     color: white;  /* Fallback: assume this color ON TOP of image */
-    background: url(./images/hero.jpg) no-repeat;
+    background: url('./images/hero.jpg') no-repeat;
     background-size: cover; // 
     background-attachment: fixed; // fixed o inherit. Con fixed lo sfondo non si muove inseieme alle lettere
     -webkit-background-clip: text;

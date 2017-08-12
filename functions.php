@@ -44,7 +44,7 @@ function activenet_enqueue_scripts_styles() {
 
 	//wp_enqueue_style( 'font-awesome', CHILD_URL . '/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 
-	wp_enqueue_script( 'activenet-sticky-header', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'activenet-sticky-header', get_stylesheet_directory_uri() . '/js/sticky.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 	wp_enqueue_script( 'activenet-anijs', get_stylesheet_directory_uri() . '/js/anijs-min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	wp_enqueue_script( 'activenet-anijs-dom', get_stylesheet_directory_uri() . '/js/anijs-helper-dom-min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
@@ -154,44 +154,24 @@ add_action( 'genesis_before_content_sidebar_wrap', 'slider_widget',20 );
 	) );
 }
 
-//* Add Home Top Sections widget area
+//* Customize the footer credits
+add_filter( 'genesis_footer_creds_text', 'an_footer_creds_text' );
+function an_footer_creds_text() {
+	echo '<p>©2017 Active Net Theme · P.IVA 0000000 · Web Design by <b>Active Net</b></p>';
+}
 
+//* Register sidebars
 genesis_register_sidebar( array(
 	'id'            => 'home-top-sections',
 	'name'          => __( 'Home Top Sections', 'activenet' ),
 	'description'   => __( 'Home Top Sections Area', 'activenet' ),
 ) );
 
-add_action( 'genesis_after_header', 'home_top_sections_widget',20 );
-	function home_top_sections_widget() {
-	if ( is_front_page() )
-		genesis_widget_area( 'home-top-sections', array(
-			'before' => '<div class="home-top-sections sections widget-area"><div class="wrap">',
-			'after' => '</div></div>',
-	) );
-}
-
-//* Add Home Bottom Sections widget area
 genesis_register_sidebar( array(
 	'id'            => 'home-bottom-sections',
 	'name'          => __( 'Home Bottom Sections', 'activenet' ),
 	'description'   => __( 'Home Bottom Sections Area', 'activenet' ),
 ) );
-
-add_action( 'genesis_before_footer', 'home_bottom_sections_widget',20 );
-	function home_bottom_sections_widget() {
-	if ( is_front_page() )
-		genesis_widget_area( 'home-bottom-sections', array(
-			'before' => '<div class="home-bottom-sections sections widget-area"><div class="wrap">',
-			'after' => '</div></div>',
-	) );
-}
-
-//* Customize the footer credits
-add_filter( 'genesis_footer_creds_text', 'an_footer_creds_text' );
-function an_footer_creds_text() {
-	echo '<p>©2017 Active Net Theme · P.IVA 0000000 · Web Design by <b>Active Net</b></p>';
-}
 
 //* Add custom header area
 add_action( 'genesis_header', 'an_do_header' );
@@ -367,7 +347,7 @@ function gt_review_newer_link_text() {
 * post-type-1: 2 colonne semplice -> http://i.imgur.com/7jWNXfo.png
 * post-type-2: 4 colonne (da Srikat) -> http://i.imgur.com/MBMier2.png
 */
-include_once( get_stylesheet_directory() . '/lib/post-type-1.php' );
+//include_once( get_stylesheet_directory() . '/lib/post-type-1.php' );
 //include_once( get_stylesheet_directory() . '/lib/post-type-2.php' );
 
 
