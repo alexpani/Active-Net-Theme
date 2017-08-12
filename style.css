@@ -748,6 +748,36 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
   width: 80%;
   margin: 30px auto; }
 
+.facebook,
+.youtube,
+.twitter,
+.pinterest {
+  float: left;
+  margin-right: 20px; }
+
+.social {
+  overflow: auto; }
+
+.facebook i {
+  color: #3b5998; }
+  .facebook i:hover {
+    color: #8b9dc3; }
+
+.twitter i {
+  color: #0084b4; }
+  .twitter i:hover {
+    color: #00aced; }
+
+.pinterest i {
+  color: #bd081c; }
+  .pinterest i:hover {
+    color: #d50c22; }
+
+.youtube i {
+  color: #CD201F; }
+  .youtube i:hover {
+    color: #000000; }
+
 @media only screen and (min-width: 666px) {
   .aligner {
     display: flex;

@@ -136,7 +136,7 @@ function activenet_comments_gravatar( $args ) {
 
 //* Optimize automatic paragraph in WordPress
 remove_filter('the_content', 'wpautop');
-add_filter('the_content', 'wpautop', 12);
+//add_filter('the_content', 'wpautop', 12);
 
 //* Add slider widget area
 genesis_register_sidebar( array(
