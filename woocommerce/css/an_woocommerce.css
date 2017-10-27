@@ -62,7 +62,7 @@ Global Theme Variables
 .text-transparent {
   color: white;
   /* Fallback: assume this color ON TOP of image */
-  background: url("./images/hero.jpg") no-repeat;
+  background: url("/images/hero.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   -webkit-background-clip: text;
@@ -77,6 +77,54 @@ Global Theme Variables
   background: linear-gradient(to right, #f25ce4 0%, #6959c9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
+
+.text-xsmall {
+  font-size: 1.44rem; }
+
+.text-small {
+  font-size: 1.62rem; }
+  @media only screen and (max-width: 1023px) {
+    .text-small {
+      font-size: 1.72rem; } }
+  @media only screen and (max-width: 639px) {
+    .text-small {
+      font-size: 1.7rem; } }
+
+.text-medium {
+  font-size: 2.16rem; }
+  @media only screen and (max-width: 1023px) {
+    .text-medium {
+      font-size: 1.86rem; } }
+  @media only screen and (max-width: 639px) {
+    .text-medium {
+      font-size: 1.86rem; } }
+
+.text-large {
+  font-size: 3.96rem; }
+  @media only screen and (max-width: 1023px) {
+    .text-large {
+      font-size: 2.36rem; } }
+  @media only screen and (max-width: 639px) {
+    .text-large {
+      font-size: 2.26rem; } }
+
+.text-xlarge {
+  font-size: 5.4rem; }
+  @media only screen and (max-width: 1023px) {
+    .text-xlarge {
+      font-size: 3.96rem; } }
+  @media only screen and (max-width: 639px) {
+    .text-xlarge {
+      font-size: 3.36rem; } }
+
+.text-xxlarge {
+  font-size: 7.2rem; }
+  @media only screen and (max-width: 1023px) {
+    .text-xxlarge {
+      font-size: 5.4rem; } }
+  @media only screen and (max-width: 639px) {
+    .text-xxlarge {
+      font-size: 3.96rem; } }
 
 /*
 * Active Net Woocommerce Extra v2.0
@@ -93,7 +141,7 @@ li.cat-parent.current-cat > a, li.current-cat-parent > a, li.current-cat > a {
     border-top: 1px solid #ecf0f1; }
 
 .woocommerce ul.cart_list li a, .woocommerce ul.product_list_widget li a {
-  font-weight: 700; }
+  font-weight: 500; }
 
 .short-description {
   border-bottom: 1px solid #ecf0f1;

@@ -107,7 +107,10 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 //* Arranger
 
 .center, .align-center {
-	text-align: center !important;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .right, .align-right {
@@ -246,27 +249,14 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	background-size: cover;
 }
 
-.overlay {
-	position: absolute;
-	top: 40%;
-	left: 25%;
-	width: 50%;
-	text-align: center;
-}
 
 //* Hero
 .hero {
 	background: url('./images/hero.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
 	padding: 0% 0;
-	@include overlay();		
-	//overflow: hidden;
 	padding: 100px 0;
-	//display: table;	
-	//table-layout: fixed;
-	//width: 100%;
 	height: calc(100vh);
 	display: flex;
 	align-items:center;
@@ -283,30 +273,6 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 .uppercase {
 	text-transform: uppercase;
-}
-
-.text-xsmall {
-	font-size: $text-xsmall;
-}
-
-.text-small {
-	font-size: $text-small;
-}
-
-.text-medium {
-	font-size: $text-medium;
-}
-
-.text-large {
-	font-size: $text-large;
-}
-
-.text-xlarge {
-	font-size: $text-xlarge;
-}
-
-.text-xxlarge {
-	font-size: $text-xxlarge;
 }
 
 .text-columns {
@@ -353,6 +319,14 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 
 }
 
+.overlay {
+	position: absolute;
+	top: 40%;
+	left: 25%;
+	width: 50%;
+	text-align: center;
+}
+
 .content-box-primary {
 	background-color: $primary-color;
 	border: 1px solid $primary-color-alt;
@@ -366,6 +340,16 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 .content-box-secondary {
 	background-color: $secondary-color;
 	border: 1px solid $secondary-color-alt;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 30px;
+	width: 80%;
+	margin: 30px auto;
+}
+
+.content-box-light {
+	background-color: #fff;
+	border: 1px solid $text-color;
 	margin-bottom: 30px;
 	overflow: hidden;
 	padding: 30px;
@@ -436,18 +420,19 @@ Helper classes. Si utilizzano nell'editor dei post di Wordpress
 	}
 }
 
-
-
-
-
-//* Aligner se assegnato a una section permette di allinearne verticalmente il contenuto
+//* Aligner se assegnato a una section permette di allineare verticalmente il contenuto
 //* display:flex non permette alle colonne di collassare su schermi piccoli,
 //* per cui la rendo funzionante in corrispondenza di colonne ancora non collassate
-@media only screen and (min-width: 666px) {
+@media only screen and (min-width: $screen-small) {
 
 	.aligner {
 		display:flex;
 		align-items:center;
 	}
 
+}
+
+
+.hidden {
+    display: none;
 }

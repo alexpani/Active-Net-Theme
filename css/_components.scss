@@ -2,7 +2,7 @@
 Poppy Elements
 ---------------------------------------------------------------------------------------------------- */
 
-$icon-color: #1abc9c !default;
+$icon-color: #f39c12 !default;
 $secondary-color: #555 !default;
 $color-light: #fff !default;
 $color-dark: #333 !default;
@@ -44,15 +44,8 @@ li.ordrered-list-6:nth-of-type(6n+1) {
 }
 
 
-//* Featured Info
-.poppy-featured-info {
-}
-
-
 //* Icon Box
 .poppy.poppy-icon-box {
-	text-align: center;
-	padding: 10px;
 	
 	div {
 		text-align: center;
@@ -65,23 +58,19 @@ li.ordrered-list-6:nth-of-type(6n+1) {
 	
 	h3 {
 		margin: 1rem auto;		
-		color: $secondary-color;
-	}
-
-	h3 {
-		color: $color-light !important;
+		@include text-medium;
 	}
 	
-	h4 {
-		font-weight: normal;		
-		color: $secondary-color;
+	p {
+		font-weight: $bold;
+		line-height: 1.1;		
 	}
 
 	&.text-light,
 	&.color-light {
 
-		h3, h4 {
-			color: $color-light !important;
+		h3, p {
+			color: $color-light;
 		}
 
 	}
@@ -89,8 +78,8 @@ li.ordrered-list-6:nth-of-type(6n+1) {
 	&.text-dark,
 	&.color-dark {
 
-		h3, h4 {
-			color: $color-dark !important;
+		h3, p {
+			color: $color-dark;
 		}
 
 	}
@@ -227,4 +216,84 @@ li.ordrered-list-6:nth-of-type(6n+1) {
 		
 	}
 
+}
+
+
+//* #Tabs & #Accordions. Requires anijs.js
+
+ul.tabs, ul.accordions {
+	margin: 0;
+	margin-bottom: 40px;
+	overflow: auto;
+	
+ 	li {
+		list-style: none;
+		display: inline;
+	}
+
+}
+
+.tab span {
+	font-family: $title-font-family;
+	font-weight: $title-font-weight;
+	margin: 0 0 -1px 0;
+	border: solid 1px $elements-color;
+	border-bottom: none;
+	padding: 12px 18px;
+	cursor: pointer;
+	display: inline-block;
+	background: $elements-color;
+	
+	&:hover {
+		color: $primary-color;
+		cursor: pointer;
+	}
+
+}
+
+.tabs .tab.active span {
+	border-bottom: none;
+	z-index: 2;
+	color: $primary-color;
+	background: #FFF;
+}
+
+.tab div {
+	display: none;
+	float: left;
+	border-top: 1px solid $elements-color;		
+	padding-top: 10px;
+}
+
+@media only screen and (max-width: 360px) {
+
+	.tab span {
+		width: 100%;
+		border-bottom: 1px solid #fff;
+		border-top: 1px solid #fff;
+	}
+}	
+
+.tabs .tab.active div {
+	display: block; 
+}
+
+.accordions .tab span {
+
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+}
+
+.accordions .tab.active span {
+	border-bottom: 1px solid $elements-color;
+	border-top: 1px solid $elements-color;
+	z-index: 2;
+	color: $primary-color;
+	background: #FFF;
+}
+
+.accordions .tab.active div {
+	display: block;
+	padding: 20px 6px;
 }

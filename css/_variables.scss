@@ -69,28 +69,35 @@ $message-color: $nephritis;
 $info-color: $peterriver;
 $error-color: $alizarin;
 
+// Media queries breakpoints
+$screen-huge: 1340px;
+$screen-large: 1200px;
+$screen-medium: 1023px;
+$screen-small: 639px;  // 639 fino a Galaxy S6 e Iphone 6, orizzontali, esclusi
+$screen-xsmall: 500px;
+
 // Typography
 
 // Declare fonts combination
 
-//@include raleway-opensans();
-//@include roboto-opensans();
-//@include josefinsans-playfairdisplay();
-//@include robotoslab-roboto();
-//@include opensanscondensed-opensans();
-//@include oswald-opensans();
-//@include montserrat-merriweather();
-//@include merriweather-montserrat();
-@include lato-sourcesanspro();
-//@include playfairdisplay-opensans();
-//@include quicksand-cormorantgaramont();
+//@include raleway-opensans;
+//@include roboto-opensans;
+//@include josefinsans-playfairdisplay;
+//@include robotoslab-roboto;
+//@include opensanscondensed-opensans;
+//@include oswald-opensans;
+//@include montserrat-merriweather;
+//@include merriweather-montserrat;
+@include lato-sourcesanspro; // completo
+//@include playfairdisplay-opensans;
+//@include quicksand-cormorantgaramont; // completo
 
 $font-size: 1.8rem; 
 //$font-family: 'Poppins', sans-serif;
 //$font-weight: 400;
 $text-color: #333;
 $text-line-height: 1.6;
-$bold: 700;
+$bold: 500;
 $strong: $bold;
 //$title-font-family: 'Montserrat', serif;
 $title-line-height: 1.2;
@@ -104,10 +111,11 @@ $title-margin: 0 0 2rem; 			// in generale
 $entry-title-margin: 4rem 0 2rem;   // nei contenuti
 $title-transform: none;
 $paragraph-margin: 0 0 1rem;
-$text-xsmall: $font-size*.7;
+
+$text-xsmall: $font-size*.8;
 $text-small: $font-size*.9;
-$text-medium: $font-size*1.5;
-$text-large: $font-size*2;
+$text-medium: $font-size*1.2;
+$text-large: $font-size*2.2;
 $text-xlarge: $font-size*3;
 $text-xxlarge: $font-size*4;
 
@@ -121,7 +129,7 @@ $padding-large: 100px;
 $padding-xlarge: 200px;
 $border: 1px solid $elements-color;
 $border-radius: 3px;
-$icon-color: $turquoise;
+$icon-color: $orange;
 $border-test: 'no'; // Enable visible borders for test purposes. yes or no
 
 
@@ -171,6 +179,7 @@ $header-vertical-align: center; // center al centro, flex-end in basso
 $header-vertical-padding: 10px;
 $sticky-header: 'yes'; // attiva sticky header.
 $sticky-header-transparent: 'yes';
+$sticky-header-background-light: 'yes'; // indicare se lo sfondo sotto al menu è chiaro
 
 // Navigation
 $navigation-font-family: $title-font-family;
@@ -187,7 +196,7 @@ $secondary-nav-hover: $orange;
 $header-navigation-font-size: 1.4rem;
 $header-nav-link: $color-dark;
 $header-nav-hover: $primary-color-alt;
-$header-nav-underline: 'yes'; // style of te menu items, yes or no
+$header-nav-underline: 'yes'; // style of the menu items, yes or no
 $responsive-nav-bk: $white;
 $responsive-nav-link: $secondary-color;
 $responsive-nav-toggle: $text-color;

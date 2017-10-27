@@ -1,8 +1,8 @@
 <?php
 /**
  * Active Net
- * @version 1.0
- * @date 02/08/2017
+ * @version 1.1
+ * @date 12/08/2017
  * Based on Genesis Sample Child Theme
  *
  * @package Poppy Framework
@@ -348,7 +348,7 @@ function gt_review_newer_link_text() {
 * post-type-2: 4 colonne (da Srikat) -> http://i.imgur.com/MBMier2.png
 */
 //include_once( get_stylesheet_directory() . '/lib/post-type-1.php' );
-//include_once( get_stylesheet_directory() . '/lib/post-type-2.php' );
+include_once( get_stylesheet_directory() . '/lib/post-type-2.php' );
 
 
 
@@ -374,5 +374,3 @@ function enqueue_sidr_touchwipe() {
 	wp_enqueue_script( 'touchwipe',  get_stylesheet_directory_uri() . '/js/jquery.touchwipe.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'touchwipe-init',  get_stylesheet_directory_uri() . '/js/jquery.touchwipe.min.init.js', array( 'touchwipe' ), '1.0.0', true );
 }
-
-

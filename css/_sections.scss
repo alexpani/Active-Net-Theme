@@ -43,7 +43,7 @@
 }
 
 .container {
-	overflow: auto;
+	overflow: hidden;
 	
 	p {
 		margin: 0;
@@ -56,9 +56,15 @@
 }
 
 .section {
+
 	
 	img {
 		margin-bottom: -8px; // Verificare se è universale. Evita il bordo nelle sezioni al 50%
+		
+		&.alignnone {
+			margin-bottom: -8px;
+		}
+		
 	}
 
 	p {
