@@ -104,7 +104,7 @@ function prefix_remove_default_images( $sizes ) {
  return $sizes;
 }
 
-add_image_size( 'featured-image', 1140, 400, TRUE );
+add_image_size( 'featured-image', 1280, 400, TRUE );
 
 //* Display Featured Image on top of the page */
 add_action( 'genesis_before_entry', 'featured_page_image', 8 );
