@@ -104,8 +104,14 @@ function prefix_remove_default_images( $sizes ) {
  return $sizes;
 }
 
-//* Add Image Sizes
-//add_image_size( 'featured-image', 720, 400, TRUE );
+add_image_size( 'featured-image', 1140, 400, TRUE );
+
+//* Display Featured Image on top of the page */
+add_action( 'genesis_before_entry', 'featured_page_image', 8 );
+function featured_page_image() {
+  if ( ! is_singular( 'page' ) )  return;
+	the_post_thumbnail('featured-image');
+}
 
 //* Put the secondary navigation menu on topo
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
