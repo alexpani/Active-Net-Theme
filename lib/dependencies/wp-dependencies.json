@@ -47,7 +47,7 @@
   {
     "name": "HTML Editor Syntax Highlighter",
     "host": "wordpress",
-    "slug": "HESH-WordPress-Plugin-release/html-editor-syntax-highlighter.php",
+    "slug": "html-editor-syntax-highlighter/html-editor-syntax-highlighter.php",
     "uri": "https://wordpress.org/plugins/html-editor-syntax-highlighter/",
     "branch": "trunk",
     "optional": false
